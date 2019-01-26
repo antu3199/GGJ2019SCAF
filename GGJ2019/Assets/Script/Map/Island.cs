@@ -14,8 +14,11 @@ public class Island : MonoBehaviour {
 	public Rigidbody2D rb;
 	public Map map;
 
-	void Start() {
+	void Awake() {
 		tiles = new Dictionary<Vector2, Tile>();
+	}
+
+	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		UpdateChildTiles();
 	}
