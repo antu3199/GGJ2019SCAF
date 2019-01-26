@@ -29,9 +29,15 @@ public class Island : MonoBehaviour {
 	}
 
 	public void PlaceEntity(Entity entity, Vector2 pivot) {
+		int sortingOrder = int.MinValue;
 		foreach(Vector2 occupant in entity.GetDirectionalOccupancy()) {
 			tiles[occupant + pivot].PlaceEntity(entity, occupant);
+			if (tiles[occupant + pivot].GetSortingOrder() < sortingOrder) {
+				sortingOrder = tiles[occupant + pivot].GetSortingOrder();
+			}
 		}
+
+		entity.SetSortingOrder(sortingOrder);
 	}
 
 	/// PRIVATE

@@ -36,11 +36,11 @@ public class Tile : MonoBehaviour {
     public IslandRef islandRef;
 
     public int GetSortingOrder() {
-        return (int)(-coordinate.y * 100);
+        return (int)(coordinate.y * 10);    //smaller means higher priority
     }
 
     public void SetSortingOrder() {
-		GetComponent<SpriteRenderer>().sortingOrder = GetSortingOrder();
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, GetSortingOrder());
     }
 
     public bool HasEntity() {

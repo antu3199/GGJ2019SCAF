@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour {
     public EntityDirection direction;
 
     public void SetSortingOrder(int order) {
-        GetComponent<SpriteRenderer>().sortingOrder = order;
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, order);
     }
 
     public Vector2[] GetDirectionalOccupancy() {
