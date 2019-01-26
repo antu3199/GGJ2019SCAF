@@ -19,18 +19,28 @@ public class EntityRef {
     }
 }
 
+public class IslandRef {
+    public Island island;
+    public Vector2 location; 
+
+    public IslandRef(Island island, Vector2 offset) {
+        this.island = island;
+        this.location = offset;    
+    }
+}
+
 public class Tile : MonoBehaviour {
     public TileType tileType;
-    public Vector2 coordinate;
+    public Vector2 coordinate;          //Relative to Game
     public EntityRef entityRef;
-    public Island island;
+    public IslandRef islandRef;
 
     public int GetSortingOrder() {
-        return (int)(-coordinate.y * 100);
+        return (int)(coordinate.y * 10);    //smaller means higher priority
     }
 
     public void SetSortingOrder() {
-		GetComponent<SpriteRenderer>().sortingOrder = GetSortingOrder();
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, GetSortingOrder());
     }
 
     public bool HasEntity() {
@@ -41,7 +51,7 @@ public class Tile : MonoBehaviour {
         entityRef = new EntityRef(entity, offset);
     }
 
-    public void SetIsland(Island island) {
-        this.island = island;
+    public void SetIsland(Island island, Vector2 offset) {
+        this.islandRef = new IslandRef(island, offset);
     }
 }
