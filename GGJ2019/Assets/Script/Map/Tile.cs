@@ -23,6 +23,7 @@ public class Tile : MonoBehaviour {
     public TileType tileType;
     public Vector2 coordinate;
     public EntityRef entityRef;
+    public Island island;
 
     public int GetSortingOrder() {
         return (int)(-coordinate.y * 100);
@@ -38,6 +39,9 @@ public class Tile : MonoBehaviour {
 
     public void PlaceEntity(Entity entity, Vector2 offset) {
         entityRef = new EntityRef(entity, offset);
-        entity.SetSortingOrder(GetSortingOrder());
+    }
+
+    public void SetIsland(Island island) {
+        this.island = island;
     }
 }
