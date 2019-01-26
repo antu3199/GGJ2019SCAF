@@ -4,7 +4,7 @@ using UnityEngine;
 public class FlowerGarden : Entity
 {
 
-    public override void Interact(EntityDirection dir = EntityDirection.NONE)
+    public override void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE)
     {
         //Do something
     }
