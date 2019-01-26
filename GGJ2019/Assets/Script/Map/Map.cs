@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour {
-
     public int rows;
     public int cols;
     private Tile[,] tiles;
@@ -51,8 +50,8 @@ public class Map : MonoBehaviour {
         Tile replacedTile = this.tiles[x, y];        
         this.tiles[x, y] = Instantiate(tile.gameObject, gameObject.transform).GetComponent<Tile>();
         this.tiles[x, y].coordinate = new Vector2(x, y);
-        this.tiles[x, y].SetSortingOrder();
         this.tiles[x, y].transform.position = CoordToPosition(x, y);
+        this.tiles[x, y].SetSortingOrder();
         if (replacedTile != null) {
             Destroy(replacedTile.gameObject);
         }
