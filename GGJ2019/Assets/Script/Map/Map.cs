@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour {
-
     public int rows;
     public int cols;
     private Tile[,] tiles;
