@@ -27,7 +27,7 @@ public class Island : MonoBehaviour {
 		return true;
 	}
 
-	public void PlaceEntity(Entity entity, Vector pivot) {
+	public void PlaceEntity(Entity entity, Vector2 pivot) {
 		foreach(Vector2 occupant in entity.GetDirectionalOccupancy()) {
 			tiles[occupant + pivot].PlaceEntity(entity, occupant);
 		}
