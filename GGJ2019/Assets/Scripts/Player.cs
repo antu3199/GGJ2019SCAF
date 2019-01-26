@@ -13,7 +13,7 @@ public class Player : Character {
 	public override void Start () {
         base.Start();
         r = GetComponent<Rigidbody2D>();
-        if (!(marker = GetComponent<Marker>())){
+        if (!(marker = GetComponentInChildren<Marker>())){
             Debug.LogError("Player must have a marker attached!");
         }
 	}
@@ -22,5 +22,12 @@ public class Player : Character {
 	public override void Update () {
         // Controls
         r.velocity = moveSpeed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-	}
+        if (r.velocity != Vector2.zero)
+        {
+            float rotation = Vector2.SignedAngle(Vector2.up, r.velocity);
+            Vector3 angles = transform.eulerAngles;
+            angles.z = rotation;
+            transform.eulerAngles = angles;
+        }
+    }
 }
