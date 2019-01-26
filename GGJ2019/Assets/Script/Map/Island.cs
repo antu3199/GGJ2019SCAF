@@ -16,6 +16,7 @@ public class Island : MonoBehaviour {
 	void Start() {
 		tiles = new Dictionary<Vector2, Tile>();
 		rb = GetComponent<Rigidbody2D>();
+		UpdateChildTiles();
 	}
 
 	public bool IsEntityPlaceable(Entity entity, Vector2 pivot) {
@@ -30,6 +31,14 @@ public class Island : MonoBehaviour {
 	public void PlaceEntity(Entity entity, Vector2 pivot) {
 		foreach(Vector2 occupant in entity.GetDirectionalOccupancy()) {
 			tiles[occupant + pivot].PlaceEntity(entity, occupant);
+		}
+	}
+
+	/// PRIVATE
+
+	private void UpdateChildTiles() {
+		foreach(KeyValuePair<Vector2, Tile> pair in tiles) {
+			pair.Value.SetIsland(this, pair.Key);
 		}
 	}
 }
