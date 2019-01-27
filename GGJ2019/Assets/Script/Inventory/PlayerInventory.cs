@@ -15,6 +15,7 @@ public class PlayerInventory : MonoBehaviour {
     public GridLayoutGroup itemsGrid;
     public int selectedItemIndex = -1;
     private int maxStorage;
+    public bool opened;
 
     void Start()
     {
@@ -34,19 +35,16 @@ public class PlayerInventory : MonoBehaviour {
         {
             AddItem(ItemManager.Instance.itemData[i].key, 1);
         }
+
     }
 
-    public void Open()
+    public void ToggleInventory()
     {
         this.selectedItemIndex = -1;
         this.UpdateSelected();
-        this.gameObject.SetActive(true);
+        this.gameObject.SetActive(!this.gameObject.activeSelf);
     }
 
-    public void Close()
-    {
-        this.gameObject.SetActive(false);
-    }
 
     public void UpdateSelected()
     {
@@ -68,6 +66,7 @@ public class PlayerInventory : MonoBehaviour {
             this.selectedItemDescriptionText.text = "";
             this.selectedBorder.gameObject.SetActive(false);
             useButton.Interactable = false;
+            this.selectedItemImage.gameObject.SetActive(false);
         } else
         {
             this.selectedBorder.gameObject.SetActive(true);
@@ -78,6 +77,7 @@ public class PlayerInventory : MonoBehaviour {
             selectedBorder.transform.SetParent(itemSlot.itemSlotImage.transform, false);
             useButton.Interactable = itemSlot.item.usable && selected;
             this.selectedItemImage.sprite = itemSlot.itemSlotImage.sprite;
+            this.selectedItemImage.gameObject.SetActive(true);
         }
     }
 
