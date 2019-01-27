@@ -15,6 +15,174 @@
       "description" : "A delicious apple",
       "usable" : true,
       "collapsable" : true
+    },
+    {
+      "index" : 2,
+      "key" : "steak-raw",
+      "displayName": "Raw Steak",
+      "description" : "A steak that needs to be cooked",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 3,
+      "key" : "steak-cooked",
+      "displayName": "Gourmet Steak",
+      "description" : "Delicious steak that tastes very good",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 4,
+      "key" : "egg-raw",
+      "displayName": "Egg",
+      "description" : "Raw egg.",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 5,
+      "key" : "egg-cooked",
+      "displayName": "Sunny side up egg",
+      "description" : "Delicious cooked egg",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 6,
+      "key" : "chicken-raw",
+      "displayName": "Raw chicken",
+      "description" : "Needs to be cooked",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 7,
+      "key" : "chicken-cooked",
+      "displayName": "Cooked chicken",
+      "description" : "Delicious",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 8,
+      "key" : "pork-raw",
+      "displayName": "Raw pork",
+      "description" : "Needs to be cooked",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 9,
+      "key" : "pork-cooked",
+      "displayName": "Cooked pork",
+      "description" : "Delicious",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 10,
+      "key" : "milk",
+      "displayName": "Milk",
+      "description" : "Moo Moo milk",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 11,
+      "key" : "carrot",
+      "displayName": "Carrot",
+      "description" : "Bunny man food",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 12,
+      "key" : "corn",
+      "displayName": "Corn on the Cob",
+      "description" : "Country side food",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 13,
+      "key" : "watermelon",
+      "displayName": "Watermelon",
+      "description" : "Juicy watermelon",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 14,
+      "key" : "potato",
+      "displayName": "Potato",
+      "description" : "To become french fries",
+      "usable" : true,
+      "collapsable" : true
+    }, 
+    {
+      "index" : 15,
+      "key" : "lettuce",
+      "displayName": "Lettuce",
+      "description" : "Salad thing",
+      "usable" : true,
+      "collapsable" : true
+    },
+    {
+      "index" : 16,
+      "key" : "wood",
+      "displayName": "Wood",
+      "description" : "wood desc",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 17,
+      "key" : "coal",
+      "displayName": "Coal",
+      "description" : "Coal desc",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 18,
+      "key" : "ore-silver",
+      "displayName": "Silver ore",
+      "description" : "ora ora ora ora",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 19,
+      "key" : "ore-gold",
+      "displayName": "Gold Ore",
+      "description" : "ora ora ora ora",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 20,
+      "key" : "ore-mithril",
+      "displayName": "Gold Ore",
+      "description" : "ora ora ora ora",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 21,
+      "key" : "ore-amethyst",
+      "displayName": "Amethyst Ore",
+      "description" : "ora ora ora ora",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 22,
+      "key" : "ice-cube",
+      "displayName": "Ice Cube",
+      "description" : "A cube of ice",
+      "usable" : false,
+      "collapsable" : true
     }
   ]
 }

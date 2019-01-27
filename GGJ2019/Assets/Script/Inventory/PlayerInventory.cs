@@ -26,6 +26,13 @@ public class PlayerInventory : MonoBehaviour {
 
         this.selectedItemIndex = -1;
         this.UpdateSelected();
+
+
+        //For testing
+        for (int i = 0; i < ItemManager.Instance.itemData.Count; i++)
+        {
+            AddItem(ItemManager.Instance.itemData[i].key, 1);
+        }
     }
 
     public void Open()
