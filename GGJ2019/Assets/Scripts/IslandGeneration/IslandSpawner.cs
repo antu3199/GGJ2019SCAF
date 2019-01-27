@@ -10,7 +10,7 @@ public class IslandSpawner : MonoBehaviour {
 	public float homeBuffer;			// The closest distance an island can pass by the home island.
 	public RandomValue spawnCooldown;
 	public RandomValue islandVelocity;
-
+	
 	private void Start()
 	{
 		cam = Camera.main;
@@ -50,15 +50,11 @@ public class IslandSpawner : MonoBehaviour {
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
 					// Move island to randomly generated position
 					island.transform.position = newIslandPosition;
-					Debug.Log("spawning at " + newIslandPosition);
-
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -islandVelocity.GetRandom());
 				} else {
 					// Island spawns from bottom and moves up
 					float newIslandY = cam.transform.position.y - halfCamHeight - GetChildBounds(island).extents.y;
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
-					Debug.Log("spawning at " + newIslandPosition);
-
 					island.transform.position = newIslandPosition;
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(0, islandVelocity.GetRandom());
 				}

@@ -150,7 +150,8 @@ MonoBehaviour:
   tileQuantityRange:
     range:
       min: 1
-      max: 12
+      max: 8
+  islandLifetime: 30
 --- !u!4 &16173421
 Transform:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ GameObject:
   - component: {fileID: 1067640728}
   - component: {fileID: 1067640727}
   m_Layer: 0
-  m_Name: IslandManager
+  m_Name: IslandSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

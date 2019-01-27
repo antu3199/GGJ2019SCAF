@@ -8,7 +8,8 @@ public class IslandGenerator : MonoBehaviour {
 	public GameObject islandBasePrefab;
 	public GameObject[] tilePrefabs;
 	public RandomValue tileQuantityRange;
-
+	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
+	
 	public GameObject GenerateIsland()
 	{
 		GameObject islandObj = Instantiate(islandBasePrefab);
@@ -38,6 +39,7 @@ public class IslandGenerator : MonoBehaviour {
 		}
 		// Give islands different SortingGroup orders
 		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 100);
+		StartCoroutine(island.BeginTimeout(islandLifetime));
 		return islandObj;
 	}
 

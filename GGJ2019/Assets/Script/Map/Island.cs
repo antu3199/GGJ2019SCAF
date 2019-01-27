@@ -54,6 +54,11 @@ public class Island : MonoBehaviour {
 		Destroy(other.gameObject);
 	}
 
+	public IEnumerator BeginTimeout(float lifetime) {
+		yield return new WaitForSeconds(lifetime);
+		Destroy(gameObject);
+	}
+
 	/// PRIVATE
 
 	private Vector2 MigratePiece(Vector2 tileLoc, Tile tile, Vector2 origin, Player player) {
