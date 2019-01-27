@@ -17,7 +17,7 @@ public class UseTool : MonoBehaviour {
 		if (Input.GetAxisRaw("Fire1") != 0 && !tool.isFired)
         {
             float dRotation = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
-            Vector2 rotationVector = new Vector2(Mathf.Cos(dRotation), Mathf.Sin(dRotation));
+            Vector2 rotationVector = new Vector2(-Mathf.Sin(dRotation), Mathf.Cos(dRotation));
             tool.transform.position = player.transform.position;
             tool.gameObject.SetActive(true);
             tool.Fire(rotationVector);

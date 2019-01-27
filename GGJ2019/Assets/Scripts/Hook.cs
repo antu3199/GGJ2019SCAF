@@ -36,7 +36,10 @@ public class Hook : MonoBehaviour {
 			isFired = true;
 			EnableCargoTrigger();
 			rb.velocity = dir * magnitude;
-			StartCoroutine(WaitForEvent());	
+            Vector3 rotation = transform.eulerAngles;
+            rotation.z = Vector2.SignedAngle(Vector2.up, dir);
+            transform.eulerAngles = rotation;
+            StartCoroutine(WaitForEvent());	
 		}
 		
 	}
