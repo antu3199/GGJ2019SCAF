@@ -26,7 +26,7 @@ TextureImporter:
     21300042: sleep
     21300044: npc_2
     21300046: npc_3
-    21300048: npc_4
+    21300048: p_n_4
     21300050: npc_5
     21300052: npc_6
     21300054: npc_7
@@ -47,6 +47,9 @@ TextureImporter:
     21300084: cow_2
     21300086: chicken_2
     21300088: pig_2
+    21300090: p_s_4
+    21300092: p_w_4
+    21300094: p_e_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -130,7 +133,18 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -544,9 +558,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 121
-        y: 246
-        width: 38
-        height: 33
+        y: 241
+        width: 40
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -600,15 +614,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_4
+      name: p_n_4
       rect:
         serializedVersion: 2
-        x: 121
-        y: 206
-        width: 39
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 123
+        y: 220
+        width: 13
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1035,6 +1049,66 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b337dffe3dad9654d8e2b1888a413854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p_s_4
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 220
+        width: 13
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684c7d9dc9fa2463dbdade4768a9040f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p_w_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 220
+        width: 11
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ccca37d23974bb8a99a0d52e61af37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p_e_4
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 220
+        width: 11
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198decce1ebfa401b8eaf089fd89b690
       vertices: []
       indices: 
       edges: []

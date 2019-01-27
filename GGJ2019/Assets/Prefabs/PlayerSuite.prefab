@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 95338519688082876}
   - component: {fileID: 114739854684936398}
   - component: {fileID: 61179861305558566}
+  - component: {fileID: 114392509628565504}
+  - component: {fileID: 114300382377697936}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -301,7 +303,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -312,7 +314,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!61 &61586474279605792
 BoxCollider2D:
@@ -369,6 +371,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hook: {fileID: 114743001543477012}
+--- !u!114 &114300382377697936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413294937939528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e7c0da6b53647488ac388d4f09f19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  template: {fileID: 1248036295250442, guid: 826c07d33e0b4694d9d086c33747c3e9, type: 2}
+--- !u!114 &114392509628565504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413294937939528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2716dd0b80c6450aa2c21925f182e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMagnitude: 10
+  angularMagnitude: 10
+  incrementor: 0.1
 --- !u!114 &114415909718169292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,25 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466e64164c8914a81dbc5c02a4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
+  visualObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
     type: 2}
   selectedTile: {fileID: 0}
-  selectedTileCollider: {fileID: 0}
-  tiles: []
-  tileFilter:
-    useTriggers: 1
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 16384
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!114 &114421254690351982
 MonoBehaviour:
   m_ObjectHideFlags: 1
