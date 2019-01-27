@@ -113,6 +113,109 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1115443607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1115443609}
+  - component: {fileID: 1115443608}
+  m_Layer: 0
+  m_Name: IslandGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1115443608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115443607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd01dc1d7acd41c40847f07b63bab62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islandBasePrefab: {fileID: 1585502456644556, guid: 34998cc20d97d50448a70939c823b20e,
+    type: 2}
+  tilePrefabs:
+  - {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305, type: 2}
+  - {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862, type: 2}
+  - {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269, type: 2}
+  - {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37, type: 2}
+  tileQuantityRange:
+    range:
+      min: 1
+      max: 8
+  islandLifetime: 30
+--- !u!4 &1115443609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115443607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1895661050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895661052}
+  - component: {fileID: 1895661051}
+  m_Layer: 0
+  m_Name: IslandSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1895661051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1895661050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f765a81da76aff3469f26eaf9092d41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeIsland: {fileID: 0}
+  islandGenerator: {fileID: 1115443608}
+  homeBuffer: 3.5
+  spawnCooldown:
+    range:
+      min: 2
+      max: 3
+  islandVelocity:
+    range:
+      min: 1
+      max: 3
+--- !u!4 &1895661052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1895661050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955082467
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +364,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1536154384645980, guid: 9a501afe9d9b9493d816f3e8655912fd,
         type: 2}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: islandSpawner
+      value: 
+      objectReference: {fileID: 1895661051}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
   m_IsPrefabAsset: 0

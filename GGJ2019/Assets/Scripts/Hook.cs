@@ -10,7 +10,7 @@ public class Hook : MonoBehaviour {
 	public float WaitForRewind;
 
 	public bool isFired {get; private set;}
-	public bool collision {get; private set;}
+	public bool collision {get; set;}
 	
 	public Tile cargo {get; set;}
 	public Tile dropPoint {get; set;}
@@ -84,6 +84,7 @@ public class Hook : MonoBehaviour {
 			}
 
 			if(collision) {
+				Debug.Log("COLLISION");
 				EnableDropPointTrigger();
 				StartCoroutine(Rewind());
 				break;

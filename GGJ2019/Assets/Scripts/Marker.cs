@@ -47,7 +47,7 @@ public class Marker : MonoBehaviour {
         {
             selectedTile = selectedTileCollider.GetComponent<Tile>();
             indicator.transform.position = selectedTile.transform.position;
-            Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            //Debug.Log("Selected " + selectedTile.coordinate.ToString());
         }
     }
 
@@ -70,7 +70,7 @@ public class Marker : MonoBehaviour {
             {
                 selectedTile = selectedTileCollider.GetComponent<Tile>();
                 indicator.transform.position = selectedTile.transform.position;
-                Debug.Log("Selected " + selectedTile.coordinate.ToString());
+                //Debug.Log("Selected " + selectedTile.coordinate.ToString());
             }
         }
     }
