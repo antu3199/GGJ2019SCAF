@@ -16,6 +16,7 @@ public class Map : MonoBehaviour {
     public GameObject GhostIsland;
     public GameObject StarterIsland;
     public GameObject PlayerSuite;
+    public CameraBehaviour cam;
 
     public IslandSpawner islandSpawner;
 
@@ -136,5 +137,6 @@ public class Map : MonoBehaviour {
         Vector2 location = CoordToPosition(rows/2, cols/2);
         player.transform.position = new Vector3(location.x, location.y, tiles[rows/2, cols/2].GetSortingOrder());
         suite.transform.parent = null;
+        cam.player = player;
     }
 }
