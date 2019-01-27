@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4033766982908996}
   - component: {fileID: 212153660827922534}
-  m_Layer: 13
+  m_Layer: 21
   m_Name: ActionSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114498970364400166}
   - component: {fileID: 114957025285745796}
   - component: {fileID: 61613121170440848}
-  m_Layer: 13
+  m_Layer: 21
   m_Name: TreeEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}

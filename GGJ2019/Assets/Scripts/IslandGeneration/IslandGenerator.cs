@@ -73,7 +73,7 @@ public class IslandGenerator : MonoBehaviour {
 						Entity chosenEntity = chosenTileInfo.uniqueTileEntities[Random.Range(0, chosenTileInfo.uniqueTileEntities.Length)].GetComponentsInChildren<Entity>()[0];
 						GameObject entityObj = chosenEntity.gameObject;
 						// Set this entity to be on the FloatingIsland layer while it's unhooked
-						entityObj.layer = LayerMask.NameToLayer("FloatingIsland");
+						//entityObj.layer = LayerMask.NameToLayer("FloatingIsland");
 						if (entityObj.transform.parent != null) {
 							entityObj = entityObj.transform.parent.gameObject;
 							chosenEntity.transform.parent.gameObject.layer = LayerMask.NameToLayer("FloatingIsland");
