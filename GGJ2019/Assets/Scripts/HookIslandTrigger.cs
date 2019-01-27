@@ -7,7 +7,7 @@ public class HookIslandTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		Tile tile = col.gameObject.GetComponent<Tile>();
-		if(tile.islandRef.island.type == IslandType.FreeForm) {
+		if(tile && tile.islandRef.island.type == IslandType.FreeForm) {
 			hook.cargo = tile;
 		}
 	}

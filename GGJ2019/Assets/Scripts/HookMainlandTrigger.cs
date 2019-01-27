@@ -7,7 +7,7 @@ public class HookMainlandTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		Tile tile = col.gameObject.GetComponent<Tile>();
-		if(tile.islandRef.island.type == IslandType.GridLocked) {
+		if(tile && tile.islandRef.island.type == IslandType.GridLocked) {
 			hook.dropPoint = tile;
 		}
 	}
