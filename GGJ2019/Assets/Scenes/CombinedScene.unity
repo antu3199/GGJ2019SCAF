@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 1955082470}
   - component: {fileID: 1955082469}
   - component: {fileID: 1955082468}
+  - component: {fileID: 1955082471}
+  - component: {fileID: 1955082472}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -294,6 +296,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955082471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955082467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0533d427935e73e40b4bdeb81078a3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!114 &1955082472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955082467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6598d140400de4da0b072ac243eb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultShakeDuration: 0.5
+  defaultShakeMagnitude: 0.2
+  defaultDampingSpeed: 5
 --- !u!1001 &2036639948
 Prefab:
   m_ObjectHideFlags: 0
@@ -370,6 +398,11 @@ Prefab:
       propertyPath: islandSpawner
       value: 
       objectReference: {fileID: 1681278527}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1955082471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
   m_IsPrefabAsset: 0
