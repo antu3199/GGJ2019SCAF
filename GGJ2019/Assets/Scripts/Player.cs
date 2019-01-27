@@ -20,8 +20,10 @@ public class Player : Character {
         }
         arm = GetComponent<Pitcher>();
         anim = GetComponent<Animator>();
+
+		StartCoroutine(StartHungerDrain());
 	}
-	
+
 	// Update is called once per frame
 	public override void Update () {
         // Controls
@@ -55,8 +57,35 @@ public class Player : Character {
         }
     }
 
-    int animDirection()
+	int animDirection()
     {
         return (int)direction / 2 * 2;
     }
+
+	public override void Die()
+	{
+		//TODO: game over
+	}
+
+	IEnumerator StartHungerDrain()
+	{
+		while (true)
+		{
+			if (currentHunger > 0)
+			{
+				// Reduce hunger regularly
+				IncreaseHunger(-hungerLossPerTick);
+				yield return new WaitForSeconds(hungerTickDuration);
+			}
+			else {
+				// Reduce health regularly if hunger is 0
+				IncreaseHealth(-healthLossPerTick);
+				yield return new WaitForSeconds(starvingTickDuration);
+			}
+			if (currentHealth <= 0)
+			{
+				break;
+			}
+		}
+	}
 }

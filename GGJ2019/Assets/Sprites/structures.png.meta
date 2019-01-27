@@ -79,6 +79,7 @@ TextureImporter:
     21300148: structures_74
     21300150: structures_75
     21300152: structures_76
+    21300154: house-mansion
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -654,66 +655,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_31
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 300
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 323413a8c6075664a9a8769e77844ff8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_32
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 300
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd67febfb00848b4f933df048dac2d24
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_33
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 300
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 366bd5c543458c142902ed399992771e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: structures_34
       rect:
         serializedVersion: 2
@@ -949,66 +890,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a39ce54c0de84e64393b9e0d1d3c6286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_46
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 280
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1ddc5eedd8180c489d113f9efedbaf8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_47
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 280
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ba5bbe3bad22184394883cc41c5cb05
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_48
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 280
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97a1ece8042e39349aae6815c132261c
       vertices: []
       indices: 
       edges: []
@@ -1254,66 +1135,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_61
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 260
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74105510caf863e43a84f89202a403bf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_62
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 260
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 304e9331dcf40f74d92b939d4e1f2fd4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_63
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 260
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 063ae6c451b54414abed2ba3276eac37
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: structures_64
       rect:
         serializedVersion: 2
@@ -1514,66 +1335,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_74
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 240
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7931a37e56db7f46875bd0ad099eb30
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_75
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 240
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22cbca53efa71a54592be6af411571e1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: structures_76
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 240
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ead4ef278d095941929006e0a14fe89
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: tree_3
       rect:
         serializedVersion: 2
@@ -1609,6 +1370,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 37ec4813190d5bb469ad8ef0fff04050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house-mansion
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 240
+        width: 60
+        height: 75
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd51557849a58f541a238d105c462e02
       vertices: []
       indices: 
       edges: []

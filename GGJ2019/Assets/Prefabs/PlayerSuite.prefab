@@ -314,7 +314,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.57}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!61 &61586474279605792
 BoxCollider2D:
@@ -408,9 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466e64164c8914a81dbc5c02a4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
+    type: 2}
   selectedTile: {fileID: 0}
-  currentTiles: []
-  playerTransform: {fileID: 4629349653194272}
 --- !u!114 &114421254690351982
 MonoBehaviour:
   m_ObjectHideFlags: 1

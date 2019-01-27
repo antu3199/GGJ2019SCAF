@@ -50,7 +50,12 @@ public abstract class Character : MonoBehaviour {
     public float currentHunger;
     public float currentHealth;
 
-    public Direction direction;
+	public float hungerTickDuration;	// Time between hunger ticks.
+	public float hungerLossPerTick;
+	public float starvingTickDuration;	// Time between taking damage when starving.
+	public float healthLossPerTick;
+
+	public Direction direction;
 
 	// Use this for initialization
 	public virtual void Start () {
@@ -61,9 +66,28 @@ public abstract class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
-		// TODO reduce hunger regularly
-        // TODO reduce health regularly if hunger is 0?
-        // Can do in separate method so can be overridden
+
 	}
 
+	public void IncreaseHunger(float value)
+	{
+		currentHunger += value;
+		currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
+	}
+
+	public void IncreaseHealth(float value)
+	{
+		currentHealth += value;
+		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+		if (currentHealth <= 0)
+		{
+			Die();
+		}
+	}
+
+	public virtual void Die()
+	{
+		// TODO: make more sophisticated
+		Destroy(this);
+	}
 }
