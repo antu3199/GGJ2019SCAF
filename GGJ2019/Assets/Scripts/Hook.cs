@@ -37,13 +37,13 @@ public class Hook : MonoBehaviour {
 			isFired = true;
 			EnableCargoTrigger();
 			rb.velocity = dir * magnitude;
-			StartCoroutine(Rewind());	
+			StartCoroutine(WaitForEvent());	
 		}
 		
 	}
 
 	private bool IsCloseTo(float num, float num2) {
-		return (num - num2 <= 0.01f);
+		return (Mathf.Abs(num - num2) <= 0.01f);
 	}
 
 	private void EnableCargoTrigger() {
@@ -66,6 +66,7 @@ public class Hook : MonoBehaviour {
 		isFired = false;
 		cargo = null;
 		dropPoint = null;
+		collision = false;
 		DisableAllTrigger();
 	}
 
@@ -94,15 +95,17 @@ public class Hook : MonoBehaviour {
 	private IEnumerator Rewind() {
 		float startTime = Time.time;
 		float totalDist = Vector2.Distance(this.transform.position, player.transform.position);
+		Vector3 startPos = this.transform.position;
+		Vector3 cargoPos = cargo ? cargo.transform.position : this.transform.position;
 		rb.velocity = Vector2.zero;
 
 		while(true) {
 			float distCovered = (Time.time - startTime) * rewindMagnitude;
 			float fracJourney = distCovered / totalDist;
             Debug.Log(fracJourney + "  " + totalDist);
-			transform.position = Vector3.Lerp(this.transform.position, player.transform.position, fracJourney);
+			transform.position = Vector3.Lerp(startPos, player.transform.position, fracJourney);
 			if(cargo) {
-				cargo.transform.position = Vector3.Lerp(cargo.transform.position, player.transform.position, fracJourney);
+				cargo.transform.position = Vector3.Lerp(cargoPos, player.transform.position, fracJourney);
 			}
 
 			yield return new WaitForEndOfFrame();
@@ -112,10 +115,12 @@ public class Hook : MonoBehaviour {
 				dropPoint = null;
 			}
 
-			if(IsCloseTo(fracJourney, 1.0f)) {
+			if(IsCloseTo(fracJourney, 1.0f) || fracJourney > 1.0f) {
 				ResetHook();
-				yield return null;
+				break;
 			}
 		}
+
+		yield return null;
 	}
 }
