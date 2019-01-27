@@ -73,7 +73,8 @@ public abstract class Character : MonoBehaviour {
 	{
 		currentHunger += value;
 		currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
-	}
+        UIManager.Instance.UpdateHunger(currentHunger, maxHunger);
+    }
 
 	public void IncreaseHealth(float value)
 	{
