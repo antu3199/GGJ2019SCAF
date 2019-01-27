@@ -14,6 +14,7 @@ public class Animal : MonoBehaviour
 	public RandomValue moveDelay;		// Time (range) to wait until moving again.
 	public RandomValue moveTime;		// Duration (range) for which to move.
 	public RandomValue moveForce;
+	public RandomValue wakeTransitionTime;	// Time between waking up and moving around.
 	Rigidbody2D rb;
 	NPCAnimator npcAnimator;
 
@@ -39,10 +40,11 @@ public class Animal : MonoBehaviour
 		npcAnimator.Trigger("Sleep");
 	}
 
-	public void WakeUp()
+	public IEnumerator WakeUp()
 	{
 		state = AnimalState.ACTIVE;
 		npcAnimator.Trigger("Wake");
+		yield return new WaitForSeconds(wakeTransitionTime.GetRandom());
 		StartCoroutine(Wander());
 	}
 

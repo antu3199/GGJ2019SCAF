@@ -76,7 +76,7 @@ public class Island : MonoBehaviour {
 		foreach(Animal animal in GetComponentsInChildren<Animal>()) {
 			animal.transform.parent = null;
 			animal.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-			animal.WakeUp();
+			StartCoroutine(animal.WakeUp());
 		}
 	}
 
