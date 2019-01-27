@@ -13,7 +13,7 @@ public class JButton : MonoBehaviour
     private List<UnityAction> actions = new List<UnityAction>();
     private Button button;
 
-    void Start()
+    void Awake()
     {
         this.button = GetComponent<Button>();
     }
