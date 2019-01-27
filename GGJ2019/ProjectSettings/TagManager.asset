@@ -23,9 +23,9 @@ TagManager:
   - FloatingIsland
   - hook_island
   - hook_mainland
-  - 
-  - 
-  - 
+  - Marker
+  - GhostTile
+  - Projectile
   - 
   - 
   - 

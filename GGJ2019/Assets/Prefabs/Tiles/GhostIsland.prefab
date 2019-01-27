@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934787724742402}
   - component: {fileID: 114978551819756830}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GhostIsland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212273764655728096}
   - component: {fileID: 61028329925148450}
   - component: {fileID: 114645189689131152}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GhostTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4467422044303532}
   - component: {fileID: 61270699456650106}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

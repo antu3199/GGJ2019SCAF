@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466e64164c8914a81dbc5c02a4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47, type: 2}
+  indicatorObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
+    type: 2}
   selectedTile: {fileID: 0}
   selectedTileCollider: {fileID: 0}
   tiles: []
