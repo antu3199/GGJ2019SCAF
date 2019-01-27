@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour {
     [SerializeField] private Text selectedItemDescriptionText;
     [SerializeField] private JButton useButton;
     [SerializeField] private Image selectedBorder;
+    [SerializeField] private Image selectedItemImage;
 
     public List<PlayerItemSlot> itemSlots;
 
@@ -76,6 +77,7 @@ public class PlayerInventory : MonoBehaviour {
             useButton.SetAction(itemSlot.item.Use);
             selectedBorder.transform.SetParent(itemSlot.itemSlotImage.transform, false);
             useButton.Interactable = itemSlot.item.usable && selected;
+            this.selectedItemImage.sprite = itemSlot.itemSlotImage.sprite;
         }
     }
 

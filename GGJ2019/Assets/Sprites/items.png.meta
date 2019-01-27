@@ -2,28 +2,32 @@ fileFormatVersion: 2
 guid: e74b2676b7f26cf4ebfb09a06e9f1494
 TextureImporter:
   fileIDToRecycleName:
-    21300000: items_0
-    21300002: items_1
-    21300004: items_2
-    21300006: items_3
-    21300008: items_4
-    21300010: items_5
-    21300012: items_6
-    21300014: items_7
-    21300016: items_8
-    21300018: items_9
-    21300020: items_10
-    21300022: items_11
-    21300024: items_12
-    21300026: items_13
-    21300028: items_14
-    21300030: items_15
-    21300032: items_16
-    21300034: items_17
-    21300036: items_18
-    21300038: items_19
-    21300040: items_20
-    21300042: items_21
+    21300000: steak-raw
+    21300002: egg-raw
+    21300004: chicken-raw
+    21300006: pork-raw
+    21300008: milk
+    21300010: panel-frame
+    21300012: steak-cooked
+    21300014: egg-cooked
+    21300016: chicken-cooked
+    21300018: pork-cooked
+    21300020: button1
+    21300022: button2
+    21300024: apple
+    21300026: carrot
+    21300028: corn
+    21300030: watermelon
+    21300032: potato
+    21300034: lettuce
+    21300036: log
+    21300038: coal
+    21300040: ore-silver
+    21300042: ore-gold
+    21300044: ore-mithril
+    21300046: ore-amethyst
+    21300048: ice-cube
+    21300050: border2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -117,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: items_0
+      name: steak-raw
       rect:
         serializedVersion: 2
         x: 0
@@ -125,19 +129,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0654ffefa4d0b548ae34a4cd0807f51
+      spriteID: 3a51c0b50fff1f545b60f6e83895290b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_1
+      name: egg-raw
       rect:
         serializedVersion: 2
         x: 20
@@ -145,19 +149,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59d007b1275cb324a8ff6c75a9c5c45f
+      spriteID: c73489b35910c40499a03302c2736276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_2
+      name: chicken-raw
       rect:
         serializedVersion: 2
         x: 40
@@ -165,19 +169,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 313912aedfe6cb9439673f3dbc854371
+      spriteID: 7037248809a413b4cb05a010070faba2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_3
+      name: pork-raw
       rect:
         serializedVersion: 2
         x: 60
@@ -185,19 +189,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e9cee29d0ccad4589964a404a58b1b
+      spriteID: 6c046605384d865449cd013b3f3b7b07
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_4
+      name: milk
       rect:
         serializedVersion: 2
         x: 80
@@ -205,19 +209,39 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e5ff4f3ec68ea44e8874098c11be25c
+      spriteID: ab41c992610f8ff40b5829c5c70d4c5e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_5
+      name: panel-frame
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 300
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673fdead2989bc24b931243dfc33eedd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steak-cooked
       rect:
         serializedVersion: 2
         x: 0
@@ -225,19 +249,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fd2ed496b0c2bc43b7b3a0915a97d1e
+      spriteID: 935608bcb328aa345aa158366709ce4e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_6
+      name: egg-cooked
       rect:
         serializedVersion: 2
         x: 20
@@ -245,19 +269,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8c8929d4ae82b46926d98762600913
+      spriteID: 61dc161b31dbccf4c9b27825f59b1a87
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_7
+      name: chicken-cooked
       rect:
         serializedVersion: 2
         x: 40
@@ -265,19 +289,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1b49b5c48d8dfb45a7facd677ab573c
+      spriteID: 578a527d40690794a9c80c4de6b9e29c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_8
+      name: pork-cooked
       rect:
         serializedVersion: 2
         x: 60
@@ -285,19 +309,59 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4038d5ced74adb44ba1ea6241e7b331f
+      spriteID: d883e2468f6ef5a4793eadae35763f29
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_9
+      name: button1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 280
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 6, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dfc13f40207f34ea2841c0f98e1c24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 280
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7113a9227106a874b88d12a0b64809b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apple
       rect:
         serializedVersion: 2
         x: 0
@@ -305,19 +369,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4674c5dc377b4e4882cb9dae1f2c67d
+      spriteID: aaf201afa7cc6bc4380c43f544ee71dc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_10
+      name: carrot
       rect:
         serializedVersion: 2
         x: 20
@@ -325,19 +389,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4b18ff21639324285b47a69baa3e39
+      spriteID: 4e6f9531d27d78c49834ee827eab0933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_11
+      name: corn
       rect:
         serializedVersion: 2
         x: 40
@@ -345,19 +409,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e37198c3060de643904a4ee83e1a1e7
+      spriteID: bb58aab4ca166fc4bad68feb2dbdc526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_12
+      name: watermelon
       rect:
         serializedVersion: 2
         x: 60
@@ -365,19 +429,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b25d8b8f8007de4aa85daaa629f5405
+      spriteID: 924b5b41b1b6b1849b0940d25858851a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_13
+      name: potato
       rect:
         serializedVersion: 2
         x: 80
@@ -385,19 +449,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cab3f481cffbf324fa9cb7206d0064bf
+      spriteID: fb4592da0b28d0f488d97c71767f94c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_14
+      name: lettuce
       rect:
         serializedVersion: 2
         x: 100
@@ -405,19 +469,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc5afbe82964b8746a62d6476e4b663d
+      spriteID: 66e6b97e13ef7f04ba899a9544604564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_15
+      name: log
       rect:
         serializedVersion: 2
         x: 0
@@ -425,19 +489,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56dde18d96975424d840093f5ebc6a00
+      spriteID: d1830c7292e495b48a5deafd5b593482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_16
+      name: coal
       rect:
         serializedVersion: 2
         x: 20
@@ -445,19 +509,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d94d42cf0fb3c54cad8d4fa5eca135e
+      spriteID: f1751174c870c7744b170618a6fafe1a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_17
+      name: ore-silver
       rect:
         serializedVersion: 2
         x: 40
@@ -465,19 +529,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d098c4b70b5c4e4591a97c9cd9075d7
+      spriteID: e039b40505054ac47851817f67cd7dee
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_18
+      name: ore-gold
       rect:
         serializedVersion: 2
         x: 60
@@ -485,19 +549,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cf786f228acb63449229539af4352b6
+      spriteID: e0d544a6459d8d944946e905631b4df0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_19
+      name: ore-mithril
       rect:
         serializedVersion: 2
         x: 80
@@ -505,19 +569,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbe6ccb64addc06448f918812e108424
+      spriteID: 4de25cc3b81c189459db033fd6b20559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_20
+      name: ore-amethyst
       rect:
         serializedVersion: 2
         x: 100
@@ -525,19 +589,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d399749dca69242b4f7948e2a543b5
+      spriteID: eaafc4cda9c5a08488a43fc98c47999d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items_21
+      name: ice-cube
       rect:
         serializedVersion: 2
         x: 120
@@ -545,13 +609,33 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5498d78a3ee25834db0590ec38d1eceb
+      spriteID: f2e778f8b17eb39479d8c1f97f56a6fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: border2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 300
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecd1334724d57642b72186dfc627ea8
       vertices: []
       indices: 
       edges: []
