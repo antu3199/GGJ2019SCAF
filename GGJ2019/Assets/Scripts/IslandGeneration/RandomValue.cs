@@ -22,11 +22,24 @@ public class RandomValue {
 	{
 		if (excludedRange != null)
 		{
-			float excludedInterval = (excludedRange.max - excludedRange.min);
-			float rand = Random.Range(range.min, range.max - excludedInterval);
-			if (rand >= excludedRange.min)
-			{
-				rand += excludedInterval;
+			bool exclusionResolved = false;
+			float rand;
+			if (excludedRange.min < range.min && range.min < excludedRange.max) {
+				range.min = excludedRange.max;
+				exclusionResolved = true;
+			}
+			if (excludedRange.min < range.max && range.max < excludedRange.max) {
+				range.max = excludedRange.min;
+				exclusionResolved = true;
+			}
+			if (exclusionResolved) {
+				rand = Random.Range(range.min, range.max);
+			} else {
+				float excludedInterval = (excludedRange.max - excludedRange.min);
+				rand = Random.Range(range.min, range.max - excludedInterval);
+				if (rand >= excludedRange.min) {
+					rand += excludedInterval;
+				}
 			}
 			return rand;
 		}

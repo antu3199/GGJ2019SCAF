@@ -58,7 +58,16 @@ public class ItemManager : Singleton<ItemManager> {
     {
         ItemFactory.Initialize();
         itemData = new List<Item>(this.GetComponentsInChildren<Item>());
+        inventory.Initialize();
 
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            this.inventory.ToggleInventory();
+        }
     }
 
 	public ItemModel GetItemModel(string key)
