@@ -81,7 +81,6 @@ public class IslandSpawner : MonoBehaviour {
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(islandVelocity.GetRandom(), 0);
 				}
 			}
-			//TODO: island cleanup after they exit bounds
 			// Generate wait time until next island spawning
 			yield return new WaitForSeconds(spawnCooldown.GetRandom());
 		}
