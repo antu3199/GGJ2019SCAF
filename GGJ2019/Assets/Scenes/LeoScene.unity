@@ -113,67 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &16173419
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 16173421}
-  - component: {fileID: 16173420}
-  m_Layer: 0
-  m_Name: IslandGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &16173420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 16173419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd01dc1d7acd41c40847f07b63bab62e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  islandBasePrefab: {fileID: 1585502456644556, guid: 34998cc20d97d50448a70939c823b20e,
-    type: 2}
-  tilePrefabs:
-  - {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305, type: 2}
-  - {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862, type: 2}
-  - {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269, type: 2}
-  - {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37, type: 2}
-  tileQuantityRange:
-    range:
-      min: 1
-      max: 8
-  islandLifetime: 60
-  npcPrefabs:
-  - {fileID: 1454774279354194, guid: 706e26a250cdf84429e0b00e86f7b991, type: 2}
-  - {fileID: 1466249849685654, guid: f8049a32395fc864bbc71ed67f4eb000, type: 2}
-  - {fileID: 1058441790548518, guid: 8efae77cff224824eba379562a20c658, type: 2}
-  npcChance: 1
-  npcQuantity:
-    range:
-      min: 1
-      max: 3
---- !u!4 &16173421
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 16173419}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &92862677
 Prefab:
   m_ObjectHideFlags: 0
@@ -221,6 +160,48 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1320025307309900, guid: e382add492c88144d8ef5d865a7300c5,
     type: 2}
   m_PrefabInternal: {fileID: 420581947}
+--- !u!1001 &359730462
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651292778005760, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &420581947
 Prefab:
   m_ObjectHideFlags: 0
@@ -263,97 +244,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e382add492c88144d8ef5d865a7300c5, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &674547474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 674547476}
-  - component: {fileID: 674547475}
-  m_Layer: 0
-  m_Name: BiomeDB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &674547475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 674547474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ee0199664f9fb46b1739ea99cea518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &674547476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 674547474}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1067640726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1067640728}
-  - component: {fileID: 1067640727}
-  m_Layer: 0
-  m_Name: IslandSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1067640727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067640726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f765a81da76aff3469f26eaf9092d41f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  homeIsland: {fileID: 267465194}
-  islandGenerator: {fileID: 16173420}
-  homeBuffer: 3.5
-  spawnCooldown:
-    range:
-      min: 2
-      max: 3
-  islandVelocity:
-    range:
-      min: 2
-      max: 4
---- !u!4 &1067640728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067640726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1322083426
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,4 +320,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1996993742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1996993745}
+  - component: {fileID: 1996993744}
+  - component: {fileID: 1996993743}
+  m_Layer: 0
+  m_Name: FloatingIslandManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1996993743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996993742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f765a81da76aff3469f26eaf9092d41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeIsland: {fileID: 267465194}
+  islandGenerator: {fileID: 1996993744}
+  homeBuffer: 3.5
+  spawnCooldown:
+    range:
+      min: 2
+      max: 3
+  islandVelocity:
+    range:
+      min: 2
+      max: 4
+--- !u!114 &1996993744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996993742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd01dc1d7acd41c40847f07b63bab62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islandBasePrefab: {fileID: 1585502456644556, guid: 34998cc20d97d50448a70939c823b20e,
+    type: 2}
+  tileInfo:
+  - tilePrefab: {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  entitySpawnChance: 0.25
+  tileQuantityRange:
+    range:
+      min: 1
+      max: 8
+  islandLifetime: 60
+  npcPrefabs:
+  - {fileID: 1454774279354194, guid: 706e26a250cdf84429e0b00e86f7b991, type: 2}
+  - {fileID: 1466249849685654, guid: f8049a32395fc864bbc71ed67f4eb000, type: 2}
+  - {fileID: 1058441790548518, guid: 8efae77cff224824eba379562a20c658, type: 2}
+  npcChance: 1
+  npcQuantity:
+    range:
+      min: 1
+      max: 3
+--- !u!4 &1996993745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996993742}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

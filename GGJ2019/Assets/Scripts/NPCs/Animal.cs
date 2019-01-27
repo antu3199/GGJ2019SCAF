@@ -43,7 +43,7 @@ public class Animal : MonoBehaviour
 	{
 		state = AnimalState.ACTIVE;
 		npcAnimator.Trigger("Wake");
-		//StartCoroutine(Wander());
+		StartCoroutine(Wander());
 	}
 
 	private void Move()

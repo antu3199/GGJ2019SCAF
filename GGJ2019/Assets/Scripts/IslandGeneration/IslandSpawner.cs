@@ -5,9 +5,9 @@ using UnityEngine;
 public class IslandSpawner : MonoBehaviour {
 
 	private Camera cam;
-	public GameObject homeIsland;		// Reference to player's island.
+	public GameObject homeIsland;			// Reference to player's island.
 	public IslandGenerator islandGenerator;
-	public float homeBuffer;			// The closest distance an island can pass by the home island.
+	public float homeBuffer;				// The closest distance an island can pass by the home island.
 	public RandomValue spawnCooldown;
 	public RandomValue islandVelocity;
 	
@@ -20,7 +20,7 @@ public class IslandSpawner : MonoBehaviour {
 
 	public void StartSpawning()
 	{
-		if (islandGenerator.tilePrefabs.Length > 0) {
+		if (islandGenerator.tileInfo.Length > 0) {
 			StartCoroutine(SpawnIslands());
 		}
 		else {
