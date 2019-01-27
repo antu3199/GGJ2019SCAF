@@ -5,22 +5,30 @@ using UnityEngine;
 public class Marker : MonoBehaviour {
     // Object class for indicating which tile the player will be interacting with
 
-    public GameObject indicator;
+    public GameObject indicatorObject;
     public Tile selectedTile;
     public Collider2D selectedTileCollider;
     public Collider2D[] tiles;
     Collider2D marker;
     public ContactFilter2D tileFilter;
 
-	// Use this for initialization
-	void Start () {
+    GameObject indicator;
+
+    private void Awake()
+    {
+        marker = GetComponent<Collider2D>();
+    }
+
+    // Use this for initialization
+    void Start () {
         // markers must be child of some gameobject
 		if (transform.parent == null)
         {
             Destroy(gameObject);
         }
-        marker = GetComponent<Collider2D>();
+        Debug.Log(marker);
         tiles = new Collider2D[4];
+        indicator = Instantiate(indicatorObject);
 
         // populate tiles 
         // IMPORTANT! - this assumes player spawns somewhere with tiles in front of them
@@ -41,7 +49,9 @@ public class Marker : MonoBehaviour {
         {
             tiles[i] = null;
         }
+        Debug.Log(marker == null);
         marker.OverlapCollider(tileFilter, tiles);
+        Debug.Log(tiles.ToString());
         selectedTileCollider = selectTile();
         if (selectedTileCollider)
         {

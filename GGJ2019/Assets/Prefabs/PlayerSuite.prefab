@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 50965420354452130}
   - component: {fileID: 95338519688082876}
   - component: {fileID: 114739854684936398}
-  m_Layer: 0
+  - component: {fileID: 61179861305558566}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +57,7 @@ GameObject:
   - component: {fileID: 4233177273927334}
   - component: {fileID: 61088556173369746}
   - component: {fileID: 114222231035942932}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: hook_mainland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ GameObject:
   - component: {fileID: 212034936089221998}
   - component: {fileID: 50549418640184836}
   - component: {fileID: 114743001543477012}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +92,7 @@ GameObject:
   - component: {fileID: 4363866951273882}
   - component: {fileID: 61586474279605792}
   - component: {fileID: 114624023997450794}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: hook_island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 4817786609528558}
   - component: {fileID: 114415909718169292}
   - component: {fileID: 61280747877358020}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413294937939528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4817786609528558}
@@ -262,6 +263,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
+--- !u!61 &61179861305558566
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413294937939528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.3, y: 2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61280747877358020
 BoxCollider2D:
@@ -354,20 +380,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466e64164c8914a81dbc5c02a4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47, type: 2}
+  indicatorObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
+    type: 2}
   selectedTile: {fileID: 0}
   selectedTileCollider: {fileID: 0}
   tiles: []
   tileFilter:
     useTriggers: 1
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 16384
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
