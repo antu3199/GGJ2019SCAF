@@ -51,12 +51,14 @@ public class ItemModel
 
 public class ItemManager : Singleton<ItemManager> {
 
-    public List<Item> itemData;
+    public List<Item> itemData { get; set; }
     public PlayerInventory inventory;
     
     void Awake()
     {
         ItemFactory.Initialize();
+        itemData = new List<Item>(this.GetComponentsInChildren<Item>());
+
     }
 
 	public ItemModel GetItemModel(string key)
