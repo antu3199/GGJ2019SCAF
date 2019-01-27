@@ -8,7 +8,7 @@ public enum AnimalState
 	ACTIVE = 1
 }
 
-public class Animal : MonoBehaviour
+public class Animal : Character
 {
 	public AnimalState state;
 	public RandomValue moveDelay;		// Time (range) to wait until moving again.
