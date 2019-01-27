@@ -60,12 +60,20 @@ public class Hook : MonoBehaviour {
 		mainlandTrigger.gameObject.SetActive(false);
 	}
 
+	private void ResetHook() {
+		isFired = false;
+		cargo = null;
+		dropPoint = null;
+		DisableAllTrigger();
+	}
+
 	// COROUTINES
 
 	private IEnumerator WaitForEvent() {
 		float startTime = Time.time;
 		while(true) {
 			if(Time.time - startTime >= WaitForRewind) {
+				DisableAllTrigger();
 				StartCoroutine(Rewind());
 				break;
 			}
@@ -85,7 +93,7 @@ public class Hook : MonoBehaviour {
 		float startTime = Time.time;
 		float totalDist = Vector2.Distance(this.transform.position, player.transform.position);
 		rb.velocity = Vector2.zero;
-		//TODO: Turn off Rewind hitbox??
+
 		while(true) {
 			float distCovered = (Time.time - startTime) * rewindMagnitude;
 			float fracJourney = distCovered / totalDist;
@@ -96,9 +104,13 @@ public class Hook : MonoBehaviour {
 
 			yield return new WaitForEndOfFrame();
 
+			if(dropPoint) {
+				dropPoint.islandRef.island.MergeIsland(cargo.islandRef.island, cargo, dropPoint.islandRef.location, player);
+				dropPoint = null;
+			}
+
 			if(IsCloseTo(fracJourney, 1.0f)) {
-				DisableAllTrigger();
-				isFired = false;
+				ResetHook();
 				yield return null;
 			}
 		}
