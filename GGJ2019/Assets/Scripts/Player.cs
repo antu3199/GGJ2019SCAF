@@ -24,10 +24,9 @@ public class Player : Character {
         r.velocity = moveSpeed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (r.velocity != Vector2.zero)
         {
-            float rotation = Vector2.SignedAngle(Vector2.up, r.velocity);
-            Vector3 angles = transform.eulerAngles;
-            angles.z = rotation;
-            transform.eulerAngles = angles;
+            float rotation = Vector2.SignedAngle(r.velocity, Vector2.up) + 360;
+            Debug.Log(rotation + "=>" + rotation/45);
+            direction = (Direction)(Mathf.Round(rotation / 45) % 8);
         }
     }
 }
