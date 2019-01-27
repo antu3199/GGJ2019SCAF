@@ -38,7 +38,7 @@ public class IslandGenerator : MonoBehaviour {
 			}
 		}
 		// Give islands different SortingGroup orders
-		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 100);
+		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 1000);
 		StartCoroutine(island.BeginTimeout(islandLifetime));
 		return islandObj;
 	}
