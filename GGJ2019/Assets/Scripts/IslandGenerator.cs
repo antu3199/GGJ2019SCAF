@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class IslandGenerator : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class IslandGenerator : MonoBehaviour {
 		Island island = islandObj.GetComponent<Island>();
 		int chosenTileIndex = Random.Range(0, tilePrefabs.Length);
 		Tile chosenTile = Instantiate(tilePrefabs[chosenTileIndex], islandObj.transform).GetComponent<Tile>();
-		chosenTile.SetIsland(island);
+		chosenTile.SetIsland(island, Vector2.zero);
 		chosenTile.SetSortingOrder();
 		island.tiles.Add(Vector2.zero, chosenTile);
 		int tileQuantity = (int)tileQuantityRange.GetRandom();
@@ -26,16 +27,15 @@ public class IslandGenerator : MonoBehaviour {
 			if (!island.tiles.ContainsKey(newTileVect)) {
 				// Initialize tile
 				Tile newTile = Instantiate(tilePrefabs[chosenTileIndex], Vector2.zero, Quaternion.identity, islandObj.transform).GetComponent<Tile>();
-				newTile.SetIsland(island);
+				newTile.SetIsland(island, newTileVect);
 				// Move tile to position in island
 				newTile.transform.position += new Vector3(newTileVect.x * newTile.GetComponent<Collider2D>().bounds.size.x, newTileVect.y * newTile.GetComponent<Collider2D>().bounds.size.y, 0);
 				newTile.SetSortingOrder();
-				//Debug.Log("tile at " + newTileVect + " at sorting order " + newTile.GetSortingOrder());
 				island.tiles.Add(newTileVect, newTile);
 			}
 		}
-		//TODO: resize box collider
-		//TODO: fix sorting order
+		// Give islands different SortingGroup orders
+		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 100);
 		return islandObj;
 	}
 

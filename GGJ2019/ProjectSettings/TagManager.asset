@@ -20,7 +20,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - FloatingIsland
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TileGround
+    uniqueID: 2855244001
+    locked: 0
+  - name: TileDetail
+    uniqueID: 1138615629
     locked: 0
