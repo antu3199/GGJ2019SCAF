@@ -143,7 +143,6 @@ public class PlayerInventory : MonoBehaviour {
 
     public void SelectItem (int index)
     {
-        Debug.Log("Select item " + index);
         this.selectedItemIndex = index;
         this.UpdateSelected();
     }

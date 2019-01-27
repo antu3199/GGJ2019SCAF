@@ -19,7 +19,6 @@ public class ItemFactory
         {
             string dataAsJson = File.ReadAllText(filePath);
             ItemsList itemsList = JsonUtility.FromJson<ItemsList>(dataAsJson);
-            Debug.Log(itemsList);
             foreach (ItemModel itemModel in itemsList.items)
             {
                 itemDictionary.Add(itemModel.key, itemModel);

@@ -40,8 +40,6 @@ public class JButton : MonoBehaviour
     {
         this.RemoveActions();
 
-        Debug.Log("Action called");
-
         this.actions.Add(action);
 
         this.button.onClick.AddListener(action);
