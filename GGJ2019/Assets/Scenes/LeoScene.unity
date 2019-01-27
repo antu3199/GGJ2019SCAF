@@ -144,6 +144,9 @@ MonoBehaviour:
     type: 2}
   tilePrefabs:
   - {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305, type: 2}
+  - {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862, type: 2}
+  - {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269, type: 2}
+  - {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37, type: 2}
   tileQuantityRange:
     range:
       min: 1
@@ -171,7 +174,7 @@ GameObject:
   - component: {fileID: 1067640728}
   - component: {fileID: 1067640727}
   m_Layer: 0
-  m_Name: IslandSpawner
+  m_Name: IslandManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +305,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
