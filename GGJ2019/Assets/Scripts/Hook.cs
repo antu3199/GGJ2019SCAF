@@ -107,14 +107,11 @@ public class Hook : MonoBehaviour {
 			transform.position = Vector3.Lerp(startPos, player.transform.position, fracJourney);
 			if(cargo) {
 				cargo.islandRef.island.transform.position = Vector3.Lerp(cargoPos, player.transform.position, fracJourney);
-				Debug.Log(cargo.islandRef.island.gameObject.name);
 			}
 
 			yield return new WaitForEndOfFrame();
 
 			if(dropPoint && cargo) {
-				Debug.Log(cargo.islandRef.island);
-				Debug.Log(dropPoint.islandRef);
 				dropPoint.islandRef.island.MergeIsland(cargo.islandRef.island, cargo, dropPoint.islandRef.location, player);
 				dropPoint = null;
 				cargo = null;

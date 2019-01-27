@@ -19,7 +19,7 @@ public class Entity : MonoBehaviour {
     public virtual bool interactable { get; set; }
     public EntityDirection direction;
     protected bool inRange = false;
-    [SerializeField] protected SpriteRenderer actionImage;
+    public SpriteRenderer actionImage;
 
     void Start()
     {

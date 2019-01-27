@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -24,11 +25,18 @@ public class SpriteAnimator : MonoBehaviour {
     public bool paused { get; set; }
     private float nextTransitionTime;
 
+    private UnityAction callback;
+
     void Start()
     {
         finished = false;
         paused = false;
         this.Reset();
+    }
+
+    public void SetCallBack(UnityAction action)
+    {
+        this.callback = action;
     }
 
     float GetNextTransitionTime()
@@ -49,6 +57,8 @@ public class SpriteAnimator : MonoBehaviour {
 
                 if (animState == states.Count)
                 {
+                    this.callback();
+
                     if (!loop)
                     {
                         finished = true;

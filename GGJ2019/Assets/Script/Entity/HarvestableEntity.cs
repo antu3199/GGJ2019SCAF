@@ -13,6 +13,10 @@ public class HarvestableEntity : Entity
     public int maxSeedsDropped = 2;
     public string seedKey;
 
+    void Start()
+    {
+        this.animator.SetCallBack(this.UpdateCallback);
+    }
 
     public override bool interactable
     {
@@ -43,10 +47,12 @@ public class HarvestableEntity : Entity
 
     public override void OnEnterTile() {
         base.OnEnterTile();
+        this.actionImage.gameObject.SetActive(true);
     }
 
     public override void OnExitTile() {
         base.OnExitTile();
+        this.actionImage.gameObject.SetActive(false);
     }
 
     public override void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE)
@@ -58,7 +64,17 @@ public class HarvestableEntity : Entity
         {
             ItemManager.Instance.inventory.AddItem(this.seedKey, Random.Range(minSeedsDropped, maxSeedsDropped));
         }
+
         animator.Reset();
+
+        this.actionImage.gameObject.SetActive(this.interactable);
+
+    }
+
+    private void UpdateCallback()
+    {
+        if (this.inRange)
+            actionImage.gameObject.SetActive(this.interactable);
     }
 
 } 
