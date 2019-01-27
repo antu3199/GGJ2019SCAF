@@ -14,8 +14,11 @@ public class Island : MonoBehaviour {
 	public Rigidbody2D rb;
 	public Map map;
 
-	void Start() {
+	void Awake() {
 		tiles = new Dictionary<Vector2, Tile>();
+	}
+
+	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		UpdateChildTiles();
 	}
@@ -49,6 +52,11 @@ public class Island : MonoBehaviour {
 			//TODO: Some animation
 		}
 		Destroy(other.gameObject);
+	}
+
+	public IEnumerator BeginTimeout(float lifetime) {
+		yield return new WaitForSeconds(lifetime);
+		Destroy(gameObject);
 	}
 
 	/// PRIVATE
