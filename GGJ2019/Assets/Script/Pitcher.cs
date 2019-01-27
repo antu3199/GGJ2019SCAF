@@ -38,7 +38,6 @@ public class Pitcher : MonoBehaviour {
 
         do {
             if(count >= ItemManager.Instance.inventory.itemSlots.Count) {
-                Debug.Log("No items to throw!");
                 index = -1;
                 break;
             }
@@ -61,13 +60,11 @@ public class Pitcher : MonoBehaviour {
         // Spawn the overworld object and throw it
         PlayerItemSlot itemSlot = GetCurrentItem();
         if(itemSlot == null || itemSlot.empty) {
-            Debug.Log("Throwing Nothing!");
         } else {
             Item item = itemSlot.item;
             itemSlot.RemoveItems(1);
             GameObject itemProjectile = itemGen.GetOverworldItem(item);
             itemProjectile.transform.position = transform.position;
-            Debug.Log(player.chrName + ": Throwing " + item.key);
             Vector2 throwVelocity = Character.DirToVector(player.direction) * currentMagnitude;
             itemProjectile.GetComponent<Rigidbody2D>().velocity = throwVelocity;
             itemProjectile.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-1 * angularMagnitude, angularMagnitude);
@@ -82,7 +79,6 @@ public class Pitcher : MonoBehaviour {
         while(charging) {
             currentMagnitude += incrementor;
             currentMagnitude = currentMagnitude > maxMagnitude ? maxMagnitude : currentMagnitude;
-            Debug.Log(currentMagnitude + "/" + maxMagnitude);
             yield return new WaitForFixedUpdate();
         }
         yield return null;
