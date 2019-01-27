@@ -8,6 +8,7 @@ public class Player : Character {
 
     Rigidbody2D r;
     Marker marker;
+    Animator anim;
     
 	// Use this for initialization
 	public override void Start () {
@@ -16,6 +17,7 @@ public class Player : Character {
         if (!(marker = GetComponentInChildren<Marker>())){
             Debug.LogError("Player must have a marker attached!");
         }
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -28,5 +30,12 @@ public class Player : Character {
             Debug.Log(rotation + "=>" + rotation/45);
             direction = (Direction)(Mathf.Round(rotation / 45) % 8);
         }
+        anim.SetInteger("direction", animDirection());
+        anim.SetBool("isMoving", r.velocity != Vector2.zero);
+    }
+
+    int animDirection()
+    {
+        return (int)direction / 2 * 2;
     }
 }
