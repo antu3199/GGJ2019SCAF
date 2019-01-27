@@ -4,7 +4,7 @@
       "index" : 0,
       "key" : "flower",
       "displayName" : "Flower",
-      "description" : "A nice smelling flower",
+      "description" : "It's K I L L E D OR B E K I L L E D.",
       "usable" : false,
       "collapsable" : false
     },
@@ -12,7 +12,7 @@
       "index" : 1,
       "key" : "apple",
       "displayName": "Apple",
-      "description" : "A delicious apple",
+      "description" : "A delicious red apple. Eat it to restore some hunger.",
       "usable" : true,
       "collapsable" : true
     },
@@ -20,7 +20,7 @@
       "index" : 2,
       "key" : "steak-raw",
       "displayName": "Raw Steak",
-      "description" : "A steak that needs to be cooked",
+      "description" : "A steak that needs to be cooked. Eat it to restore a little bit of health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -28,7 +28,7 @@
       "index" : 3,
       "key" : "steak-cooked",
       "displayName": "Gourmet Steak",
-      "description" : "Delicious steak that tastes very good",
+      "description" : "Delicious steak that tastes very good. Eat it to greatly restore health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -36,7 +36,7 @@
       "index" : 4,
       "key" : "egg-raw",
       "displayName": "Egg",
-      "description" : "Raw egg.",
+      "description" : "Raw egg. Eat it to restore a little bit of health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -44,7 +44,7 @@
       "index" : 5,
       "key" : "egg-cooked",
       "displayName": "Sunny side up egg",
-      "description" : "Delicious cooked egg",
+      "description" : "Delicious cooked egg. Eat it to restore health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -52,14 +52,14 @@
       "index" : 6,
       "key" : "chicken-raw",
       "displayName": "Raw chicken",
-      "description" : "Needs to be cooked",
+      "description" : "Needs to be cooked. Eat it to restore a little bit of health.",
       "usable" : true,
       "collapsable" : true
     },
     {
       "index" : 7,
       "key" : "chicken-cooked",
-      "displayName": "Cooked chicken",
+      "displayName": "Cooked chicken. Eat it to greatly restore health.",
       "description" : "Delicious",
       "usable" : true,
       "collapsable" : true
@@ -68,7 +68,7 @@
       "index" : 8,
       "key" : "pork-raw",
       "displayName": "Raw pork",
-      "description" : "Needs to be cooked",
+      "description" : "Needs to be cooked. Eat it to restore a little bit of health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -76,7 +76,7 @@
       "index" : 9,
       "key" : "pork-cooked",
       "displayName": "Cooked pork",
-      "description" : "Delicious",
+      "description" : "Pork cooked to perfection. Eat it to greatly restore health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -84,7 +84,7 @@
       "index" : 10,
       "key" : "milk",
       "displayName": "Milk",
-      "description" : "Moo Moo milk",
+      "description" : "Fresh milk from the past. Drink it to restore health.",
       "usable" : true,
       "collapsable" : true
     },
@@ -92,15 +92,15 @@
       "index" : 11,
       "key" : "carrot",
       "displayName": "Carrot",
-      "description" : "Bunny man food",
+      "description" : "Bunny man food. Eat it to restore hunger.",
       "usable" : true,
       "collapsable" : true
     },
     {
       "index" : 12,
       "key" : "corn",
-      "displayName": "Corn on the Cob",
-      "description" : "Country side food",
+      "displayName": "Corn",
+      "description" : "Country side food. Eat it to restore hunger.",
       "usable" : true,
       "collapsable" : true
     },
@@ -108,7 +108,7 @@
       "index" : 13,
       "key" : "watermelon",
       "displayName": "Watermelon",
-      "description" : "Juicy watermelon",
+      "description" : "Juicy big watermelon. Eat it to restore hunger.",
       "usable" : true,
       "collapsable" : true
     },
@@ -116,15 +116,15 @@
       "index" : 14,
       "key" : "potato",
       "displayName": "Potato",
-      "description" : "To become french fries",
+      "description" : "To become french fries. Eat it to restore hunger. Plant it to grow more.",
       "usable" : true,
       "collapsable" : true
     }, 
     {
       "index" : 15,
       "key" : "lettuce",
-      "displayName": "Lettuce",
-      "description" : "Salad thing",
+      "displayName": "Cabbage",
+      "description" : "Salad thing. Eat it to restore hunger.",
       "usable" : true,
       "collapsable" : true
     },
@@ -132,7 +132,7 @@
       "index" : 16,
       "key" : "wood",
       "displayName": "Wood",
-      "description" : "wood desc",
+      "description" : "Wood. You killed her. You monster.",
       "usable" : false,
       "collapsable" : true
     },
@@ -181,6 +181,38 @@
       "key" : "ice-cube",
       "displayName": "Ice Cube",
       "description" : "A cube of ice",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 23,
+      "key" : "carrot-seeds",
+      "displayName": "Carrot Seeds",
+      "description" : "Seeds of carrot",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 24,
+      "key" : "corn-seeds",
+      "displayName": "Corn Seeds",
+      "description" : "Seeds of corn",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 25,
+      "key" : "watermelon-seeds",
+      "displayName": "Watermelon Seeds",
+      "description" : "Seeds of Watermelon",
+      "usable" : false,
+      "collapsable" : true
+    },
+    {
+      "index" : 26,
+      "key" : "lettuce-seeds",
+      "displayName": "Lettuce Seeds",
+      "description" : "Seeds of Lettuce",
       "usable" : false,
       "collapsable" : true
     }

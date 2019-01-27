@@ -11,23 +11,25 @@ using UnityEngine.UI;
 public class JButton : MonoBehaviour
 {
     private List<UnityAction> actions = new List<UnityAction>();
-    private Button button;
 
-    void Awake()
+    public Button ButtonComponent
     {
-        this.button = GetComponent<Button>();
+        get
+        {
+            return GetComponent<Button>();
+        }
     }
 
     public bool Interactable
     {
         get
         {
-            return this.button.interactable;
+            return this.ButtonComponent.interactable;
         }
 
         set
         {
-            this.button.interactable = value;
+            this.ButtonComponent.interactable = value;
         }
     }
 
@@ -42,14 +44,14 @@ public class JButton : MonoBehaviour
 
         this.actions.Add(action);
 
-        this.button.onClick.AddListener(action);
+        this.ButtonComponent.onClick.AddListener(action);
     }
 
     public void RemoveActions()
     {
         foreach (var action in this.actions)
         {
-            this.button.onClick.RemoveListener(action);
+            this.ButtonComponent.onClick.RemoveListener(action);
         }
 
         this.actions.Clear();
