@@ -79,7 +79,12 @@ public class IslandGenerator : MonoBehaviour {
 							chosenEntity.transform.parent.gameObject.layer = LayerMask.NameToLayer("FloatingIsland");
 						}
 						Entity spawnedEntity = Instantiate(entityObj, newTile.transform).GetComponentsInChildren<Entity>()[0];
-						newTile.PlaceEntity(spawnedEntity, newTileVect);
+                        if (spawnedEntity.GetComponent<SoilEntity>() != null)
+                        {
+                            spawnedEntity.GetComponent<SoilEntity>().PlantNow();
+                        }
+
+                        newTile.PlaceEntity(spawnedEntity, newTileVect);
 					}
 				}
 				island.tiles.Add(newTileVect, newTile);

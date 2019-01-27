@@ -15,7 +15,13 @@ public class UIManager : Singleton<UIManager>
 
     void Start()
     {
-        UpdateSelectedItem(0);
+        if (selectedItemImage != null)
+        {
+            UpdateSelectedItem(0);
+        } else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void UpdateHunger (float currentHunger, float maxHunger)

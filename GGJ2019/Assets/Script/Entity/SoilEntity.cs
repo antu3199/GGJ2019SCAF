@@ -10,6 +10,9 @@ public class HarvestPrefab {
 
 public class SoilEntity : Entity
 {
+
+    [SerializeField] private HarvestableEntity prePlantedEntity;
+
     public string itemKey;
     public string itemSeedKey;
     public List<HarvestPrefab> vegetablePrefabs;
@@ -63,6 +66,12 @@ public class SoilEntity : Entity
         {
             this.harvest.OnExitTile();
         }
+    }
+
+    public void PlantNow()
+    {
+        hasPlanted = true;
+        this.harvest = prePlantedEntity;
     }
 
     public override void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE)

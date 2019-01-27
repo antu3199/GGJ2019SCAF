@@ -133,9 +133,9 @@ MonoBehaviour:
   occupancy: []
   direction: 1
   actionImage: {fileID: 212153660827922534}
+  parent: {fileID: 0}
   itemKey: apple
   harvestQuantity: 3
-  boxCollider: {fileID: 61613121170440848}
   animator: {fileID: 114498970364400166}
   minSeedsDropped: 1
   maxSeedsDropped: 2
