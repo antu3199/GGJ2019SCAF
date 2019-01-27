@@ -3657,6 +3657,7 @@ MonoBehaviour:
   actionImage: {fileID: 0}
   parent: {fileID: 4230465928419308}
   itemKey: carrot
+  itemSeedKey: carrot-seeds
   vegetablePrefabs:
   - key: carrot
     entity: {fileID: 114726822856172416, guid: c8ab01a0054de5848b5e196a7ff89eca, type: 2}
@@ -4285,6 +4286,7 @@ MonoBehaviour:
   actionImage: {fileID: 0}
   parent: {fileID: 4713305596425308}
   itemKey: corn
+  itemSeedKey: corn-seeds
   vegetablePrefabs:
   - key: carrot
     entity: {fileID: 114726822856172416, guid: c8ab01a0054de5848b5e196a7ff89eca, type: 2}
@@ -4314,6 +4316,7 @@ MonoBehaviour:
   actionImage: {fileID: 0}
   parent: {fileID: 4250311902553670}
   itemKey: lettuce
+  itemSeedKey: lettuce-seeds
   vegetablePrefabs:
   - key: carrot
     entity: {fileID: 114726822856172416, guid: c8ab01a0054de5848b5e196a7ff89eca, type: 2}

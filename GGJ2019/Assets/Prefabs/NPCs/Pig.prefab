@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114018320457384870}
   - component: {fileID: 114481761716321694}
   - component: {fileID: 95181387325131454}
-  - component: {fileID: 61019303656788336}
-  m_Layer: 8
+  - component: {fileID: 61849078254002288}
+  m_Layer: 10
   m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61019303656788336
+--- !u!61 &61849078254002288
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,7 +77,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.097340226, y: -0.79818916}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -88,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3071306, y: 0.40362167}
+  m_Size: {x: 2.3, y: 2}
   m_EdgeRadius: 0
 --- !u!95 &95181387325131454
 Animator:
@@ -122,8 +122,8 @@ MonoBehaviour:
   chrName: Pig
   maxHunger: 100
   maxHealth: 100
-  currentHunger: 0
-  currentHealth: 0
+  currentHunger: 100
+  currentHealth: 100
   hungerTickDuration: 0
   hungerLossPerTick: 0
   starvingTickDuration: 0
@@ -142,10 +142,18 @@ MonoBehaviour:
     range:
       min: 100
       max: 100
-  wakeTransitionTime:
-    range:
-      min: 0.5
-      max: 2
+--- !u!114 &114070488466208286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058441790548518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac03ad77b4e744199428ae2ad964e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops: []
 --- !u!114 &114481761716321694
 MonoBehaviour:
   m_ObjectHideFlags: 1
