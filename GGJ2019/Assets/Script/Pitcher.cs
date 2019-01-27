@@ -64,8 +64,12 @@ public class Pitcher : MonoBehaviour {
             Item item = itemSlot.item;
             itemSlot.RemoveItems(1);
             GameObject itemProjectile = itemGen.GetOverworldItem(item);
-            itemProjectile.transform.position = transform.position;
-            Vector2 throwVelocity = Character.DirToVector(player.direction) * currentMagnitude;
+            Vector3 launchPoint = transform.position;
+            Vector2 chrDir = Character.DirToVector(player.direction);
+            launchPoint.x += chrDir.x * 2;
+            launchPoint.y += chrDir.y * 2;
+            itemProjectile.transform.position = launchPoint;
+            Vector2 throwVelocity = chrDir * currentMagnitude;
             itemProjectile.GetComponent<Rigidbody2D>().velocity = throwVelocity;
             itemProjectile.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-1 * angularMagnitude, angularMagnitude);
         }
