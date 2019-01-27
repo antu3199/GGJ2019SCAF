@@ -8,7 +8,7 @@ public enum AnimalState
 	ACTIVE = 1
 }
 
-public class Animal : MonoBehaviour
+public class Animal : Character
 {
 	public AnimalState state;
 	public RandomValue moveDelay;		// Time (range) to wait until moving again.
@@ -23,12 +23,12 @@ public class Animal : MonoBehaviour
 		npcAnimator = GetComponent<NPCAnimator>();
 	}
 
-	void Start()
+	public override void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	void Update()
+	public override void Update()
 	{
 		npcAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
 	}

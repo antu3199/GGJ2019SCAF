@@ -18,8 +18,10 @@ public class Player : Character {
             Debug.LogError("Player must have a marker attached!");
         }
         anim = GetComponent<Animator>();
+
+		StartCoroutine(StartHungerDrain());
 	}
-	
+
 	// Update is called once per frame
 	public override void Update () {
         // Controls
@@ -34,15 +36,42 @@ public class Player : Character {
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (marker.selectedTile && marker.selectedTile.entityRef.entity)
+            if (marker.selectedTile && marker.selectedTile.entityRef.entity && marker.selectedTile.entityRef.entity.interactable == true)
             {
                 marker.selectedTile.entityRef.entity.Interact();
             }
-        }
-    }
+		}
+	}
 
-    int animDirection()
+	int animDirection()
     {
         return (int)direction / 2 * 2;
     }
+
+	public override void Die()
+	{
+		//TODO: game over
+	}
+
+	IEnumerator StartHungerDrain()
+	{
+		while (true)
+		{
+			if (currentHunger > 0)
+			{
+				// Reduce hunger regularly
+				IncreaseHunger(-hungerLossPerTick);
+				yield return new WaitForSeconds(hungerTickDuration);
+			}
+			else {
+				// Reduce health regularly if hunger is 0
+				IncreaseHealth(-healthLossPerTick);
+				yield return new WaitForSeconds(starvingTickDuration);
+			}
+			if (currentHealth <= 0)
+			{
+				break;
+			}
+		}
+	}
 }
