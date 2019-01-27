@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Character {
 
     public float moveSpeed;
+    public CameraBehaviour cam;
 
     Rigidbody2D r;
     Marker marker;
@@ -26,34 +27,57 @@ public class Player : Character {
 
 	// Update is called once per frame
 	public override void Update () {
-        // Controls
-        r.velocity = moveSpeed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        if (r.velocity != Vector2.zero)
-        {
-            float rotation = Vector2.SignedAngle(r.velocity, Vector2.up) + 360;
-            direction = (Direction)(Mathf.Round(rotation / 45) % 8);
-        }
-        anim.SetInteger("direction", animDirection());
-        anim.SetBool("isMoving", r.velocity != Vector2.zero);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (marker.selectedTile && marker.selectedTile.entityRef.entity && marker.selectedTile.entityRef.entity.interactable == true)
+        if(!isDead) {
+            // Controls
+            r.velocity = moveSpeed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            if (r.velocity != Vector2.zero)
             {
-                marker.selectedTile.entityRef.entity.Interact();
+                float rotation = Vector2.SignedAngle(r.velocity, Vector2.up) + 360;
+                direction = (Direction)(Mathf.Round(rotation / 45) % 8);
+            }
+            anim.SetInteger("direction", animDirection());
+            anim.SetBool("isMoving", r.velocity != Vector2.zero);
+
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                if (marker.selectedTile && marker.selectedTile.entityRef.entity && marker.selectedTile.entityRef.entity.interactable == true)
+                {
+                    marker.selectedTile.entityRef.entity.Interact();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.X)) {
+                arm.InitCharge();
+            }
+
+            if(Input.GetKeyUp(KeyCode.X)) {
+                arm.Fire();
+            }
+
+            if(Input.GetKeyDown(KeyCode.E)) {
+                arm.IterateToNextValidItemSlot();
             }
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.X)) {
-            arm.InitCharge();
-        }
+    public override void Die() {
+        base.Die();
+        cam.enabled = false;
+        OverworldItemGenerator itemGen = GetComponent<OverworldItemGenerator>();
 
-        if(Input.GetKeyUp(KeyCode.X)) {
-            arm.Fire();
-        }
-
-        if(Input.GetKeyDown(KeyCode.E)) {
-            arm.IterateToNextValidItemSlot();
+        foreach(PlayerItemSlot itemSlot in ItemManager.Instance.inventory.itemSlots) {
+            Item item = itemSlot.item;
+            for (int i = 0; i < itemSlot.quantity; i++) {
+                itemSlot.RemoveItems(1);
+                GameObject itemProjectile = itemGen.GetOverworldItem(item);
+                itemProjectile.transform.position = transform.position;
+                Rigidbody2D rb = itemProjectile.GetComponent<Rigidbody2D>();
+                rb.AddForce(new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f), 0) * 600f);
+                rb.freezeRotation = false;
+                rb.gravityScale = 0.5f;
+                rb.angularDrag = 0.5f;
+                rb.AddTorque(100f);
+            }
         }
     }
 
@@ -61,11 +85,6 @@ public class Player : Character {
     {
         return (int)direction / 2 * 2;
     }
-
-	public override void Die()
-	{
-		//TODO: game over
-	}
 
 	IEnumerator StartHungerDrain()
 	{

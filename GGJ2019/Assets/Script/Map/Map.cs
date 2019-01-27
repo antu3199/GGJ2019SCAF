@@ -150,5 +150,6 @@ public class Map : MonoBehaviour {
         player.transform.position = new Vector3(location.x, location.y, tiles[rows/2, cols/2].GetSortingOrder());
         suite.transform.parent = null;
         cam.player = player;
+        player.cam = cam;
     }
 }
