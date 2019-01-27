@@ -301,7 +301,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -312,7 +312,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.57}
   m_EdgeRadius: 0
 --- !u!61 &61586474279605792
 BoxCollider2D:
@@ -380,25 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466e64164c8914a81dbc5c02a4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorObject: {fileID: 1566582857442522, guid: 88e8fa1a58c67294abeb2bf7197fdf47,
-    type: 2}
   selectedTile: {fileID: 0}
-  selectedTileCollider: {fileID: 0}
-  tiles: []
-  tileFilter:
-    useTriggers: 1
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 16384
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  currentTiles: []
+  playerTransform: {fileID: 4629349653194272}
 --- !u!114 &114421254690351982
 MonoBehaviour:
   m_ObjectHideFlags: 1
