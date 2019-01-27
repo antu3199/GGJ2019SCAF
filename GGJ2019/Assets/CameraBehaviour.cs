@@ -57,7 +57,7 @@ public class CameraBehaviour : MonoBehaviour {
 				transform.localPosition = player.transform.position + Random.insideUnitSphere * currShakeMagnitude;
 				currShakeDuration -= Time.deltaTime * currDampingSpeed;
 			} else {
-				transform.localPosition = player.transform.position;
+				transform.localPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 				break;
 			}
 			yield return null;
