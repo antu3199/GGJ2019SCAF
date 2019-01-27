@@ -41,17 +41,17 @@ public class Player : Character {
                 marker.selectedTile.entityRef.entity.Interact();
             }
 		}
-
-		if (currentHealth <= 0)
-		{
-			//TODO: game over
-		}
 	}
 
 	int animDirection()
     {
         return (int)direction / 2 * 2;
     }
+
+	public override void Die()
+	{
+		//TODO: game over
+	}
 
 	IEnumerator StartHungerDrain()
 	{

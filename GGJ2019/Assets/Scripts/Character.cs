@@ -79,5 +79,15 @@ public abstract class Character : MonoBehaviour {
 	{
 		currentHealth += value;
 		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+		if (currentHealth <= 0)
+		{
+			Die();
+		}
+	}
+
+	public virtual void Die()
+	{
+		// TODO: make more sophisticated
+		Destroy(this);
 	}
 }
