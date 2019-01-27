@@ -6,11 +6,11 @@ using UnityEngine.Rendering;
 public class IslandGenerator : MonoBehaviour {
 
 	public GameObject islandBasePrefab;
-	public GameObject[] tilePrefabs;
-	//TODO:public Entity[] biomeEntities;			// Entity prefabs that correspond to the tile prefabs. Should be same length as tilePrefabs.
+	public TileInfo[] tileInfo;
+	public float entitySpawnChance;         // Chance of an island having an entity.
 	public RandomValue tileQuantityRange;
 	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
-	
+
 	
 	public static void RandomizeDecor(Tile tile) {
 		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
@@ -42,10 +42,12 @@ public class IslandGenerator : MonoBehaviour {
 		return islandObj;
 	}
 
+	// Create shape of island by generating tiles and the entities on top of them.
 	private void GrowTiles(Island island)
 	{
-		int chosenTileIndex = Random.Range(0, tilePrefabs.Length);
-		Tile chosenTile = Instantiate(tilePrefabs[chosenTileIndex], island.gameObject.transform).GetComponent<Tile>();
+		int chosenTileIndex = Random.Range(0, tileInfo.Length);
+		TileInfo chosenTileInfo = tileInfo[chosenTileIndex];
+		Tile chosenTile = Instantiate(chosenTileInfo.tilePrefab, island.gameObject.transform).GetComponent<Tile>();
 		RandomizeDecor(chosenTile);
 		chosenTile.SetIsland(island, Vector2.zero);
 		chosenTile.SetSortingOrder();
@@ -60,12 +62,22 @@ public class IslandGenerator : MonoBehaviour {
 			if (!island.tiles.ContainsKey(newTileVect))
 			{
 				// Initialize tile
-				Tile newTile = Instantiate(tilePrefabs[chosenTileIndex], Vector2.zero, Quaternion.identity, island.gameObject.transform).GetComponent<Tile>();
+				Tile newTile = Instantiate(chosenTileInfo.tilePrefab, Vector2.zero, Quaternion.identity, island.gameObject.transform).GetComponent<Tile>();
 				RandomizeDecor(newTile);
 				newTile.SetIsland(island, newTileVect);
 				// Move tile to position in island
 				newTile.transform.position += new Vector3(newTileVect.x * newTile.GetComponent<Collider2D>().bounds.size.x, newTileVect.y * newTile.GetComponent<Collider2D>().bounds.size.y, 0);
 				newTile.SetSortingOrder();
+				// Random chance to place entity
+				if (Random.value < entitySpawnChance)
+				{
+					if (chosenTileInfo.uniqueTileEntities.Length > 0) {
+						Entity chosenEntity = chosenTileInfo.uniqueTileEntities[Random.Range(0, chosenTileInfo.uniqueTileEntities.Length)].GetComponent<Entity>();
+						Entity newEntity = Instantiate(chosenEntity, newTile.transform);
+						ShiftSpriteToTile(newEntity.transform);
+						newTile.PlaceEntity(newEntity, newTileVect);
+					}
+				}
 				island.tiles.Add(newTileVect, newTile);
 			}
 		}
@@ -82,13 +94,22 @@ public class IslandGenerator : MonoBehaviour {
 			Vector2 randTileVector = tileList[Random.Range(0, tileList.Count)];
 			GameObject chosenNpc = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
 			GameObject npc = Instantiate(chosenNpc, island.tiles[randTileVector].transform.position, Quaternion.identity, island.tiles[randTileVector].transform);
-			npc.transform.position += new Vector3(0, npc.GetComponent<Renderer>().bounds.extents.y, 0);
+			ShiftSpriteToTile(npc.transform);
+			// Flip animal half the time
+			if(Random.value < 0.5f) {
+				npc.GetComponent<NPCAnimator>().FlipSprite();
+			}
 			npc.GetComponent<Animal>().Sleep();
 			npcsSpawned++;
 		}
 	}
 
-	//TODO:PlaceBiomeEntities
+	// Shifts a transform up on its tile so its feet/bottom are on the center of the tile
+	private void ShiftSpriteToTile(Transform t)
+	{
+		t.position += new Vector3(0, t.gameObject.GetComponent<Renderer>().bounds.extents.y, 0);
+	}
+
 	/*
 	// Randomly translate and flip decor
 	public void RandomizeDecor(Tile tile)
