@@ -37,6 +37,13 @@ public class IslandSpawner : MonoBehaviour {
 			// Get generated island object
 			GameObject island = islandGenerator.GenerateIsland();
 
+			// Check if homeIsland exists
+			if(!homeIsland) {
+				// Generate wait time until next island spawning
+				yield return new WaitForSeconds(spawnCooldown.GetRandom());
+				continue;
+			}
+
 			// Randomly choose whether this island is vertically-moving or horizontally-moving
 			if (Random.value < 0.5f) {
 				// Vertically-moving island

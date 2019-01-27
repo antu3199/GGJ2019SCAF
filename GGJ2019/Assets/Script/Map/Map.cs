@@ -17,6 +17,8 @@ public class Map : MonoBehaviour {
     public GameObject StarterIsland;
     public GameObject PlayerSuite;
 
+    public IslandSpawner islandSpawner;
+
     public List<BackgroundSpawn> backgroundSpawn;
     public float flickerSpeed;
     public Vector2 tileSize;
@@ -60,16 +62,18 @@ public class Map : MonoBehaviour {
             y >= 0 && y < cols);
     }
 
-    public void SpawnIsland(Island island, int x, int y) {
+    public Island SpawnIsland(Island island, int x, int y) {
         Island newIsland = Instantiate(island.gameObject, gameObject.transform).GetComponent<Island>();
         newIsland.coordinate = new Vector2(x, y);
         newIsland.type = IslandType.GridLocked;
         foreach(KeyValuePair<Vector2, Tile> pair in newIsland.tiles) {
             PlaceTile(pair.Value, x + (int)pair.Key.x, y + (int)pair.Key.y);
         }
+
+        return newIsland;
     }
 
-    public void SpawnTile(Tile tile, int x, int y) {
+    public Tile SpawnTile(Tile tile, int x, int y) {
         Tile replacedTile = this.tiles[x, y];        
         this.tiles[x, y] = Instantiate(tile.gameObject, gameObject.transform).GetComponent<Tile>();
         this.tiles[x, y].coordinate = new Vector2(x, y);
@@ -79,6 +83,8 @@ public class Map : MonoBehaviour {
             replacedTile.islandRef.island.RemoveTile(new Vector2(x, y));
             Destroy(replacedTile.gameObject);
         }
+
+        return this.tiles[x, y];
     }
 
     public void PlaceTile(Tile tile, int x, int y)
@@ -120,7 +126,7 @@ public class Map : MonoBehaviour {
     }
 
     private void SpawnStartIsland() {
-        SpawnIsland(StarterIsland.GetComponent<Island>(), rows/2, cols/2);
+        islandSpawner.homeIsland = SpawnIsland(StarterIsland.GetComponent<Island>(), rows/2, cols/2).gameObject;
     }
 
     private void SpawnPlayer() {
