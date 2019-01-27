@@ -31,6 +31,14 @@ public class Player : Character {
         }
         anim.SetInteger("direction", animDirection());
         anim.SetBool("isMoving", r.velocity != Vector2.zero);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (marker.selectedTile && marker.selectedTile.entityRef.entity)
+            {
+                marker.selectedTile.entityRef.entity.Interact();
+            }
+        }
     }
 
     int animDirection()
