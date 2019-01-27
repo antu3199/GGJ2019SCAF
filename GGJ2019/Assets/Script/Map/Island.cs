@@ -16,11 +16,11 @@ public class Island : MonoBehaviour {
 
 	void Awake() {
 		tiles = new Dictionary<Vector2, Tile>();
+		InitializeChildren();
 	}
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		UpdateChildTiles();
 	}
 
 	public bool IsEntityPlaceable(Entity entity, Vector2 pivot) {
@@ -47,11 +47,21 @@ public class Island : MonoBehaviour {
 	public void MergeIsland(Island other, Tile targetTile, Vector2 targetLocation, Player player) {
 		Vector2 origin = targetLocation - targetTile.islandRef.location;
 		foreach(KeyValuePair<Vector2, Tile> pair in other.tiles) {
-			Vector2 newLocation = MigratePiece(pair.Key, pair.Value, origin, player);
-			targetTile.transform.position = coordinateToPosition(newLocation);
+			Vector2 newLocation = MigratePiece(other, pair.Key, pair.Value, origin, player);
+			pair.Value.transform.position = coordinateToPosition(newLocation);
 			//TODO: Some animation
 		}
-		Destroy(other.gameObject);
+	}
+
+	public void RemoveTile(Vector2 coord) {
+		if(tiles.ContainsKey(coord)) {
+			tiles.Remove(coord);
+		}
+
+		//Destroy self if no tiles
+		if(tiles.Count == 0) {
+			Destroy(gameObject);
+		}
 	}
 
 	public IEnumerator BeginTimeout(float lifetime) {
@@ -61,7 +71,7 @@ public class Island : MonoBehaviour {
 
 	/// PRIVATE
 
-	private Vector2 MigratePiece(Vector2 tileLoc, Tile tile, Vector2 origin, Player player) {
+	private Vector2 MigratePiece(Island other, Vector2 tileLoc, Tile tile, Vector2 origin, Player player) {
 		List<Vector2> acceptableTargets = new List<Vector2>();
 
 		int ring = 0;
@@ -105,7 +115,17 @@ public class Island : MonoBehaviour {
 
 		//Migrate the Tile
 		tile.transform.SetParent(gameObject.transform);
+		tiles.Add(selection, tile);
+		other.RemoveTile(selection);
+
 		return selection;
+	}
+
+	private void InitializeChildren() {
+		foreach(Tile tile in GetComponentsInChildren<Tile>()) {
+			tile.islandRef.island = this;
+			tiles.Add(tile.islandRef.location, tile);
+		}
 	}
 
 	private Vector3 coordinateToPosition(Vector2 coord) {

@@ -10,6 +10,14 @@ public class IslandGenerator : MonoBehaviour {
 	public RandomValue tileQuantityRange;
 	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
 	
+	
+	public static void RandomizeDecor(Tile tile) {
+		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
+		foreach (Decor decor in decors) {
+			decor.RandomizeDecor();
+		}
+	}
+	
 	public GameObject GenerateIsland()
 	{
 		GameObject islandObj = Instantiate(islandBasePrefab);
@@ -41,13 +49,6 @@ public class IslandGenerator : MonoBehaviour {
 		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 1000);
 		StartCoroutine(island.BeginTimeout(islandLifetime));
 		return islandObj;
-	}
-
-	public void RandomizeDecor(Tile tile) {
-		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
-		foreach (Decor decor in decors) {
-			decor.RandomizeDecor();
-		}
 	}
 
 	/*

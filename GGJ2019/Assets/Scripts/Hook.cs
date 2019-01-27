@@ -29,6 +29,7 @@ public class Hook : MonoBehaviour {
 
 		islandTrigger.hook = this;
 		mainlandTrigger.hook = this;
+		gameObject.SetActive(false);
 	}
 
 	public void Fire(Vector2 dir) {

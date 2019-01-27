@@ -31,7 +31,6 @@ public class Marker : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered " + collision.GetComponent<Tile>().coordinate.ToString());
         for (int i = 0; i < tiles.Length; i++)
         {
             tiles[i] = null;
@@ -40,7 +39,6 @@ public class Marker : MonoBehaviour {
         selectedTileCollider = selectTile();
         selectedTile = selectedTileCollider.GetComponent<Tile>();
         indicator.transform.position = selectedTile.transform.position;
-        Debug.Log("Selected " + selectedTile.coordinate.ToString());
     }
 
     /*  IF selectedTile and tiles are already populated, then we only
@@ -48,8 +46,6 @@ public class Marker : MonoBehaviour {
      */
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited " + collision.GetComponent<Tile>().coordinate.ToString());
-        Debug.Log(collision.GetComponent<Tile>().coordinate.ToString() + " == " + (collision == selectedTileCollider));
         if (collision == selectedTileCollider)
         {
             for (int i = 0; i < tiles.Length; i++)
@@ -60,7 +56,6 @@ public class Marker : MonoBehaviour {
             selectedTileCollider = selectTile();
             selectedTile = selectedTileCollider.GetComponent<Tile>();
             indicator.transform.position = selectedTile.transform.position;
-            Debug.Log("Selected " + selectedTile.coordinate.ToString());
         }
     }
 
@@ -71,8 +66,6 @@ public class Marker : MonoBehaviour {
         float selectedAngleDiff = float.MaxValue;
         foreach (Collider2D t in tiles)
         {
-            if (t)
-                Debug.Log(t.GetComponent<Tile>().coordinate.ToString() + " " + transform.parent.rotation.eulerAngles.z + " vs " + Vector2.Angle(Vector2.up, transform.parent.position - t.transform.position));
             if (t && Mathf.Abs(transform.parent.rotation.eulerAngles.z - Vector2.Angle(Vector2.up, transform.parent.position - t.transform.position)) < selectedAngleDiff)
             {
                 selected = t;

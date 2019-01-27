@@ -25,7 +25,6 @@ public class Player : Character {
         if (r.velocity != Vector2.zero)
         {
             float rotation = Vector2.SignedAngle(r.velocity, Vector2.up) + 360;
-            Debug.Log(rotation + "=>" + rotation/45);
             direction = (Direction)(Mathf.Round(rotation / 45) % 8);
         }
     }

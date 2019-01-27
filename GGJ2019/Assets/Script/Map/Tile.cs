@@ -9,6 +9,7 @@ public enum TileType
     UNOWNED = 2
 }
 
+[System.Serializable]
 public class EntityRef {
     public Entity entity;
     public Vector2 location;
@@ -19,6 +20,7 @@ public class EntityRef {
     }
 }
 
+[System.Serializable]
 public class IslandRef {
     public Island island;
     public Vector2 location; 
