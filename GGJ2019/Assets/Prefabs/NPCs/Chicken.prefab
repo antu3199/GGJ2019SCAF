@@ -108,6 +108,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114638685108601198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466249849685654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1adea96078a42278044eed3c7b45cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops: []
 --- !u!114 &114717933141815436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,8 +147,8 @@ MonoBehaviour:
   chrName: Chicken
   maxHunger: 100
   maxHealth: 100
-  currentHunger: 0
-  currentHealth: 0
+  currentHunger: 100
+  currentHealth: 100
   hungerTickDuration: 0
   hungerLossPerTick: 0
   starvingTickDuration: 0

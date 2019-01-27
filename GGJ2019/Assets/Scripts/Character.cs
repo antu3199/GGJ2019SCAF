@@ -57,11 +57,15 @@ public abstract class Character : MonoBehaviour {
 
 	public Direction direction;
 
+    protected bool isDead;
+
 	// Use this for initialization
 	public virtual void Start () {
         currentHealth = maxHealth;
         currentHunger = maxHunger;
+        isDead = false;
         direction = Direction.NORTH;
+        StartCoroutine(WatchHealth());
 	}
 	
 	// Update is called once per frame
@@ -80,15 +84,37 @@ public abstract class Character : MonoBehaviour {
 	{
 		currentHealth += value;
 		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-		if (currentHealth <= 0)
-		{
-			Die();
-		}
 	}
 
-	public virtual void Die()
+	protected virtual void Die()
 	{
-		// TODO: make more sophisticated
-		Destroy(this);
+		isDead = true;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        foreach(Collider2D col in GetComponentsInChildren<Collider2D>()) {
+            col.enabled = false;
+        }
+
+        rb.freezeRotation = false;
+        rb.AddForce(new Vector3(0, 1, 0) * 700f);
+        rb.gravityScale = 0.5f;
+        rb.angularDrag = 2;
+        rb.AddTorque(4000f);
+		Destroy(gameObject, 10f);
 	}
+
+    // COROUTINE
+
+    IEnumerator WatchHealth() {
+        while(true) {
+            if(currentHunger  <= 0 || currentHealth <= 0) {
+                Debug.Log("idie");
+                Die();
+                break;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        yield return null;
+    }
 }
