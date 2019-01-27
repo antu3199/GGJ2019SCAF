@@ -13,14 +13,22 @@ public class Map : MonoBehaviour {
     public int cols;
     private Tile[,] tiles;
 
-    public GameObject emptyTile;
+    public GameObject GhostIsland;
+    public GameObject StarterIsland;
+    public GameObject PlayerSuite;
+
+    public IslandSpawner islandSpawner;
+
     public List<BackgroundSpawn> backgroundSpawn;
     public float flickerSpeed;
     public Vector2 tileSize;
 
     void Start() {
+        tiles = new Tile[rows, cols];
     	InitializeMap();
         SpawnBackground();
+        SpawnStartIsland();
+        SpawnPlayer();
     }
 
     public Vector3 CoordToPosition(int x, int y)
@@ -54,24 +62,49 @@ public class Map : MonoBehaviour {
             y >= 0 && y < cols);
     }
 
-    public void PlaceTile(Tile tile, int x, int y)
-    {
+    public Island SpawnIsland(Island island, int x, int y) {
+        Island newIsland = Instantiate(island.gameObject, gameObject.transform).GetComponent<Island>();
+        newIsland.coordinate = new Vector2(x, y);
+        newIsland.type = IslandType.GridLocked;
+        newIsland.map = this;
+        foreach(KeyValuePair<Vector2, Tile> pair in newIsland.tiles) {
+            PlaceTile(pair.Value, x + (int)pair.Key.x, y + (int)pair.Key.y);
+        }
+        
+        return newIsland;
+    }
+
+    public Tile SpawnTile(Tile tile, int x, int y) {
         Tile replacedTile = this.tiles[x, y];        
         this.tiles[x, y] = Instantiate(tile.gameObject, gameObject.transform).GetComponent<Tile>();
         this.tiles[x, y].coordinate = new Vector2(x, y);
         this.tiles[x, y].transform.position = CoordToPosition(x, y);
         this.tiles[x, y].SetSortingOrder();
         if (replacedTile != null) {
+            replacedTile.islandRef.island.RemoveTile(new Vector2(x, y));
+            Destroy(replacedTile.gameObject);
+        }
+
+        return this.tiles[x, y];
+    }
+
+    public void PlaceTile(Tile tile, int x, int y)
+    {
+        Tile replacedTile = this.tiles[x, y];        
+        this.tiles[x, y] = tile;
+        this.tiles[x, y].coordinate = new Vector2(x, y);
+        this.tiles[x, y].transform.position = CoordToPosition(x, y);
+        this.tiles[x, y].SetSortingOrder();
+        if (replacedTile != null) {
+            replacedTile.islandRef.island.RemoveTile(new Vector2(x, y));
             Destroy(replacedTile.gameObject);
         }
     }
 
     private void InitializeMap() {
-        tiles = new Tile[rows, cols];
     	for(int i = 0; i < rows; i++) {
     		for(int j = 0; j < cols; j++) {
-    			Tile tile = emptyTile.GetComponent<Tile>();
-    			PlaceTile(tile, i, j);
+                SpawnIsland(GhostIsland.GetComponent<Island>(), i, j);
     		}
     	}	
     }
@@ -91,5 +124,17 @@ public class Map : MonoBehaviour {
                 back.flickerFreq = flickerSpeed;
             }
         }
+    }
+
+    private void SpawnStartIsland() {
+        islandSpawner.homeIsland = SpawnIsland(StarterIsland.GetComponent<Island>(), rows/2, cols/2).gameObject;
+    }
+
+    private void SpawnPlayer() {
+        GameObject suite = Instantiate(PlayerSuite, gameObject.transform);
+        Player player = suite.GetComponentInChildren<Player>();
+        Vector2 location = CoordToPosition(rows/2, cols/2);
+        player.transform.position = new Vector3(location.x, location.y, tiles[rows/2, cols/2].GetSortingOrder());
+        suite.transform.parent = null;
     }
 }

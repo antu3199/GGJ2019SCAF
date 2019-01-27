@@ -5,22 +5,30 @@ using UnityEngine;
 public class Marker : MonoBehaviour {
     // Object class for indicating which tile the player will be interacting with
 
-    public GameObject indicator;
+    public GameObject indicatorObject;
     public Tile selectedTile;
     public Collider2D selectedTileCollider;
     public Collider2D[] tiles;
     Collider2D marker;
     public ContactFilter2D tileFilter;
 
-	// Use this for initialization
-	void Start () {
+    GameObject indicator;
+
+    private void Awake()
+    {
+        marker = GetComponent<Collider2D>();
+    }
+
+    // Use this for initialization
+    void Start () {
         // markers must be child of some gameobject
 		if (transform.parent == null)
         {
             Destroy(gameObject);
         }
-        marker = GetComponent<Collider2D>();
+        Debug.Log(marker);
         tiles = new Collider2D[4];
+        indicator = Instantiate(indicatorObject);
 
         // populate tiles 
         // IMPORTANT! - this assumes player spawns somewhere with tiles in front of them
@@ -29,18 +37,28 @@ public class Marker : MonoBehaviour {
         //selectedTile = selectedTileCollider.GetComponent<Tile>();
 	}
 
+    private void Update()
+    {
+        marker.offset = 2 * Character.DirToVector(transform.parent.GetComponent<Player>().direction);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered " + collision.GetComponent<Tile>().coordinate.ToString());
+        //Debug.Log("Entered " + collision.GetComponent<Tile>().coordinate.ToString());
         for (int i = 0; i < tiles.Length; i++)
         {
             tiles[i] = null;
         }
+        Debug.Log(marker == null);
         marker.OverlapCollider(tileFilter, tiles);
+        Debug.Log(tiles.ToString());
         selectedTileCollider = selectTile();
-        selectedTile = selectedTileCollider.GetComponent<Tile>();
-        indicator.transform.position = selectedTile.transform.position;
-        Debug.Log("Selected " + selectedTile.coordinate.ToString());
+        if (selectedTileCollider)
+        {
+            selectedTile = selectedTileCollider.GetComponent<Tile>();
+            indicator.transform.position = selectedTile.transform.position;
+            //Debug.Log("Selected " + selectedTile.coordinate.ToString());
+        }
     }
 
     /*  IF selectedTile and tiles are already populated, then we only
@@ -48,8 +66,8 @@ public class Marker : MonoBehaviour {
      */
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited " + collision.GetComponent<Tile>().coordinate.ToString());
-        Debug.Log(collision.GetComponent<Tile>().coordinate.ToString() + " == " + (collision == selectedTileCollider));
+        //Debug.Log("Exited " + collision.GetComponent<Tile>().coordinate.ToString());
+        //Debug.Log(collision.GetComponent<Tile>().coordinate.ToString() + " == " + (collision == selectedTileCollider));
         if (collision == selectedTileCollider)
         {
             for (int i = 0; i < tiles.Length; i++)
@@ -58,9 +76,12 @@ public class Marker : MonoBehaviour {
             }
             marker.OverlapCollider(tileFilter, tiles);
             selectedTileCollider = selectTile();
-            selectedTile = selectedTileCollider.GetComponent<Tile>();
-            indicator.transform.position = selectedTile.transform.position;
-            Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            if (selectedTileCollider)
+            {
+                selectedTile = selectedTileCollider.GetComponent<Tile>();
+                indicator.transform.position = selectedTile.transform.position;
+                //Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            }
         }
     }
 
@@ -71,8 +92,6 @@ public class Marker : MonoBehaviour {
         float selectedAngleDiff = float.MaxValue;
         foreach (Collider2D t in tiles)
         {
-            if (t)
-                Debug.Log(t.GetComponent<Tile>().coordinate.ToString() + " " + transform.parent.rotation.eulerAngles.z + " vs " + Vector2.Angle(Vector2.up, transform.parent.position - t.transform.position));
             if (t && Mathf.Abs(transform.parent.rotation.eulerAngles.z - Vector2.Angle(Vector2.up, transform.parent.position - t.transform.position)) < selectedAngleDiff)
             {
                 selected = t;

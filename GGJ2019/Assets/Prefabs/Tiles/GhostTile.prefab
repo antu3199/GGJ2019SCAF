@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212976826283843462}
   - component: {fileID: 61026443284657070}
   - component: {fileID: 114417267370348130}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GhostTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4230495783417006}
   - component: {fileID: 61773353983154732}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &61773353983154732
 BoxCollider2D:
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &114417267370348130
 MonoBehaviour:
@@ -135,6 +135,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 0
   coordinate: {x: 0, y: 0}
+  entityRef:
+    entity: {fileID: 0}
+    location: {x: 0, y: 0}
+  islandRef:
+    island: {fileID: 0}
+    location: {x: 0, y: 0}
 --- !u!212 &212976826283843462
 SpriteRenderer:
   m_ObjectHideFlags: 1

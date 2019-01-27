@@ -13,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - NPC
+  - Entity
+  - Item
+  - Wall
+  - Mainland
   - FloatingIsland
-  - 
-  - 
-  - 
-  - 
-  - 
+  - hook_island
+  - hook_mainland
+  - Marker
+  - GhostTile
+  - Projectile
   - 
   - 
   - 
