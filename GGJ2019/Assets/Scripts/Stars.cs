@@ -19,11 +19,15 @@ public class Stars : MonoBehaviour {
 	// COROUTINE
 
 	IEnumerator Animate() {
-		while(true)
-		{
-			sr.sprite = sprites[curSprite];
-			yield return new WaitForSeconds(flickerFreq);
-			curSprite = (curSprite + 1) % sprites.Count;	
+		if(sprites.Count > 0) {
+			while(true)
+			{
+				sr.sprite = sprites[curSprite];
+				yield return new WaitForSeconds(flickerFreq);
+				curSprite = (curSprite + 1) % sprites.Count;	
+			}	
 		}
+
+		yield return null;
 	}
 }

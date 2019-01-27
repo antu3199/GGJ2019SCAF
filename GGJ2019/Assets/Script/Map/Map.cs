@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class BackgroundSpawn {
+    public GameObject background;
+    public int freq;
+}
+
 public class Map : MonoBehaviour {
     public int rows;
     public int cols;
     private Tile[,] tiles;
 
     public GameObject emptyTile;
+    public List<BackgroundSpawn> backgroundSpawn;
+    public float flickerSpeed;
     public Vector2 tileSize;
 
     void Start() {
     	InitializeMap();
+        SpawnBackground();
     }
 
     public Vector3 CoordToPosition(int x, int y)
@@ -65,5 +74,22 @@ public class Map : MonoBehaviour {
     			PlaceTile(tile, i, j);
     		}
     	}	
+    }
+
+    private void SpawnBackground() {
+        List<GameObject> randomizer = new List<GameObject>();
+        foreach(BackgroundSpawn background in backgroundSpawn) {
+            for(int i = 0; i < background.freq; i++) {
+                randomizer.Add(background.background);
+            }
+        }
+
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < cols; j++) {
+                Stars back = Instantiate(randomizer[Random.Range(0, randomizer.Count)], gameObject.transform).GetComponent<Stars>();
+                back.transform.position = CoordToPosition(i, j);
+                back.flickerFreq = flickerSpeed;
+            }
+        }
     }
 }
