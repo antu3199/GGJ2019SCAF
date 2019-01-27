@@ -11,6 +11,8 @@ public class UIManager : Singleton<UIManager>
 
     public Slider hungerSlider;
 
+    public int selectedIndex;
+
     void Start()
     {
         UpdateSelectedItem(0);
@@ -24,6 +26,8 @@ public class UIManager : Singleton<UIManager>
 
     public void UpdateSelectedItem(int index)
     {
+
+        this.selectedIndex = index;
         if (index != -1 && !ItemManager.Instance.inventory.itemSlots[index].empty)
         {
             this.selectedItemImage.sprite = ItemManager.Instance.inventory.itemSlots[index].itemSlotImage.sprite;
