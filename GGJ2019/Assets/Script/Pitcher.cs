@@ -13,9 +13,14 @@ public class Pitcher : MonoBehaviour {
 
     bool charging = false;
 
+    OverworldItemGenerator itemGen;
+
     void Start() {
         currentMagnitude = 0;
         index = 0;
+        player = GetComponent<Player>();
+
+        itemGen = GetComponent<OverworldItemGenerator>();
     }
 
     public PlayerItemSlot GetCurrentItem() {
@@ -62,7 +67,11 @@ public class Pitcher : MonoBehaviour {
         } else {
             Item item = itemSlot.item;
             itemSlot.RemoveItems(1);
-            Debug.Log("Throwing " + item.key);
+            GameObject itemProjectile = itemGen.GetOverworldItem(item);
+            itemProjectile.transform.position = transform.position;
+            Debug.Log(player.chrName + ": Throwing " + item.key);
+            Vector2 throwVelocity = Character.DirToVector(player.direction) * currentMagnitude;
+            itemProjectile.GetComponent<Rigidbody2D>().velocity = throwVelocity;
         }
 
         currentMagnitude = 0;
