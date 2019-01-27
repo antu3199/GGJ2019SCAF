@@ -41,6 +41,7 @@ public class IslandSpawner : MonoBehaviour {
 
 			// Check if homeIsland exists
 			if(!homeIsland) {
+				Destroy(island);
 				// Generate wait time until next island spawning
 				yield return new WaitForSeconds(spawnCooldown.GetRandom());
 				continue;

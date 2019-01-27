@@ -1,0 +1,375 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 11
+  m_GIWorkflowMode: 1
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_TemporalCoherenceThreshold: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 10
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 1
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &1681278526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681278529}
+  - component: {fileID: 1681278528}
+  - component: {fileID: 1681278527}
+  m_Layer: 0
+  m_Name: FloatingIslandManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1681278527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681278526}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f765a81da76aff3469f26eaf9092d41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeIsland: {fileID: 0}
+  islandGenerator: {fileID: 1681278528}
+  map: {fileID: 1751458762}
+  homeBuffer: 3.5
+  spawnCooldown:
+    range:
+      min: 2
+      max: 3
+  islandVelocity:
+    range:
+      min: 2
+      max: 4
+--- !u!114 &1681278528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681278526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd01dc1d7acd41c40847f07b63bab62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islandBasePrefab: {fileID: 1585502456644556, guid: 34998cc20d97d50448a70939c823b20e,
+    type: 2}
+  tileInfo:
+  - tilePrefab: {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  - tilePrefab: {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37,
+      type: 2}
+    uniqueTileEntities:
+    - {fileID: 1898039476233312, guid: 0fafc8109992a6f408df23251c1a4be7, type: 2}
+  entitySpawnChance: 0.25
+  tileQuantityRange:
+    range:
+      min: 1
+      max: 8
+  islandLifetime: 60
+  npcPrefabs:
+  - {fileID: 1454774279354194, guid: 706e26a250cdf84429e0b00e86f7b991, type: 2}
+  - {fileID: 1466249849685654, guid: f8049a32395fc864bbc71ed67f4eb000, type: 2}
+  - {fileID: 1058441790548518, guid: 8efae77cff224824eba379562a20c658, type: 2}
+  npcChance: 1
+  npcQuantity:
+    range:
+      min: 0
+      max: 2
+--- !u!4 &1681278529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681278526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751458762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+    type: 2}
+  m_PrefabInternal: {fileID: 2036639948}
+  m_Script: {fileID: 11500000, guid: 6498a394c94674009935f5585bba01d4, type: 3}
+--- !u!1 &1955082467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955082470}
+  - component: {fileID: 1955082469}
+  - component: {fileID: 1955082468}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1955082468
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955082467}
+  m_Enabled: 1
+--- !u!20 &1955082469
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955082467}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.050980393, g: 0.007843138, b: 0.050980393, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 20
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1955082470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955082467}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30, y: 30, z: -1000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2036639948
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748591747029578, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1715015958757778, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: GhostIsland
+      value: 
+      objectReference: {fileID: 1340283458306384, guid: e8449c41d35d54f9c93361288524dff0,
+        type: 2}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: cols
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: rows
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: StarterIsland
+      value: 
+      objectReference: {fileID: 1599145855885172, guid: 754f91893084541a99cc5f5d61ab55f3,
+        type: 2}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: PlayerSuite
+      value: 
+      objectReference: {fileID: 1536154384645980, guid: 9a501afe9d9b9493d816f3e8655912fd,
+        type: 2}
+    - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+        type: 2}
+      propertyPath: islandSpawner
+      value: 
+      objectReference: {fileID: 1681278527}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76257c85a1aa04838ae17192680bf276, type: 2}
+  m_IsPrefabAsset: 0

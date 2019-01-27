@@ -7,21 +7,19 @@ public class IslandGenerator : MonoBehaviour {
 
 	public GameObject islandBasePrefab;
 	public TileInfo[] tileInfo;
-	public float entitySpawnChance;         // Chance of an island having an entity.
+	public float entitySpawnChance;         // Chance of an individual tile having an entity.
 	public RandomValue tileQuantityRange;
-	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
+	public float islandLifetime;            // Duration in seconds that an island lasts before destroying itself.
+	public GameObject[] npcPrefabs;
+	public float npcChance;                 // Chance of an island having an npc.
+	public RandomValue npcQuantity;
 
-	
 	public static void RandomizeDecor(Tile tile) {
 		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
 		foreach (Decor decor in decors) {
 			decor.RandomizeDecor();
 		}
 	}
-
-	public GameObject[] npcPrefabs;
-	public float npcChance;                 // Chance of an island having an npc.
-	public RandomValue npcQuantity;
 
 	public GameObject GenerateIsland()
 	{
