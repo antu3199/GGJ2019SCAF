@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "index" : 0,
+      "key" : "flower",
+      "displayName" : "Flower",
+      "description" : "A nice smelling flower",
+      "usable" : false,
+      "collapsable" : false
+    },
+    {
+      "index" : 1,
+      "key" : "apple",
+      "displayName": "Apple",
+      "description" : "A delicious apple",
+      "usable" : true,
+      "collapsable" : true
+    }
+  ]
+}
