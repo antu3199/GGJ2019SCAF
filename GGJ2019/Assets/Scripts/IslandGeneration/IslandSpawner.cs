@@ -97,12 +97,17 @@ public class IslandSpawner : MonoBehaviour {
 
 	private Bounds GetChildBounds(GameObject obj)
 	{
-		Bounds accumulatedBounds = new Bounds();
 		Collider2D[] colliders = obj.GetComponentsInChildren<Collider2D>();
-		foreach (Collider2D collider in colliders)
-		{
-			accumulatedBounds.Encapsulate(collider.GetComponent<Collider2D>().bounds);
+		if (colliders.Length > 0) {
+			Bounds accumulatedBounds = colliders[0].bounds;
+			foreach (Collider2D collider in colliders)
+			{
+				accumulatedBounds.Encapsulate(collider.GetComponent<Collider2D>().bounds);
+			}
+			return accumulatedBounds;
+		} else {
+			Debug.Log("GetChildBonunds found no colliders.");
+			return new Bounds();
 		}
-		return accumulatedBounds;
 	}
 }

@@ -17,7 +17,7 @@ public class PlayerInventory : MonoBehaviour {
     private int maxStorage;
     public bool opened;
 
-    void Start()
+    public void Initialize()
     {
         maxStorage = itemsGrid.transform.childCount;
         itemSlots = new List<PlayerItemSlot>(itemsGrid.GetComponentsInChildren<PlayerItemSlot>());
@@ -31,7 +31,7 @@ public class PlayerInventory : MonoBehaviour {
 
 
         //For testing
-        for (int i = 0; i < ItemManager.Instance.itemData.Count; i++)
+        for (int i = 5; i < ItemManager.Instance.itemData.Count; i++)
         {
             AddItem(ItemManager.Instance.itemData[i].key, 1);
         }
