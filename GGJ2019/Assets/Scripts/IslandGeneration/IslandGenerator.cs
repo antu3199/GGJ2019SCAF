@@ -13,7 +13,7 @@ public class IslandGenerator : MonoBehaviour {
 	public GameObject[] npcPrefabs;
 	public float npcChance;                 // Chance of an island having an npc.
 	public RandomValue npcQuantity;
-
+  
 	public static void RandomizeDecor(Tile tile) {
 		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
 		foreach (Decor decor in decors) {
