@@ -60,7 +60,7 @@ public class Player : Character {
         }
     }
 
-    public override void Die() {
+    protected override void Die() {
         base.Die();
         cam.enabled = false;
         OverworldItemGenerator itemGen = GetComponent<OverworldItemGenerator>();

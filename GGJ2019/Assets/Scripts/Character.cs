@@ -85,7 +85,7 @@ public abstract class Character : MonoBehaviour {
 		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 	}
 
-	public virtual void Die()
+	protected virtual void Die()
 	{
 		isDead = true;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -98,7 +98,7 @@ public abstract class Character : MonoBehaviour {
         rb.gravityScale = 0.5f;
         rb.angularDrag = 2;
         rb.AddTorque(4000f);
-		Destroy(this, 10f);
+		Destroy(gameObject, 10f);
 	}
 
     // COROUTINE
