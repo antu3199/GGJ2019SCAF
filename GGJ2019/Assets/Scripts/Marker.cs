@@ -29,18 +29,26 @@ public class Marker : MonoBehaviour {
         //selectedTile = selectedTileCollider.GetComponent<Tile>();
 	}
 
+    private void Update()
+    {
+        marker.offset = 2 * Character.DirToVector(transform.parent.GetComponent<Player>().direction);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered " + collision.GetComponent<Tile>().coordinate.ToString());
+        //Debug.Log("Entered " + collision.GetComponent<Tile>().coordinate.ToString());
         for (int i = 0; i < tiles.Length; i++)
         {
             tiles[i] = null;
         }
         marker.OverlapCollider(tileFilter, tiles);
         selectedTileCollider = selectTile();
-        selectedTile = selectedTileCollider.GetComponent<Tile>();
-        indicator.transform.position = selectedTile.transform.position;
-        Debug.Log("Selected " + selectedTile.coordinate.ToString());
+        if (selectedTileCollider)
+        {
+            selectedTile = selectedTileCollider.GetComponent<Tile>();
+            indicator.transform.position = selectedTile.transform.position;
+            Debug.Log("Selected " + selectedTile.coordinate.ToString());
+        }
     }
 
     /*  IF selectedTile and tiles are already populated, then we only
@@ -48,8 +56,8 @@ public class Marker : MonoBehaviour {
      */
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exited " + collision.GetComponent<Tile>().coordinate.ToString());
-        Debug.Log(collision.GetComponent<Tile>().coordinate.ToString() + " == " + (collision == selectedTileCollider));
+        //Debug.Log("Exited " + collision.GetComponent<Tile>().coordinate.ToString());
+        //Debug.Log(collision.GetComponent<Tile>().coordinate.ToString() + " == " + (collision == selectedTileCollider));
         if (collision == selectedTileCollider)
         {
             for (int i = 0; i < tiles.Length; i++)
@@ -58,9 +66,13 @@ public class Marker : MonoBehaviour {
             }
             marker.OverlapCollider(tileFilter, tiles);
             selectedTileCollider = selectTile();
-            selectedTile = selectedTileCollider.GetComponent<Tile>();
-            indicator.transform.position = selectedTile.transform.position;
-            Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            if (selectedTileCollider)
+            {
+                selectedTile = selectedTileCollider.GetComponent<Tile>();
+                indicator.transform.position = selectedTile.transform.position;
+                Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            }
+            
         }
     }
 
