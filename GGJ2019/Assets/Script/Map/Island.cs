@@ -48,7 +48,6 @@ public class Island : MonoBehaviour {
 		Vector2 origin = targetLocation - targetTile.islandRef.location;
 		foreach(KeyValuePair<Vector2, Tile> pair in other.tiles) {
 			Vector2 newLocation = MigratePiece(other, pair.Key, pair.Value, origin, player);
-			pair.Value.transform.position = coordinateToPosition(newLocation);
 			//TODO: Some animation
 		}
 	}
@@ -60,6 +59,7 @@ public class Island : MonoBehaviour {
 
 		//Destroy self if no tiles
 		if(tiles.Count == 0) {
+			StopAllCoroutines();
 			Destroy(gameObject);
 		}
 	}
@@ -114,6 +114,10 @@ public class Island : MonoBehaviour {
 		}
 
 		//Migrate the Tile
+		map.PlaceTile(tile, (int)(selection.x + coordinate.x), (int)(selection.y + coordinate.y));
+		tile.islandRef.island = this;
+		tile.islandRef.location = selection;
+		tile.gameObject.layer = gameObject.layer;
 		tile.transform.SetParent(gameObject.transform);
 		tiles.Add(selection, tile);
 		other.RemoveTile(selection);
@@ -129,7 +133,7 @@ public class Island : MonoBehaviour {
 	}
 
 	private Vector3 coordinateToPosition(Vector2 coord) {
-		return transform.position + (Vector3)(coord * map.tileSize);
+		return (Vector3)(coordinate * map.tileSize) + (Vector3)(coord * map.tileSize);
 	}
 
 	private void UpdateChildTiles() {

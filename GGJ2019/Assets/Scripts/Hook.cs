@@ -84,7 +84,6 @@ public class Hook : MonoBehaviour {
 			}
 
 			if(collision) {
-				Debug.Log("COLLISION");
 				EnableDropPointTrigger();
 				StartCoroutine(Rewind());
 				break;
@@ -99,7 +98,7 @@ public class Hook : MonoBehaviour {
 		float startTime = Time.time;
 		float totalDist = Vector2.Distance(this.transform.position, player.transform.position);
 		Vector3 startPos = this.transform.position;
-		Vector3 cargoPos = cargo ? cargo.transform.position : this.transform.position;
+		Vector3 cargoPos = cargo ? cargo.islandRef.island.transform.position : this.transform.position;
 		rb.velocity = Vector2.zero;
 
 		while(true) {
@@ -107,14 +106,18 @@ public class Hook : MonoBehaviour {
 			float fracJourney = distCovered / totalDist;
 			transform.position = Vector3.Lerp(startPos, player.transform.position, fracJourney);
 			if(cargo) {
-				cargo.transform.position = Vector3.Lerp(cargoPos, player.transform.position, fracJourney);
+				cargo.islandRef.island.transform.position = Vector3.Lerp(cargoPos, player.transform.position, fracJourney);
+				Debug.Log(cargo.islandRef.island.gameObject.name);
 			}
 
 			yield return new WaitForEndOfFrame();
 
-			if(dropPoint) {
+			if(dropPoint && cargo) {
+				Debug.Log(cargo.islandRef.island);
+				Debug.Log(dropPoint.islandRef);
 				dropPoint.islandRef.island.MergeIsland(cargo.islandRef.island, cargo, dropPoint.islandRef.location, player);
 				dropPoint = null;
+				cargo = null;
 			}
 
 			if(IsCloseTo(fracJourney, 1.0f) || fracJourney > 1.0f) {

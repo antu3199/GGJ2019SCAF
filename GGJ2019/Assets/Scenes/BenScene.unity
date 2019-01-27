@@ -165,6 +165,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751458762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
+    type: 2}
+  m_PrefabInternal: {fileID: 2036639948}
+  m_Script: {fileID: 11500000, guid: 6498a394c94674009935f5585bba01d4, type: 3}
 --- !u!1 &1895661050
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeIsland: {fileID: 0}
   islandGenerator: {fileID: 1115443608}
+  map: {fileID: 1751458762}
   homeBuffer: 3.5
   spawnCooldown:
     range:

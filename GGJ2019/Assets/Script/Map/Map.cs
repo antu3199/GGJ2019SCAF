@@ -66,10 +66,11 @@ public class Map : MonoBehaviour {
         Island newIsland = Instantiate(island.gameObject, gameObject.transform).GetComponent<Island>();
         newIsland.coordinate = new Vector2(x, y);
         newIsland.type = IslandType.GridLocked;
+        newIsland.map = this;
         foreach(KeyValuePair<Vector2, Tile> pair in newIsland.tiles) {
             PlaceTile(pair.Value, x + (int)pair.Key.x, y + (int)pair.Key.y);
         }
-
+        
         return newIsland;
     }
 
