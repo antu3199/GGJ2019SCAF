@@ -56,11 +56,6 @@ public class ItemManager : Singleton<ItemManager> {
     
     void Awake()
     {
-        if (inventory == null)
-        {
-            Destroy(this.gameObject);
-        }
-
         ItemFactory.Initialize();
         itemData = new List<Item>(this.GetComponentsInChildren<Item>());
         inventory.Initialize();
