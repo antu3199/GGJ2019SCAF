@@ -34,7 +34,7 @@ public class Player : Character {
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (marker.selectedTile && marker.selectedTile.entityRef.entity)
+            if (marker.selectedTile && marker.selectedTile.entityRef.entity && marker.selectedTile.entityRef.entity.interactable == true)
             {
                 marker.selectedTile.entityRef.entity.Interact();
             }

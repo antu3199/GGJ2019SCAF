@@ -5,7 +5,6 @@ public class HarvestableEntity : Entity
 {
     public string itemKey;
     public int harvestQuantity = 1;
-    public BoxCollider2D boxCollider;
 
     [SerializeField] private SpriteAnimator animator;
 
@@ -47,7 +46,6 @@ public class HarvestableEntity : Entity
 
     public override void OnEnterTile() {
         base.OnEnterTile();
-        this.actionImage.gameObject.SetActive(true);
     }
 
     public override void OnExitTile() {

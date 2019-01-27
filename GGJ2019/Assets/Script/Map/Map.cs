@@ -80,7 +80,7 @@ public class Map : MonoBehaviour {
                 newIsland.tiles[entity.occupancy[i]].entityRef = new EntityRef(entity, entity.occupancy[i]);
             }
 
-            entity.transform.parent.position = newIsland.tiles[entity.occupancy[0]].transform.position;
+            entity.parent.transform.position = newIsland.tiles[entity.occupancy[0]].transform.position;
         }
         
         return newIsland;
