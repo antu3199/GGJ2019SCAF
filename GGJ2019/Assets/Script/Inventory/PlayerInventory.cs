@@ -79,6 +79,8 @@ public class PlayerInventory : MonoBehaviour {
             this.selectedItemImage.sprite = itemSlot.itemSlotImage.sprite;
             this.selectedItemImage.gameObject.SetActive(true);
         }
+
+        UIManager.Instance.UpdateSelectedItem(UIManager.Instance.selectedIndex);
     }
 
 
