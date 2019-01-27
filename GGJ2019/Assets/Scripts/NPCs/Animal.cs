@@ -61,6 +61,7 @@ public class Animal : MonoBehaviour
 		} else if (!npcAnimator.flipped && xForce > 0) {
 			npcAnimator.FlipSprite();
 		}
+		Debug.Log(new Vector2(xForce, yForce));
 		rb.AddForce(new Vector2(xForce, yForce));
 	}
 
