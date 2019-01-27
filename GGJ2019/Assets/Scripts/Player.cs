@@ -8,6 +8,7 @@ public class Player : Character {
 
     Rigidbody2D r;
     Marker marker;
+    Pitcher arm;
     Animator anim;
     
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class Player : Character {
         if (!(marker = GetComponentInChildren<Marker>())){
             Debug.LogError("Player must have a marker attached!");
         }
+        arm = GetComponent<Pitcher>();
         anim = GetComponent<Animator>();
 	}
 	
@@ -38,6 +40,18 @@ public class Player : Character {
             {
                 marker.selectedTile.entityRef.entity.Interact();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X)) {
+            arm.InitCharge();
+        }
+
+        if(Input.GetKeyUp(KeyCode.X)) {
+            arm.Fire();
+        }
+
+        if(Input.GetKeyDown(KeyCode.E)) {
+            arm.IterateToNextValidItemSlot();
         }
     }
 

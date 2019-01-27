@@ -544,9 +544,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 121
-        y: 246
-        width: 38
-        height: 33
+        y: 241
+        width: 40
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +603,10 @@ TextureImporter:
       name: npc_4
       rect:
         serializedVersion: 2
-        x: 121
-        y: 206
-        width: 39
-        height: 34
+        x: 120
+        y: 201
+        width: 40
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
