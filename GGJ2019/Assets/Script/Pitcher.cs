@@ -34,6 +34,7 @@ public class Pitcher : MonoBehaviour {
 
     public void IterateToNextValidItemSlot() {
         int count = 0;
+
         index = index == -1 ? 0 : index;
 
         do {
@@ -47,6 +48,8 @@ public class Pitcher : MonoBehaviour {
             count++;
         }
         while(ItemManager.Instance.inventory.itemSlots[index].empty);
+
+         UIManager.Instance.UpdateSelectedItem(index);
     }
 
     public void InitCharge() {
@@ -71,6 +74,7 @@ public class Pitcher : MonoBehaviour {
             Vector2 throwVelocity = Character.DirToVector(player.direction) * currentMagnitude;
             itemProjectile.GetComponent<Rigidbody2D>().velocity = throwVelocity;
             itemProjectile.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-1 * angularMagnitude, angularMagnitude);
+            UIManager.Instance.UpdateSelectedItem(index);
         }
 
         currentMagnitude = 0;
