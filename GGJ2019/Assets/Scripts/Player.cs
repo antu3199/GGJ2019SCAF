@@ -18,8 +18,10 @@ public class Player : Character {
             Debug.LogError("Player must have a marker attached!");
         }
         anim = GetComponent<Animator>();
+
+		StartCoroutine(StartLivingProcesses());
 	}
-	
+
 	// Update is called once per frame
 	public override void Update () {
         // Controls
@@ -38,11 +40,38 @@ public class Player : Character {
             {
                 marker.selectedTile.entityRef.entity.Interact();
             }
-        }
-    }
+		}
 
-    int animDirection()
+		if (currentHealth <= 0)
+		{
+			//TODO: game over
+		}
+	}
+
+	int animDirection()
     {
         return (int)direction / 2 * 2;
     }
+
+	IEnumerator StartLivingProcesses()
+	{
+		while (true)
+		{
+			if (currentHunger > 0)
+			{
+				// Reduce hunger regularly
+				IncreaseHunger(-hungerLossPerTick);
+				yield return new WaitForSeconds(hungerTickDuration);
+			}
+			else {
+				// Reduce health regularly if hunger is 0
+				IncreaseHealth(-healthLossPerTick);
+				yield return new WaitForSeconds(starvingTickDuration);
+			}
+			if (currentHealth <= 0)
+			{
+				break;
+			}
+		}
+	}
 }
