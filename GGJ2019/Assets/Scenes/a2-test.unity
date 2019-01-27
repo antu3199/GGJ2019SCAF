@@ -973,6 +973,9 @@ MonoBehaviour:
   itemKey: corn
   harvestQuantity: 1
   animator: {fileID: 214287893}
+  minSeedsDropped: 1
+  maxSeedsDropped: 3
+  seedKey: corn-seeds
 --- !u!114 &214287893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1026,10 @@ GameObject:
   - component: {fileID: 226997335}
   - component: {fileID: 226997334}
   - component: {fileID: 226997333}
+  - component: {fileID: 226997356}
+  - component: {fileID: 226997355}
+  - component: {fileID: 226997354}
+  - component: {fileID: 226997330}
   m_Layer: 0
   m_Name: ItemController
   m_TagString: Untagged
@@ -1043,6 +1050,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: apple
   sprite: {fileID: 21300024, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &226997330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226997328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: lettuce-seeds
+  sprite: {fileID: 21300070, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
 --- !u!114 &226997331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,6 +1361,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: steak-raw
   sprite: {fileID: 21300000, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &226997354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226997328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: watermelon-seeds
+  sprite: {fileID: 21300068, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &226997355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226997328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: corn-seeds
+  sprite: {fileID: 21300066, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &226997356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226997328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: carrot-seeds
+  sprite: {fileID: 21300064, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
 --- !u!1 &237300846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1496,9 @@ MonoBehaviour:
   itemKey: carrot
   harvestQuantity: 1
   animator: {fileID: 237300850}
+  minSeedsDropped: 1
+  maxSeedsDropped: 3
+  seedKey: carrot-seeds
 --- !u!114 &237300850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,6 +2933,9 @@ MonoBehaviour:
   itemKey: potato
   harvestQuantity: 1
   animator: {fileID: 494994050}
+  minSeedsDropped: 1
+  maxSeedsDropped: 3
+  seedKey: 
 --- !u!114 &494994050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3707,8 +3772,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 61d71d5678597204f9894921f2a0ca3e, type: 3}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_FontSize: 21
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -3718,7 +3783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DONT READ THIS
+  m_Text: Watermelon Seeds
 --- !u!222 &830560342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4832,6 +4897,9 @@ MonoBehaviour:
   itemKey: lettuce
   harvestQuantity: 1
   animator: {fileID: 1308549667}
+  minSeedsDropped: 1
+  maxSeedsDropped: 3
+  seedKey: lettuce-seeds
 --- !u!114 &1308549667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5303,7 +5371,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 61d71d5678597204f9894921f2a0ca3e, type: 3}
-    m_FontSize: 24
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5436,6 +5504,9 @@ MonoBehaviour:
   itemKey: apple
   harvestQuantity: 3
   animator: {fileID: 1543896113}
+  minSeedsDropped: 1
+  maxSeedsDropped: 2
+  seedKey: 
 --- !u!114 &1543896113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5875,6 +5946,9 @@ MonoBehaviour:
   itemKey: watermelon
   harvestQuantity: 1
   animator: {fileID: 1671496347}
+  minSeedsDropped: 1
+  maxSeedsDropped: 3
+  seedKey: watermelon-seeds
 --- !u!114 &1671496347
 MonoBehaviour:
   m_ObjectHideFlags: 0

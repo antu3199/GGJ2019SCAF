@@ -7,6 +7,11 @@ public class HarvestableEntity : Entity
     public int harvestQuantity = 1;
     [SerializeField] private SpriteAnimator animator;
 
+    public int minSeedsDropped = 1;
+    public int maxSeedsDropped = 2;
+    public string seedKey;
+
+
     public override bool interactable
     {
         get
@@ -31,6 +36,10 @@ public class HarvestableEntity : Entity
     public override void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE)
     {
         ItemManager.Instance.inventory.AddItem(this.itemKey, harvestQuantity);
+        if (ItemManager.Instance.GetItemData(this.seedKey) != null)
+        {
+            ItemManager.Instance.inventory.AddItem(this.seedKey, Random.Range(minSeedsDropped, maxSeedsDropped));
+        }
         animator.Reset();
     }
 
