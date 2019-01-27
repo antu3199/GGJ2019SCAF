@@ -12,19 +12,29 @@ public class Hook : MonoBehaviour {
 	public bool isFired {get; private set;}
 	public bool collision {get; private set;}
 	
+	public Tile cargo {get; set;}
+	public Tile dropPoint {get; set;}
+
 	Rigidbody2D rb;
-	Tile cargo;
 	
+	HookIslandTrigger islandTrigger;
+	HookMainlandTrigger mainlandTrigger;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		islandTrigger = GetComponentInChildren<HookIslandTrigger>();
+		mainlandTrigger = GetComponentInChildren<HookMainlandTrigger>();
 		isFired = false;
 		collision = false;
+
+		islandTrigger.hook = this;
+		mainlandTrigger.hook = this;
 	}
 
 	public void Fire(Vector2 dir) {
 		if(!isFired) {
 			isFired = true;
+			EnableCargoTrigger();
 			rb.velocity = dir * magnitude;
 			StartCoroutine(Rewind());	
 		}
@@ -35,11 +45,19 @@ public class Hook : MonoBehaviour {
 		return (num - num2 <= 0.01f);
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
-		Tile tile = Collider2D.gameObject.GetComponent<Tile>();
-		if(tile.islandRef.island.type == IslandType.FreeForm) {
-			cargo = tile;
-		}
+	private void EnableCargoTrigger() {
+		islandTrigger.gameObject.SetActive(true);
+		mainlandTrigger.gameObject.SetActive(false);
+	}
+
+	private void EnableDropPointTrigger() {
+		islandTrigger.gameObject.SetActive(false);
+		mainlandTrigger.gameObject.SetActive(true);
+	}
+
+	private void DisableAllTrigger() {
+		islandTrigger.gameObject.SetActive(false);
+		mainlandTrigger.gameObject.SetActive(false);
 	}
 
 	// COROUTINES
@@ -53,6 +71,7 @@ public class Hook : MonoBehaviour {
 			}
 
 			if(collision) {
+				EnableDropPointTrigger();
 				StartCoroutine(Rewind());
 				break;
 			}
@@ -78,6 +97,7 @@ public class Hook : MonoBehaviour {
 			yield return new WaitForEndOfFrame();
 
 			if(IsCloseTo(fracJourney, 1.0f)) {
+				DisableAllTrigger();
 				isFired = false;
 				yield return null;
 			}
