@@ -132,6 +132,10 @@ MonoBehaviour:
     range:
       min: 100
       max: 100
+  wakeTransitionTime:
+    range:
+      min: 0.5
+      max: 2
 --- !u!114 &114481761716321694
 MonoBehaviour:
   m_ObjectHideFlags: 1

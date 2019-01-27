@@ -145,6 +145,10 @@ MonoBehaviour:
     range:
       min: 100
       max: 100
+  wakeTransitionTime:
+    range:
+      min: 0.5
+      max: 2
 --- !u!212 &212929987296083022
 SpriteRenderer:
   m_ObjectHideFlags: 1
