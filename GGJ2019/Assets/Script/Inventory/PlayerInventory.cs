@@ -108,7 +108,8 @@ public class PlayerInventory : MonoBehaviour {
             }
        }
 
-        Debug.Log("Inventory is full!");
+        
+        .Log("Inventory is full!");
 
         return false;
     }
