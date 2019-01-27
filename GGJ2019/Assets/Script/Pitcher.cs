@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pitcher : MonoBehaviour {
 
     public float maxMagnitude;
+    public float angularMagnitude;
     public float incrementor;
 
     float currentMagnitude;
@@ -46,9 +47,6 @@ public class Pitcher : MonoBehaviour {
             count++;
         }
         while(ItemManager.Instance.inventory.itemSlots[index].empty);
-
-        PlayerItemSlot itemSlot = GetCurrentItem();
-        Debug.Log("Currently on " + itemSlot.item.key);
     }
 
     public void InitCharge() {
@@ -72,6 +70,7 @@ public class Pitcher : MonoBehaviour {
             Debug.Log(player.chrName + ": Throwing " + item.key);
             Vector2 throwVelocity = Character.DirToVector(player.direction) * currentMagnitude;
             itemProjectile.GetComponent<Rigidbody2D>().velocity = throwVelocity;
+            itemProjectile.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-1 * angularMagnitude, angularMagnitude);
         }
 
         currentMagnitude = 0;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class OverworldItem : MonoBehaviour {
 
     public Item item;
+    public float duration;
     public Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
 
@@ -13,6 +14,7 @@ public class OverworldItem : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetSprite();
+        StartCoroutine(DestroyMe());
 	}
 	
 	public void SetSprite()
@@ -28,6 +30,11 @@ public class OverworldItem : MonoBehaviour {
         {
             // Pickup
         }
+    }
+
+    IEnumerator DestroyMe() {
+        yield return new WaitForSeconds(duration);
+        Destroy(gameObject);
     }
 
 }
