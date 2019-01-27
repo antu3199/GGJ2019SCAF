@@ -19,7 +19,7 @@ public class Player : Character {
         }
         anim = GetComponent<Animator>();
 
-		StartCoroutine(StartLivingProcesses());
+		StartCoroutine(StartHungerDrain());
 	}
 
 	// Update is called once per frame
@@ -53,7 +53,7 @@ public class Player : Character {
         return (int)direction / 2 * 2;
     }
 
-	IEnumerator StartLivingProcesses()
+	IEnumerator StartHungerDrain()
 	{
 		while (true)
 		{
