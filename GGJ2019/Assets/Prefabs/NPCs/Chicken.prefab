@@ -106,6 +106,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8306aca72d6acf1448188f08b37ee242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chrName: Chicken
+  maxHunger: 100
+  maxHealth: 100
+  currentHunger: 0
+  currentHealth: 0
+  hungerTickDuration: 0
+  hungerLossPerTick: 0
+  starvingTickDuration: 0
+  healthLossPerTick: 0
+  direction: 0
   state: 0
   moveDelay:
     range:
