@@ -143,7 +143,7 @@ MonoBehaviour:
   islandBasePrefab: {fileID: 1585502456644556, guid: 34998cc20d97d50448a70939c823b20e,
     type: 2}
   tilePrefabs:
-  - {fileID: 1320025307309900, guid: e382add492c88144d8ef5d865a7300c5, type: 2}
+  - {fileID: 1105147692915736, guid: f19950fdf91734e42b78859ead165305, type: 2}
   tileQuantityRange:
     range:
       min: 1
