@@ -13,11 +13,11 @@ public class NPCAnimator : MonoBehaviour {
 
 	/*public void SetBool(string param, bool val) {
 		animator.SetBool(param, val);
-	}*/
+	}
 
-	//public void Trigger(string param) {
-	//	animator.SetTrigger(param);
-	//}
+	public void Trigger(string param) {
+		animator.SetTrigger(param);
+	}*/
 
 	public void SetFloat(string param, float val) {
 		animator.SetFloat(param, val);
