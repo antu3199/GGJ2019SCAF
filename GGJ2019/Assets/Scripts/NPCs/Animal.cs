@@ -17,6 +17,8 @@ public class Animal : Character
 	Rigidbody2D rb;
 	NPCAnimator npcAnimator;
 
+	DropSetter ds;
+
 	void Awake()
 	{
 		state = AnimalState.ACTIVE;
@@ -26,11 +28,14 @@ public class Animal : Character
 	public override void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		ds = GetComponent<DropSetter>();
 	}
 
 	public override void Update()
 	{
-		npcAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+		if(!isDead) {
+			npcAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));	
+		}
 	}
 
 	public void Sleep()
@@ -64,6 +69,17 @@ public class Animal : Character
 		rb.AddForce(new Vector2(xForce, yForce));
 	}
 
+	protected override void Die() {
+		base.Die();
+		OverworldItemGenerator itemGen = GetComponent<OverworldItemGenerator>();
+		foreach(Item item in ds.drops) {
+			for(int i = 0; i < Random.Range(1, 4); i++) {
+				GameObject itemProjectile = itemGen.GetOverworldItem(item);
+				itemProjectile.transform.position = transform.position;	
+			}
+		}
+	}
+
 	IEnumerator Wander()
 	{
 		while (true)
@@ -72,7 +88,7 @@ public class Animal : Character
 			yield return new WaitForSeconds(moveTime.GetRandom());
 			rb.velocity = Vector2.zero;
 			yield return new WaitForSeconds(moveDelay.GetRandom());
-			if (state == AnimalState.SLEEPING)
+			if (state == AnimalState.SLEEPING || isDead)
 			{
 				break;
 			}
