@@ -23,18 +23,32 @@ public class OverworldItem : MonoBehaviour {
             spriteRenderer.sprite = item.sprite;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        int otherLayer = collision.otherCollider.gameObject.layer;
-        if (LayerMask.LayerToName(otherLayer) == "Player")
-        {
-            // Pickup
-        }
-    }
-
     IEnumerator DestroyMe() {
         yield return new WaitForSeconds(duration);
         Destroy(gameObject);
+    }
+
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Bumped into a thing");
+        int otherLayer = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(otherLayer);
+        if (layerName == "Player")
+        {
+            ItemManager.Instance.inventory.AddItem(item.key, 1);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Character victim = collision.gameObject.GetComponent<Character>();
+            if (victim) {
+                //victim.AddHealth(float.MinValue);
+                Debug.Log("Smashed " + victim.chrName + "!");
+                Destroy(gameObject);
+            }
+            
+        }
+
     }
 
 }
