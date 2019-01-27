@@ -2,24 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AnimalState
+{
+	SLEEPING = 0,
+	ACTIVE = 1
+}
+
 public class Animal : MonoBehaviour
 {
+	public AnimalState state;
 	public RandomValue moveDelay;		// Time (range) to wait until moving again.
 	public RandomValue moveTime;		// Duration (range) for which to move.
 	public RandomValue moveForce;
 	Rigidbody2D rb;
 	NPCAnimator npcAnimator;
 
+	void Awake()
+	{
+		state = AnimalState.ACTIVE;
+		npcAnimator = GetComponent<NPCAnimator>();
+	}
+
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		npcAnimator = GetComponent<NPCAnimator>();
-		StartCoroutine(Wander());
 	}
 
 	void Update()
 	{
 		npcAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+	}
+
+	public void Sleep()
+	{
+		state = AnimalState.SLEEPING;
+		npcAnimator.Trigger("Sleep");
+	}
+
+	public void WakeUp()
+	{
+		state = AnimalState.ACTIVE;
+		npcAnimator.Trigger("Wake");
+		//StartCoroutine(Wander());
 	}
 
 	private void Move()
@@ -48,6 +72,10 @@ public class Animal : MonoBehaviour
 			yield return new WaitForSeconds(moveTime.GetRandom());
 			rb.velocity = Vector2.zero;
 			yield return new WaitForSeconds(moveDelay.GetRandom());
+			if (state == AnimalState.SLEEPING)
+			{
+				break;
+			}
 		}
 	}
 }

@@ -7,6 +7,7 @@ public class IslandGenerator : MonoBehaviour {
 
 	public GameObject islandBasePrefab;
 	public GameObject[] tilePrefabs;
+	//TODO:public Entity[] biomeEntities;			// Entity prefabs that correspond to the tile prefabs. Should be same length as tilePrefabs.
 	public RandomValue tileQuantityRange;
 	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
 	
@@ -17,26 +18,49 @@ public class IslandGenerator : MonoBehaviour {
 			decor.RandomizeDecor();
 		}
 	}
-	
+
+	public GameObject[] npcPrefabs;
+	public float npcChance;                 // Chance of an island having an npc.
+	public RandomValue npcQuantity;
+
 	public GameObject GenerateIsland()
 	{
 		GameObject islandObj = Instantiate(islandBasePrefab);
 		Island island = islandObj.GetComponent<Island>();
+
+		// Add tiles
+		GrowTiles(island);
+
+		// Add NPCs
+		if(Random.value < npcChance) {
+			PlaceNpcs(island);
+		}
+
+		// Give islands different SortingGroup orders
+		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 1000);
+		StartCoroutine(island.BeginTimeout(islandLifetime));
+		return islandObj;
+	}
+
+	private void GrowTiles(Island island)
+	{
 		int chosenTileIndex = Random.Range(0, tilePrefabs.Length);
-		Tile chosenTile = Instantiate(tilePrefabs[chosenTileIndex], islandObj.transform).GetComponent<Tile>();
+		Tile chosenTile = Instantiate(tilePrefabs[chosenTileIndex], island.gameObject.transform).GetComponent<Tile>();
 		RandomizeDecor(chosenTile);
 		chosenTile.SetIsland(island, Vector2.zero);
 		chosenTile.SetSortingOrder();
 		island.tiles.Add(Vector2.zero, chosenTile);
 		int tileQuantity = (int)tileQuantityRange.GetRandom();
-		while (island.tiles.Count < tileQuantity) {
+		while (island.tiles.Count < tileQuantity)
+		{
 			List<Vector2> tileList = new List<Vector2>(island.tiles.Keys);
 			Vector2 randTileVector = tileList[Random.Range(0, tileList.Count)];
 			Tile existingTile = island.tiles[randTileVector];
 			Vector2 newTileVect = GetRandAdjacentVector(randTileVector);
-			if (!island.tiles.ContainsKey(newTileVect)) {
+			if (!island.tiles.ContainsKey(newTileVect))
+			{
 				// Initialize tile
-				Tile newTile = Instantiate(tilePrefabs[chosenTileIndex], Vector2.zero, Quaternion.identity, islandObj.transform).GetComponent<Tile>();
+				Tile newTile = Instantiate(tilePrefabs[chosenTileIndex], Vector2.zero, Quaternion.identity, island.gameObject.transform).GetComponent<Tile>();
 				RandomizeDecor(newTile);
 				newTile.SetIsland(island, newTileVect);
 				// Move tile to position in island
@@ -45,12 +69,26 @@ public class IslandGenerator : MonoBehaviour {
 				island.tiles.Add(newTileVect, newTile);
 			}
 		}
-		// Give islands different SortingGroup orders
-		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 1000);
-		StartCoroutine(island.BeginTimeout(islandLifetime));
-		return islandObj;
 	}
 
+	private void PlaceNpcs(Island island)
+	{
+		int npcsToSpawn = (int)npcQuantity.GetRandom();
+		int npcsSpawned = 0;
+		List<Vector2> tileList = new List<Vector2>(island.tiles.Keys);
+		while (npcsSpawned < npcsToSpawn && npcsSpawned < tileList.Count)
+		{
+			// Create NPC and place it onto a random tile
+			Vector2 randTileVector = tileList[Random.Range(0, tileList.Count)];
+			GameObject chosenNpc = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
+			GameObject npc = Instantiate(chosenNpc, island.tiles[randTileVector].transform.position, Quaternion.identity, island.tiles[randTileVector].transform);
+			npc.transform.position += new Vector3(0, npc.GetComponent<Renderer>().bounds.extents.y, 0);
+			npc.GetComponent<Animal>().Sleep();
+			npcsSpawned++;
+		}
+	}
+
+	//TODO:PlaceBiomeEntities
 	/*
 	// Randomly translate and flip decor
 	public void RandomizeDecor(Tile tile)
