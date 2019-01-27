@@ -45,7 +45,7 @@ public class IslandGenerator : MonoBehaviour {
 
 	public void RandomizeDecor(Tile tile) {
 		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
-		foreach (Decor decor in decors)
+		foreach (Decor decor in decors) {
 			decor.RandomizeDecor();
 		}
 	}
