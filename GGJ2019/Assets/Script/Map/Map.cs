@@ -151,5 +151,6 @@ public class Map : MonoBehaviour {
         suite.transform.parent = null;
         cam.player = player;
         player.cam = cam;
+        ItemManager.Instance.inventory.player = player;
     }
 }

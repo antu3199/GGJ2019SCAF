@@ -16,6 +16,7 @@ public class PlayerInventory : MonoBehaviour {
     public int selectedItemIndex = -1;
     private int maxStorage;
     public bool opened;
+    public Player player;
 
     public void Initialize()
     {
@@ -73,6 +74,7 @@ public class PlayerInventory : MonoBehaviour {
             PlayerItemSlot itemSlot = this.itemSlots[this.selectedItemIndex];
             this.selectedItemTitleText.text = itemSlot.itemModel.displayName;
             this.selectedItemDescriptionText.text = itemSlot.itemModel.description;
+            itemSlot.item.player = player;
             useButton.SetAction(itemSlot.item.Use);
             selectedBorder.transform.SetParent(itemSlot.itemSlotImage.transform, false);
             useButton.Interactable = itemSlot.item.usable && selected;
