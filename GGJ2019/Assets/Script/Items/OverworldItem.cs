@@ -30,7 +30,6 @@ public class OverworldItem : MonoBehaviour {
 
      private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Bumped into a thing");
         int otherLayer = collision.gameObject.layer;
         string layerName = LayerMask.LayerToName(otherLayer);
         if (layerName == "Player")
@@ -42,7 +41,7 @@ public class OverworldItem : MonoBehaviour {
         {
             Character victim = collision.gameObject.GetComponent<Character>();
             if (victim) {
-                //victim.AddHealth(float.MinValue);
+                victim.IncreaseHealth(float.MinValue);
                 Debug.Log("Smashed " + victim.chrName + "!");
                 Destroy(gameObject);
             }
