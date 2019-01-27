@@ -71,6 +71,19 @@ public class Map : MonoBehaviour {
         foreach(KeyValuePair<Vector2, Tile> pair in newIsland.tiles) {
             PlaceTile(pair.Value, x + (int)pair.Key.x, y + (int)pair.Key.y);
         }
+
+        List<Entity> entities = new List<Entity>(newIsland.gameObject.GetComponentsInChildren<Entity>());
+
+        foreach (Entity entity in entities )
+        {
+            for (int i = 0; i < entity.occupancy.Length; i++)
+            {
+                newIsland.tiles[entity.occupancy[i]].entityRef = new EntityRef(entity, entity.occupancy[i]);
+            }
+
+            Debug.Log(entity.occupancy[0].x + " " + entity.occupancy[0].y);
+            entity.transform.parent.position = newIsland.tiles[entity.occupancy[0]].transform.position;
+        }
         
         return newIsland;
     }

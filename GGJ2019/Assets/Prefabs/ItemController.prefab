@@ -1,0 +1,418 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1913118017529570}
+  m_IsPrefabAsset: 1
+--- !u!1 &1913118017529570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4167367770791082}
+  - component: {fileID: 114997918858784562}
+  - component: {fileID: 114781872551256118}
+  - component: {fileID: 114636799676250058}
+  - component: {fileID: 114520604217126016}
+  - component: {fileID: 114004506885497500}
+  - component: {fileID: 114170834114836036}
+  - component: {fileID: 114949384764659754}
+  - component: {fileID: 114389195478757930}
+  - component: {fileID: 114981391094438218}
+  - component: {fileID: 114926428634723934}
+  - component: {fileID: 114979011420557864}
+  - component: {fileID: 114708204242388254}
+  - component: {fileID: 114685792572022848}
+  - component: {fileID: 114028873315769162}
+  - component: {fileID: 114297249351206338}
+  - component: {fileID: 114696246572210154}
+  - component: {fileID: 114889981431044972}
+  - component: {fileID: 114824045714779228}
+  - component: {fileID: 114438581177877518}
+  - component: {fileID: 114671358179192862}
+  - component: {fileID: 114436402726321812}
+  - component: {fileID: 114953315501200628}
+  - component: {fileID: 114378525322733562}
+  - component: {fileID: 114864096550965680}
+  - component: {fileID: 114885642492934596}
+  - component: {fileID: 114705412701573776}
+  - component: {fileID: 114792168971493662}
+  m_Layer: 0
+  m_Name: ItemController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4167367770791082
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 515.77814, y: 420.54236, z: -14.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114004506885497500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: egg-raw
+  sprite: {fileID: 21300002, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114028873315769162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: watermelon
+  sprite: {fileID: 21300030, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114170834114836036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: egg-cooked
+  sprite: {fileID: 21300014, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114297249351206338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: potato
+  sprite: {fileID: 21300032, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114378525322733562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ice-cube
+  sprite: {fileID: 21300048, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114389195478757930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: chicken-cooked
+  sprite: {fileID: 21300016, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114436402726321812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ore-mithril
+  sprite: {fileID: 21300044, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114438581177877518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ore-gold
+  sprite: {fileID: 21300042, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114520604217126016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: steak-cooked
+  sprite: {fileID: 21300012, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114636799676250058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: steak-raw
+  sprite: {fileID: 21300000, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114671358179192862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: coal
+  sprite: {fileID: 21300038, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114685792572022848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: corn
+  sprite: {fileID: 21300028, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114696246572210154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: lettuce
+  sprite: {fileID: 21300034, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114705412701573776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: watermelon-seeds
+  sprite: {fileID: 21300068, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114708204242388254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: carrot
+  sprite: {fileID: 21300026, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114781872551256118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0d719001e04e5468c66d664404c725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: apple
+  sprite: {fileID: 21300024, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114792168971493662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: lettuce-seeds
+  sprite: {fileID: 21300070, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114824045714779228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ore-silver
+  sprite: {fileID: 21300040, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114864096550965680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: carrot-seeds
+  sprite: {fileID: 21300064, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114885642492934596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: corn-seeds
+  sprite: {fileID: 21300066, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114889981431044972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: wood
+  sprite: {fileID: 21300036, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114926428634723934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pork-cooked
+  sprite: {fileID: 21300018, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114949384764659754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: chicken-raw
+  sprite: {fileID: 21300004, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114953315501200628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc12bd4907759644b10ef9891fedbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ore-amethyst
+  sprite: {fileID: 21300046, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114979011420557864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: milk
+  sprite: {fileID: 21300008, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114981391094438218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbed30d60d3f1204bbe33f5ec2eed433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pork-raw
+  sprite: {fileID: 21300006, guid: e74b2676b7f26cf4ebfb09a06e9f1494, type: 3}
+--- !u!114 &114997918858784562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913118017529570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e9b277eb6d29c4389e33d53e4ccf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
