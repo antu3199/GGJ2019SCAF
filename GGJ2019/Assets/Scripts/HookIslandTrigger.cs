@@ -9,6 +9,7 @@ public class HookIslandTrigger : MonoBehaviour {
 		Tile tile = col.gameObject.GetComponent<Tile>();
 		if(tile && tile.islandRef.island.type == IslandType.FreeForm) {
 			hook.cargo = tile;
+			hook.collision = true;
 		}
 	}
 }

@@ -7,6 +7,7 @@ public class IslandSpawner : MonoBehaviour {
 	private Camera cam;
 	public GameObject homeIsland;		// Reference to player's island.
 	public IslandGenerator islandGenerator;
+	public Map map;
 	public float homeBuffer;			// The closest distance an island can pass by the home island.
 	public RandomValue spawnCooldown;
 	public RandomValue islandVelocity;
@@ -36,6 +37,14 @@ public class IslandSpawner : MonoBehaviour {
 
 			// Get generated island object
 			GameObject island = islandGenerator.GenerateIsland();
+			island.GetComponent<Island>().map = map;
+
+			// Check if homeIsland exists
+			if(!homeIsland) {
+				// Generate wait time until next island spawning
+				yield return new WaitForSeconds(spawnCooldown.GetRandom());
+				continue;
+			}
 
 			// Randomly choose whether this island is vertically-moving or horizontally-moving
 			if (Random.value < 0.5f) {

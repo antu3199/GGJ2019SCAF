@@ -9,7 +9,15 @@ public class IslandGenerator : MonoBehaviour {
 	public GameObject[] tilePrefabs;
 	//TODO:public Entity[] biomeEntities;			// Entity prefabs that correspond to the tile prefabs. Should be same length as tilePrefabs.
 	public RandomValue tileQuantityRange;
-	public float islandLifetime;            // Duration in seconds that an island lasts before destroying itself.
+	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
+	
+	
+	public static void RandomizeDecor(Tile tile) {
+		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
+		foreach (Decor decor in decors) {
+			decor.RandomizeDecor();
+		}
+	}
 
 	public GameObject[] npcPrefabs;
 	public float npcChance;                 // Chance of an island having an npc.
@@ -32,13 +40,6 @@ public class IslandGenerator : MonoBehaviour {
 		islandObj.GetComponent<SortingGroup>().sortingOrder = Random.Range(0, 1000);
 		StartCoroutine(island.BeginTimeout(islandLifetime));
 		return islandObj;
-	}
-
-	public void RandomizeDecor(Tile tile) {
-		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
-		foreach (Decor decor in decors) {
-			decor.RandomizeDecor();
-		}
 	}
 
 	private void GrowTiles(Island island)
@@ -88,7 +89,6 @@ public class IslandGenerator : MonoBehaviour {
 	}
 
 	//TODO:PlaceBiomeEntities
-
 	/*
 	// Randomly translate and flip decor
 	public void RandomizeDecor(Tile tile)
