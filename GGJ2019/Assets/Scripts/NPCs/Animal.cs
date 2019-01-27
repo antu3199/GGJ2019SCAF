@@ -23,12 +23,12 @@ public class Animal : Character
 		npcAnimator = GetComponent<NPCAnimator>();
 	}
 
-	void Start()
+	public override void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	void Update()
+	public override void Update()
 	{
 		npcAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
 	}
