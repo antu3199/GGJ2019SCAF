@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 4952960136241652}
   - component: {fileID: 50140155679327916}
   - component: {fileID: 114619851897927246}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StarterIsland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
