@@ -19,17 +19,11 @@ public class PlayerItemSlot : MonoBehaviour
     public int quantity = 0;
     public bool empty = true;
 
-
-
-    void Start()
-    {
-        this.EnableItemUI(false);
-        this.itemButton.SetAction(this.OnClick);
-    }
-
     public void Initialize(int index)
     {
         this.index = index;
+        this.EnableItemUI(false);
+        this.itemButton.SetAction(this.OnClick);
     }
 
     public void SetItem(string key)
