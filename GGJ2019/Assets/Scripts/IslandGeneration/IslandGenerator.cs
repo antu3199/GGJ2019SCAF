@@ -98,6 +98,8 @@ public class IslandGenerator : MonoBehaviour {
 				npc.GetComponent<NPCAnimator>().FlipSprite();
 			}
 			npc.GetComponent<Animal>().Sleep();
+			//TODO: wake animal after their island joins the mainland and activate their colliding with ghost tiles
+			//npc.GetComponent<Animal>().WakeUp();
 			npcsSpawned++;
 		}
 	}
