@@ -33,7 +33,6 @@ public class Hook : MonoBehaviour {
 
 	public void Fire(Vector2 dir) {
 		if(!isFired) {
-            Debug.Log("Fire");
 			isFired = true;
 			EnableCargoTrigger();
 			rb.velocity = dir * magnitude;
@@ -62,7 +61,6 @@ public class Hook : MonoBehaviour {
 	}
 
 	private void ResetHook() {
-        Debug.Log("It's back");
 		isFired = false;
 		cargo = null;
 		dropPoint = null;
@@ -102,7 +100,6 @@ public class Hook : MonoBehaviour {
 		while(true) {
 			float distCovered = (Time.time - startTime) * rewindMagnitude;
 			float fracJourney = distCovered / totalDist;
-            Debug.Log(fracJourney + "  " + totalDist);
 			transform.position = Vector3.Lerp(startPos, player.transform.position, fracJourney);
 			if(cargo) {
 				cargo.transform.position = Vector3.Lerp(cargoPos, player.transform.position, fracJourney);
