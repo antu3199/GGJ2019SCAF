@@ -108,7 +108,7 @@ MonoBehaviour:
   animState: 0
   states:
   - sprite: {fileID: 21300044, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
-    timeBeforeTransition: 1
+    timeBeforeTransition: 5
   - sprite: {fileID: 21300048, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 212353679410623972}

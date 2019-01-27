@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212899281403220666}
   - component: {fileID: 61437888165259298}
   - component: {fileID: 114149240110505896}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: PrePlantedLettuceEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   animState: 0
   states:
   - sprite: {fileID: 21300044, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
-    timeBeforeTransition: 1
+    timeBeforeTransition: 5
   - sprite: {fileID: 21300054, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 212031483920156760}

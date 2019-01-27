@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212141639194689640}
   - component: {fileID: 61471865058177870}
   - component: {fileID: 114953586406706730}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: PrePlantedCornEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   animState: 0
   states:
   - sprite: {fileID: 21300044, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
-    timeBeforeTransition: 1
+    timeBeforeTransition: 5
   - sprite: {fileID: 21300048, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 212048656413092620}

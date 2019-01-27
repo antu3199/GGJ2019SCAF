@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212559821473133762}
   - component: {fileID: 61816676138123910}
   - component: {fileID: 114391250442378428}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: PrePlantedPotatoEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   animState: 0
   states:
   - sprite: {fileID: 21300044, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
-    timeBeforeTransition: 1
+    timeBeforeTransition: 5
   - sprite: {fileID: 21300052, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 212513231175502376}
