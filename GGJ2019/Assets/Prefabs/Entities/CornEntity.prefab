@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabAsset: 1
 --- !u!1 &1061058935608282
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1505704284981302
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +35,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4885915338442344}
+  - component: {fileID: 114822258098417470}
+  - component: {fileID: 114620883627153684}
   - component: {fileID: 212353679410623972}
   m_Layer: 15
   m_Name: CornEntity
@@ -72,7 +74,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.26, z: -0.07382812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4926964791652658}
+  m_Father: {fileID: 4885915338442344}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4885915338442344
@@ -100,61 +102,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4100928334569808}
-  m_Father: {fileID: 4885915338442344}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61235946684059942
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1581516518320098}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.25}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
---- !u!114 &114140869498758164
+--- !u!114 &114620883627153684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1581516518320098}
+  m_GameObject: {fileID: 1505704284981302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b544d0e078aa39c4d900cf85d90cd5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  occupancy: []
+  occupancy:
+  - {x: -1, y: 1}
   direction: 1
   actionImage: {fileID: 212635465231113742}
+  parent: {fileID: 0}
   itemKey: corn
   harvestQuantity: 1
-  boxCollider: {fileID: 61235946684059942}
-  animator: {fileID: 114808240699990918}
+  animator: {fileID: 114822258098417470}
   minSeedsDropped: 1
   maxSeedsDropped: 3
   seedKey: corn-seeds
---- !u!114 &114808240699990918
+--- !u!114 &114822258098417470
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1581516518320098}
+  m_GameObject: {fileID: 1505704284981302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc938c8a0ef9c95438e1c64b9d905529, type: 3}

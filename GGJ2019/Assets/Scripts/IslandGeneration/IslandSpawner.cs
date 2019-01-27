@@ -107,7 +107,10 @@ public class IslandSpawner : MonoBehaviour {
 			}
 			return accumulatedBounds;
 		} else {
+<<<<<<< HEAD
 			Debug.Log("GetChildBounds found no colliders.");
+=======
+>>>>>>> 95605afcbd461041248c5ce99671aac1c8346da7
 			return new Bounds();
 		}
 	}

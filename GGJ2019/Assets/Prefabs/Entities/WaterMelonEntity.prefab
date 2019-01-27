@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabAsset: 1
 --- !u!1 &1789114213972908
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1884967164555788
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +35,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644758104937340}
+  - component: {fileID: 114714963663559240}
+  - component: {fileID: 114432013013370128}
   - component: {fileID: 212398391674398052}
   m_Layer: 15
   m_Name: WaterMelonEntity
@@ -72,7 +74,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.85, z: -0.07382812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4746251157436792}
+  m_Father: {fileID: 4644758104937340}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4644758104937340
@@ -100,7 +102,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4304382549286342}
-  m_Father: {fileID: 4644758104937340}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61898614401956224
@@ -153,28 +155,29 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949579285214662}
+  m_GameObject: {fileID: 1884967164555788}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b544d0e078aa39c4d900cf85d90cd5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  occupancy: []
+  occupancy:
+  - {x: -2, y: 0}
   direction: 1
   actionImage: {fileID: 212703058129543140}
+  parent: {fileID: 0}
   itemKey: watermelon
   harvestQuantity: 1
-  boxCollider: {fileID: 61898614401956224}
-  animator: {fileID: 114554861389728406}
+  animator: {fileID: 114714963663559240}
   minSeedsDropped: 1
   maxSeedsDropped: 3
   seedKey: watermelon-seeds
---- !u!212 &212076454160630232
-SpriteRenderer:
+--- !u!114 &114714963663559240
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949579285214662}
+  m_GameObject: {fileID: 1884967164555788}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -250,7 +253,7 @@ SpriteRenderer:
   m_SortingLayerID: 1883134319
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300042, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
+  m_Sprite: {fileID: 21300050, guid: 5fc03f17ad280ad4498e060079e0126d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
