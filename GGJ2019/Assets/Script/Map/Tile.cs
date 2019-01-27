@@ -46,7 +46,7 @@ public class Tile : MonoBehaviour {
     }
 
     public bool HasEntity() {
-        return entityRef != null;
+        return entityRef.entity != null;
     }
 
     public void PlaceEntity(Entity entity, Vector2 offset) {

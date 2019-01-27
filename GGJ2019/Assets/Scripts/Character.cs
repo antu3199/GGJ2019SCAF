@@ -106,7 +106,7 @@ public abstract class Character : MonoBehaviour {
 
     IEnumerator WatchHealth() {
         while(true) {
-            if(currentHunger  <= 0 || currentHealth <= 0) {
+			if (currentHunger <= 0 || currentHealth <= 0) {
                 Debug.Log("idie");
                 Die();
                 break;

@@ -63,9 +63,17 @@ MonoBehaviour:
     - {fileID: 1495545621758676, guid: 16ff01caa70ae3b4eb4cdcf3bf47d9f9, type: 2}
     - {fileID: 1620701489107912, guid: d401534aeac7902429f9d51e09786282, type: 2}
     - {fileID: 1310410307885900, guid: 9d4b784df5236934a92ae1285bd00d34, type: 2}
-    - {fileID: 1370993493704580, guid: 940139ac6a2078640ba4e92ce61d6c81, type: 2}
     - {fileID: 1602201737147214, guid: 86c56400e484bd64a8bb39b617d7523e, type: 2}
-  entitySpawnChance: 1
+  - tilePrefab: {fileID: 1331309503247556, guid: 70f58d0e377ba44488f9817da8695862,
+      type: 2}
+    uniqueTileEntities: []
+  - tilePrefab: {fileID: 1040241566000056, guid: 12547796c5b03dd4f8c0d9dbf8c0a269,
+      type: 2}
+    uniqueTileEntities: []
+  - tilePrefab: {fileID: 1704809178451952, guid: e8aeef612d116fe4585219007d9a0b37,
+      type: 2}
+    uniqueTileEntities: []
+  entitySpawnChance: 0.25
   tileQuantityRange:
     range:
       min: 1

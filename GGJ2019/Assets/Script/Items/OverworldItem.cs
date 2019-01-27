@@ -41,7 +41,7 @@ public class OverworldItem : MonoBehaviour {
         {
             Character victim = collision.gameObject.GetComponent<Character>();
             if (victim) {
-                victim.IncreaseHealth(float.MinValue);
+                victim.IncreaseHealth(-100); //TODO: change value
                 Debug.Log("Smashed " + victim.chrName + "!");
                 Destroy(gameObject);
             }

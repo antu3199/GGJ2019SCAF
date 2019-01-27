@@ -28,6 +28,7 @@ public class Animal : Character
 
 	public override void Start()
 	{
+		base.Start();
 		rb = GetComponent<Rigidbody2D>();
 		ds = GetComponent<DropSetter>();
 	}
@@ -76,7 +77,14 @@ public class Animal : Character
 		base.Die();
 		OverworldItemGenerator itemGen = GetComponent<OverworldItemGenerator>();
 		foreach(Item item in ds.drops) {
-			for(int i = 0; i < Random.Range(1, 4); i++) {
+			if (item != null)
+			{
+				Debug.Log("item " + item  + " is null");
+			} else
+			{
+				Debug.Log("item " + item + " is NOT null");
+			}
+			for (int i = 0; i < Random.Range(1, 4); i++) {
 				GameObject itemProjectile = itemGen.GetOverworldItem(item);
 				itemProjectile.transform.position = transform.position;	
 			}
