@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour {
     public IslandRef islandRef;
 
     public int GetSortingOrder() {
-        return (int)(coordinate.y * 10);    //smaller means higher priority
+        return (int)(coordinate.y * 100 + islandRef.location.y);    //smaller means higher priority
     }
 
     public void SetSortingOrder() {

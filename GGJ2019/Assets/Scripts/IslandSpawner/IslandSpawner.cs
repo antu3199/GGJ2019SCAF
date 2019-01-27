@@ -41,12 +41,12 @@ public class IslandSpawner : MonoBehaviour {
 			if (Random.value < 0.5f) {
 				// Vertically-moving island
 				RandomValue spawnXRange = new RandomValue(cam.transform.position.x - halfCamWidth, cam.transform.position.x + halfCamWidth);
-				spawnXRange.SetExcludedRange(new Range(GetBounds(homeIsland).min.x - homeBuffer - GetBounds(island).extents.x, GetBounds(homeIsland).max.x + homeBuffer + GetBounds(island).extents.x));
+				spawnXRange.SetExcludedRange(new Range(GetChildBounds(homeIsland).min.x - homeBuffer - GetChildBounds(island).extents.x, GetChildBounds(homeIsland).max.x + homeBuffer + GetChildBounds(island).extents.x));
 				float newIslandX = spawnXRange.GetRandom();
 				// Randomly choose whether this island spawns from top or bottom
 				if (Random.value < 0.5f) {
 					// Island spawns from top and moves down
-					float newIslandY = cam.transform.position.y + halfCamHeight + GetBounds(island).extents.y;
+					float newIslandY = cam.transform.position.y + halfCamHeight + GetChildBounds(island).extents.y;
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
 					// Move island to randomly generated position
 					island.transform.position = newIslandPosition;
@@ -55,7 +55,7 @@ public class IslandSpawner : MonoBehaviour {
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -islandVelocity.GetRandom());
 				} else {
 					// Island spawns from bottom and moves up
-					float newIslandY = cam.transform.position.y - halfCamHeight - GetBounds(island).extents.y;
+					float newIslandY = cam.transform.position.y - halfCamHeight - GetChildBounds(island).extents.y;
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
 					Debug.Log("spawning at " + newIslandPosition);
 
@@ -65,13 +65,13 @@ public class IslandSpawner : MonoBehaviour {
 			} else {
 				// Horizontally-moving island
 				RandomValue spawnYRange = new RandomValue(cam.transform.position.y - halfCamHeight, cam.transform.position.y + halfCamHeight);
-				spawnYRange.SetExcludedRange(new Range(GetBounds(homeIsland).min.y - homeBuffer - GetBounds(island).extents.y, GetBounds(homeIsland).max.y + homeBuffer + GetBounds(island).extents.y));
+				spawnYRange.SetExcludedRange(new Range(GetChildBounds(homeIsland).min.y - homeBuffer - GetChildBounds(island).extents.y, GetChildBounds(homeIsland).max.y + homeBuffer + GetChildBounds(island).extents.y));
 				float newIslandY = spawnYRange.GetRandom();
 				// Randomly choose whether this island spawns from left or right
 				if (Random.value < 0.5f)
 				{
 					// Island spawns from left and moves right
-					float newIslandX = cam.transform.position.x + halfCamWidth + GetBounds(island).extents.x;
+					float newIslandX = cam.transform.position.x + halfCamWidth + GetChildBounds(island).extents.x;
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
 					island.transform.position = newIslandPosition;
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(-islandVelocity.GetRandom(), 0);
@@ -79,7 +79,7 @@ public class IslandSpawner : MonoBehaviour {
 				else
 				{
 					// Island spawns from right and moves left
-					float newIslandX = cam.transform.position.x - halfCamWidth - GetBounds(island).extents.x;
+					float newIslandX = cam.transform.position.x - halfCamWidth - GetChildBounds(island).extents.x;
 					Vector3 newIslandPosition = new Vector3(newIslandX, newIslandY, island.transform.position.z);
 					island.transform.position = newIslandPosition;
 					island.GetComponent<Rigidbody2D>().velocity = new Vector2(islandVelocity.GetRandom(), 0);
@@ -91,8 +91,14 @@ public class IslandSpawner : MonoBehaviour {
 		}
 	}
 
-	private Bounds GetBounds(GameObject obj)
+	private Bounds GetChildBounds(GameObject obj)
 	{
-		return obj.GetComponent<Collider2D>().bounds;
+		Bounds accumulatedBounds = new Bounds();
+		Collider2D[] colliders = obj.GetComponentsInChildren<Collider2D>();
+		foreach (Collider2D collider in colliders)
+		{
+			accumulatedBounds.Encapsulate(collider.GetComponent<Collider2D>().bounds);
+		}
+		return accumulatedBounds;
 	}
 }
