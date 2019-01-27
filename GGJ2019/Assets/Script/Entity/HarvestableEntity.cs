@@ -5,6 +5,8 @@ public class HarvestableEntity : Entity
 {
     public string itemKey;
     public int harvestQuantity = 1;
+    public BoxCollider2D boxCollider;
+
     [SerializeField] private SpriteAnimator animator;
 
     public int minSeedsDropped = 1;

@@ -889,6 +889,7 @@ GameObject:
   - component: {fileID: 214287893}
   - component: {fileID: 214287892}
   - component: {fileID: 214287891}
+  - component: {fileID: 214287894}
   m_Layer: 0
   m_Name: RealEntity
   m_TagString: Untagged
@@ -972,6 +973,7 @@ MonoBehaviour:
   direction: 1
   itemKey: corn
   harvestQuantity: 1
+  boxCollider: {fileID: 0}
   animator: {fileID: 214287893}
   minSeedsDropped: 1
   maxSeedsDropped: 3
@@ -995,6 +997,31 @@ MonoBehaviour:
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 214287891}
   loop: 0
+--- !u!61 &214287894
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214287889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &226997328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1439,7 @@ GameObject:
   - component: {fileID: 237300850}
   - component: {fileID: 237300849}
   - component: {fileID: 237300848}
+  - component: {fileID: 237300851}
   m_Layer: 0
   m_Name: RealEntity
   m_TagString: Untagged
@@ -1495,6 +1523,7 @@ MonoBehaviour:
   direction: 1
   itemKey: carrot
   harvestQuantity: 1
+  boxCollider: {fileID: 0}
   animator: {fileID: 237300850}
   minSeedsDropped: 1
   maxSeedsDropped: 3
@@ -1518,6 +1547,31 @@ MonoBehaviour:
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 237300848}
   loop: 0
+--- !u!61 &237300851
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237300846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &250985211
 Prefab:
   m_ObjectHideFlags: 0
@@ -2849,6 +2903,7 @@ GameObject:
   - component: {fileID: 494994050}
   - component: {fileID: 494994049}
   - component: {fileID: 494994048}
+  - component: {fileID: 494994051}
   m_Layer: 0
   m_Name: RealEntity
   m_TagString: Untagged
@@ -2932,6 +2987,7 @@ MonoBehaviour:
   direction: 1
   itemKey: potato
   harvestQuantity: 1
+  boxCollider: {fileID: 0}
   animator: {fileID: 494994050}
   minSeedsDropped: 1
   maxSeedsDropped: 3
@@ -2955,6 +3011,31 @@ MonoBehaviour:
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 494994048}
   loop: 0
+--- !u!61 &494994051
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494994046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &514725834
 Prefab:
   m_ObjectHideFlags: 0
@@ -4813,6 +4894,7 @@ GameObject:
   - component: {fileID: 1308549667}
   - component: {fileID: 1308549666}
   - component: {fileID: 1308549665}
+  - component: {fileID: 1308549668}
   m_Layer: 0
   m_Name: RealEntity
   m_TagString: Untagged
@@ -4896,6 +4978,7 @@ MonoBehaviour:
   direction: 1
   itemKey: lettuce
   harvestQuantity: 1
+  boxCollider: {fileID: 0}
   animator: {fileID: 1308549667}
   minSeedsDropped: 1
   maxSeedsDropped: 3
@@ -4919,6 +5002,31 @@ MonoBehaviour:
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 1308549665}
   loop: 0
+--- !u!61 &1308549668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1308549663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &1375147973
 Prefab:
   m_ObjectHideFlags: 0
@@ -5481,6 +5589,7 @@ GameObject:
   - component: {fileID: 1543896114}
   - component: {fileID: 1543896113}
   - component: {fileID: 1543896112}
+  - component: {fileID: 1543896116}
   m_Layer: 0
   m_Name: TreeEntity
   m_TagString: Untagged
@@ -5503,6 +5612,7 @@ MonoBehaviour:
   direction: 1
   itemKey: apple
   harvestQuantity: 3
+  boxCollider: {fileID: 0}
   animator: {fileID: 1543896113}
   minSeedsDropped: 1
   maxSeedsDropped: 2
@@ -5589,6 +5699,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1543896116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543896111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 2.2, y: 3.3}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1598573513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,6 +5997,7 @@ GameObject:
   - component: {fileID: 1671496347}
   - component: {fileID: 1671496346}
   - component: {fileID: 1671496345}
+  - component: {fileID: 1671496348}
   m_Layer: 0
   m_Name: RealEntity
   m_TagString: Untagged
@@ -5945,6 +6081,7 @@ MonoBehaviour:
   direction: 1
   itemKey: watermelon
   harvestQuantity: 1
+  boxCollider: {fileID: 0}
   animator: {fileID: 1671496347}
   minSeedsDropped: 1
   maxSeedsDropped: 3
@@ -5968,6 +6105,31 @@ MonoBehaviour:
     timeBeforeTransition: 1
   spriteRenderer: {fileID: 1671496345}
   loop: 0
+--- !u!61 &1671496348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1671496343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.3}
+    oldSize: {x: 2, y: 2.1}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.1}
+  m_EdgeRadius: 0
 --- !u!1 &1691582736
 GameObject:
   m_ObjectHideFlags: 0
