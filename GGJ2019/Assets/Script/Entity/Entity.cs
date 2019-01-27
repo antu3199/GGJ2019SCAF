@@ -18,6 +18,13 @@ public class Entity : MonoBehaviour {
     public Vector2[] occupancy;
     public virtual bool interactable { get; set; }
     public EntityDirection direction;
+    protected bool inRange = false;
+    [SerializeField] protected SpriteRenderer actionImage;
+
+    void Start()
+    {
+        this.actionImage.gameObject.SetActive(false);
+    }
 
     public void SetSortingOrder(int order) {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, order);
@@ -50,8 +57,19 @@ public class Entity : MonoBehaviour {
         return rotated.ToArray();
     }
 
+    public virtual void OnStayTile()
+    {
+    }
+
+    public virtual void OnEnterTile() {
+        this.inRange = true;
+    }
+
+    public virtual void OnExitTile() {
+        this.inRange = false;
+    }
+
     public virtual void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE) { }
 
-    void Start() { }
     void Update() { }
 }

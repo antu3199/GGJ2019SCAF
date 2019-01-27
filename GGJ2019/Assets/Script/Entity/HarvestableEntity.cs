@@ -18,7 +18,7 @@ public class HarvestableEntity : Entity
     {
         get
         {
-            return true;
+            return animator.animState == animator.states.Count;
         }
 
         set
@@ -35,8 +35,24 @@ public class HarvestableEntity : Entity
         }
     }
 
+    public override void OnStayTile()
+    {
+        base.OnStayTile();
+        actionImage.gameObject.SetActive(this.interactable);
+    }
+
+    public override void OnEnterTile() {
+        base.OnEnterTile();
+    }
+
+    public override void OnExitTile() {
+        base.OnExitTile();
+    }
+
     public override void Interact(/*Player player,*/ EntityDirection dir = EntityDirection.NONE)
     {
+        if (!this.interactable) return;
+
         ItemManager.Instance.inventory.AddItem(this.itemKey, harvestQuantity);
         if (ItemManager.Instance.GetItemData(this.seedKey) != null)
         {

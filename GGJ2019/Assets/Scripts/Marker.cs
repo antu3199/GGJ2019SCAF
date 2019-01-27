@@ -57,7 +57,33 @@ public class Marker : MonoBehaviour {
         {
             selectedTile = selectedTileCollider.GetComponent<Tile>();
             indicator.transform.position = selectedTile.transform.position;
-            //Debug.Log("Selected " + selectedTile.coordinate.ToString());
+
+            selectedTile = selectedTileCollider.GetComponent<Tile>();
+            indicator.transform.position = selectedTile.transform.position;
+            Debug.Log("Selected " + selectedTile.coordinate.ToString());
+            if (selectedTile.HasEntity())
+            {
+                selectedTile.entityRef.entity.OnEnterTile();
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision == selectedTileCollider)
+        {
+            for (int i = 0; i < tiles.Length; i++)
+            {
+                tiles[i] = null;
+            }
+            marker.OverlapCollider(tileFilter, tiles);
+            selectedTileCollider = selectTile();
+            selectedTile = selectedTileCollider.GetComponent<Tile>();
+            indicator.transform.position = selectedTile.transform.position;
+            if (selectedTile.HasEntity())
+            {
+                selectedTile.entityRef.entity.OnStayTile();
+            }
         }
     }
 
@@ -78,9 +104,14 @@ public class Marker : MonoBehaviour {
             selectedTileCollider = selectTile();
             if (selectedTileCollider)
             {
+
                 selectedTile = selectedTileCollider.GetComponent<Tile>();
                 indicator.transform.position = selectedTile.transform.position;
-                //Debug.Log("Selected " + selectedTile.coordinate.ToString());
+                Debug.Log("Selected " + selectedTile.coordinate.ToString());
+                if (selectedTile.HasEntity())
+                {
+                    selectedTile.entityRef.entity.OnExitTile();
+                }
             }
         }
     }
