@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114481761716321694}
   - component: {fileID: 95181387325131454}
   - component: {fileID: 61849078254002288}
+  - component: {fileID: 114070488466208286}
+  - component: {fileID: 114091984664447162}
   m_Layer: 10
   m_Name: Pig
   m_TagString: Untagged
@@ -142,9 +144,13 @@ MonoBehaviour:
     range:
       min: 100
       max: 100
+  wakeTransitionTime:
+    range:
+      min: 0
+      max: 0
 --- !u!114 &114070488466208286
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058441790548518}
@@ -154,6 +160,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops: []
+--- !u!114 &114091984664447162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058441790548518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e7c0da6b53647488ac388d4f09f19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  template: {fileID: 1248036295250442, guid: 826c07d33e0b4694d9d086c33747c3e9, type: 2}
 --- !u!114 &114481761716321694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,7 +218,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1332871649
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300018, guid: 484abe69e8e3d9d46ac5519745c0557b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

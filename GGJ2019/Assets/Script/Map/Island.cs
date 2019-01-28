@@ -48,8 +48,10 @@ public class Island : MonoBehaviour {
 		Vector2 origin = targetLocation - targetTile.islandRef.location;
 		foreach(KeyValuePair<Vector2, Tile> pair in other.tiles) {
 			Vector2 newLocation = MigratePiece(other, pair.Key, pair.Value, origin, player);
+			WakeUpEntities();
 			//TODO: Some animation
 		}
+		Camera.main.GetComponent<CameraBehaviour>().TriggerShake();
 	}
 
 	public void RemoveTile(Vector2 coord) {
@@ -60,7 +62,7 @@ public class Island : MonoBehaviour {
 		//Destroy self if no tiles
 		if(tiles.Count == 0) {
 			StopAllCoroutines();
-			Destroy(gameObject);
+			BeginTimeout(3f);
 		}
 	}
 
@@ -70,6 +72,14 @@ public class Island : MonoBehaviour {
 	}
 
 	/// PRIVATE
+
+	private void WakeUpEntities() {
+		foreach(Animal animal in GetComponentsInChildren<Animal>()) {
+			animal.transform.parent = null;
+			animal.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+			StartCoroutine(animal.WakeUp());
+		}
+	}
 
 	private Vector2 MigratePiece(Island other, Vector2 tileLoc, Tile tile, Vector2 origin, Player player) {
 		List<Vector2> acceptableTargets = new List<Vector2>();

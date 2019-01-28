@@ -59,7 +59,6 @@ public class ItemManager : Singleton<ItemManager> {
         ItemFactory.Initialize();
         itemData = new List<Item>(this.GetComponentsInChildren<Item>());
         inventory.Initialize();
-
     }
 
     void Update()

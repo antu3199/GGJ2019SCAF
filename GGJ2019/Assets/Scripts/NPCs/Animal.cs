@@ -14,6 +14,7 @@ public class Animal : Character
 	public RandomValue moveDelay;		// Time (range) to wait until moving again.
 	public RandomValue moveTime;		// Duration (range) for which to move.
 	public RandomValue moveForce;
+	public RandomValue wakeTransitionTime;	// Time between waking up and moving around.
 	Rigidbody2D rb;
 	NPCAnimator npcAnimator;
 
@@ -27,6 +28,7 @@ public class Animal : Character
 
 	public override void Start()
 	{
+		base.Start();
 		rb = GetComponent<Rigidbody2D>();
 		ds = GetComponent<DropSetter>();
 	}
@@ -44,10 +46,11 @@ public class Animal : Character
 		npcAnimator.Trigger("Sleep");
 	}
 
-	public void WakeUp()
+	public IEnumerator WakeUp()
 	{
 		state = AnimalState.ACTIVE;
 		npcAnimator.Trigger("Wake");
+		yield return new WaitForSeconds(wakeTransitionTime.GetRandom());
 		StartCoroutine(Wander());
 	}
 
@@ -73,9 +76,16 @@ public class Animal : Character
 		base.Die();
 		OverworldItemGenerator itemGen = GetComponent<OverworldItemGenerator>();
 		foreach(Item item in ds.drops) {
-			for(int i = 0; i < Random.Range(1, 4); i++) {
+			if (item != null)
+			{
+				Debug.Log("item " + item  + " is null");
+			} else
+			{
+				Debug.Log("item " + item + " is NOT null");
+			}
+			for (int i = 0; i < Random.Range(1, 4); i++) {
 				GameObject itemProjectile = itemGen.GetOverworldItem(item);
-				itemProjectile.transform.position = transform.position;	
+				itemProjectile.transform.position = transform.position + new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(-0.7f, 0.7f), 0);
 			}
 		}
 	}

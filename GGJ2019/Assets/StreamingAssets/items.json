@@ -163,7 +163,7 @@
     {
       "index" : 20,
       "key" : "ore-mithril",
-      "displayName": "Gold Ore",
+      "displayName": "Mithril Ore",
       "description" : "ora ora ora ora",
       "usable" : false,
       "collapsable" : true

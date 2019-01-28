@@ -7,21 +7,19 @@ public class IslandGenerator : MonoBehaviour {
 
 	public GameObject islandBasePrefab;
 	public TileInfo[] tileInfo;
-	public float entitySpawnChance;         // Chance of an island having an entity.
+	public float entitySpawnChance;         // Chance of an individual tile having an entity.
 	public RandomValue tileQuantityRange;
-	public float islandLifetime;			// Duration in seconds that an island lasts before destroying itself.
+	public float islandLifetime;            // Duration in seconds that an island lasts before destroying itself.
+	public GameObject[] npcPrefabs;
+	public float npcChance;                 // Chance of an island having an npc.
+	public RandomValue npcQuantity;
 
-	
 	public static void RandomizeDecor(Tile tile) {
 		Decor[] decors = tile.gameObject.GetComponentsInChildren<Decor>();
 		foreach (Decor decor in decors) {
 			decor.RandomizeDecor();
 		}
 	}
-
-	public GameObject[] npcPrefabs;
-	public float npcChance;                 // Chance of an island having an npc.
-	public RandomValue npcQuantity;
 
 	public GameObject GenerateIsland()
 	{
@@ -72,10 +70,21 @@ public class IslandGenerator : MonoBehaviour {
 				if (Random.value < entitySpawnChance)
 				{
 					if (chosenTileInfo.uniqueTileEntities.Length > 0) {
-						Entity chosenEntity = chosenTileInfo.uniqueTileEntities[Random.Range(0, chosenTileInfo.uniqueTileEntities.Length)].GetComponent<Entity>();
-						Entity newEntity = Instantiate(chosenEntity, newTile.transform);
-						ShiftSpriteToTile(newEntity.transform);
-						newTile.PlaceEntity(newEntity, newTileVect);
+						Entity chosenEntity = chosenTileInfo.uniqueTileEntities[Random.Range(0, chosenTileInfo.uniqueTileEntities.Length)].GetComponentsInChildren<Entity>()[0];
+						GameObject entityObj = chosenEntity.gameObject;
+						// Set this entity to be on the FloatingIsland layer while it's unhooked
+						//entityObj.layer = LayerMask.NameToLayer("FloatingIsland");
+						if (entityObj.transform.parent != null) {
+							entityObj = entityObj.transform.parent.gameObject;
+							chosenEntity.transform.parent.gameObject.layer = LayerMask.NameToLayer("FloatingIsland");
+						}
+						Entity spawnedEntity = Instantiate(entityObj, newTile.transform).GetComponentsInChildren<Entity>()[0];
+                        if (spawnedEntity.GetComponent<SoilEntity>() != null)
+                        {
+                            spawnedEntity.GetComponent<SoilEntity>().PlantNow();
+                        }
+
+                        newTile.PlaceEntity(spawnedEntity, newTileVect);
 					}
 				}
 				island.tiles.Add(newTileVect, newTile);
@@ -92,22 +101,29 @@ public class IslandGenerator : MonoBehaviour {
 		{
 			// Create NPC and place it onto a random tile
 			Vector2 randTileVector = tileList[Random.Range(0, tileList.Count)];
-			GameObject chosenNpc = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
-			GameObject npc = Instantiate(chosenNpc, island.tiles[randTileVector].transform.position, Quaternion.identity, island.tiles[randTileVector].transform);
-			ShiftSpriteToTile(npc.transform);
-			// Flip animal half the time
-			if(Random.value < 0.5f) {
-				npc.GetComponent<NPCAnimator>().FlipSprite();
+			Tile chosenTile = island.tiles[randTileVector];
+			// Don't spawn NPCs on tiles with entities
+			if (!chosenTile.HasEntity())
+			{
+				GameObject chosenNpc = npcPrefabs[Random.Range(0, npcPrefabs.Length)];
+				GameObject npc = Instantiate(chosenNpc, chosenTile.transform.position, Quaternion.identity, chosenTile.transform);
+				ShiftSpriteToTile(npc.transform, chosenTile);
+				// Flip animal half the time
+				if (Random.value < 0.5f)
+				{
+					npc.GetComponent<NPCAnimator>().FlipSprite();
+				}
+				npc.GetComponent<Animal>().Sleep();
 			}
-			npc.GetComponent<Animal>().Sleep();
+			// Increment even if tile is unsuitable for NPC
 			npcsSpawned++;
 		}
 	}
 
 	// Shifts a transform up on its tile so its feet/bottom are on the center of the tile
-	private void ShiftSpriteToTile(Transform t)
+	private void ShiftSpriteToTile(Transform t, Tile tile)
 	{
-		t.position += new Vector3(0, t.gameObject.GetComponent<Renderer>().bounds.extents.y, 0);
+		t.position += new Vector3(0, tile.gameObject.GetComponent<Renderer>().bounds.extents.y, 0);
 	}
 
 	/*

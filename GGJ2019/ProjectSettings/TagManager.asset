@@ -26,7 +26,7 @@ TagManager:
   - Marker
   - GhostTile
   - Projectile
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -47,6 +47,15 @@ TagManager:
   - name: TileDetail
     uniqueID: 1138615629
     locked: 0
+  - name: EntityGround
+    uniqueID: 1883134319
+    locked: 0
+  - name: Entities
+    uniqueID: 722597637
+    locked: 0
   - name: Characters
     uniqueID: 1332871649
+    locked: 0
+  - name: MapUI
+    uniqueID: 2717775357
     locked: 0
