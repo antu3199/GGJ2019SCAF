@@ -44,8 +44,13 @@ public class CameraBehaviour : MonoBehaviour {
 
 		if (cameraState == CameraState.FOLLOWING)
 		{
-			transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+			transform.position = GetPlayerFocus();
 		}
+	}
+
+	Vector3 GetPlayerFocus()
+	{
+		return new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 	}
 
 	IEnumerator Shake()
@@ -54,10 +59,10 @@ public class CameraBehaviour : MonoBehaviour {
 		while (true)
 		{
 			if (currShakeDuration > 0) {
-				transform.localPosition = player.transform.position + new Vector3(Random.value, Random.value, 0) * currShakeMagnitude;
+				transform.localPosition = GetPlayerFocus() + new Vector3(Random.value, Random.value, 0) * currShakeMagnitude;
 				currShakeDuration -= Time.deltaTime * currDampingSpeed;
 			} else {
-				transform.localPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+				transform.localPosition = GetPlayerFocus();
 				break;
 			}
 			yield return null;
