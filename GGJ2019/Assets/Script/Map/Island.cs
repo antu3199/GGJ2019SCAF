@@ -51,7 +51,6 @@ public class Island : MonoBehaviour {
 			WakeUpEntities();
 			//TODO: Some animation
 		}
-		Debug.Log("here");
 		Camera.main.GetComponent<CameraBehaviour>().TriggerShake();
 	}
 
