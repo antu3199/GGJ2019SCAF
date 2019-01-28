@@ -86,7 +86,7 @@ public class Animal : Character
 			}
 			for (int i = 0; i < Random.Range(1, 4); i++) {
 				GameObject itemProjectile = itemGen.GetOverworldItem(item);
-				itemProjectile.transform.position = transform.position;	
+				itemProjectile.transform.position = transform.position + new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(-0.7f, 0.7f), 0);
 			}
 		}
 	}
