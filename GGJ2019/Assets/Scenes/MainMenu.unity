@@ -2018,7 +2018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.6
-  m_Text: 'PROJECT: HOME'
+  m_Text: PLANET HOME
 --- !u!222 &414925774
 CanvasRenderer:
   m_ObjectHideFlags: 0
