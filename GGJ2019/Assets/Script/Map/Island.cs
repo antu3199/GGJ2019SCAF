@@ -51,6 +51,8 @@ public class Island : MonoBehaviour {
 			WakeUpEntities();
 			//TODO: Some animation
 		}
+		Debug.Log("here");
+		Camera.main.GetComponent<CameraBehaviour>().TriggerShake();
 	}
 
 	public void RemoveTile(Vector2 coord) {

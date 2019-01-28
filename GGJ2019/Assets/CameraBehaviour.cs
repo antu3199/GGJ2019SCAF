@@ -54,7 +54,7 @@ public class CameraBehaviour : MonoBehaviour {
 		while (true)
 		{
 			if (currShakeDuration > 0) {
-				transform.localPosition = player.transform.position + Random.insideUnitSphere * currShakeMagnitude;
+				transform.localPosition = player.transform.position + new Vector3(Random.value, Random.value, 0) * currShakeMagnitude;
 				currShakeDuration -= Time.deltaTime * currDampingSpeed;
 			} else {
 				transform.localPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
@@ -70,6 +70,7 @@ public class CameraBehaviour : MonoBehaviour {
 		currShakeDuration = defaultShakeDuration;
 		currShakeMagnitude = defaultShakeMagnitude;
 		currDampingSpeed = defaultDampingSpeed;
+        StartCoroutine(Shake());
 	}
 
 	public void TriggerShake(float duration=0, float magnitude=0, float dampingSpeed=0)
@@ -89,5 +90,6 @@ public class CameraBehaviour : MonoBehaviour {
 		} else {
 			currDampingSpeed = dampingSpeed;
 		}
+        StartCoroutine(Shake());
 	}
 }
