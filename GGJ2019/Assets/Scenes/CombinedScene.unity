@@ -1618,12 +1618,12 @@ Prefab:
     - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
         type: 2}
       propertyPath: cols
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
         type: 2}
       propertyPath: rows
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114559506752196336, guid: 76257c85a1aa04838ae17192680bf276,
         type: 2}
