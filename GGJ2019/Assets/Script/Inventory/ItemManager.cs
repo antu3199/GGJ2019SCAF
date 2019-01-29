@@ -3,32 +3,53 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 
-public class ItemFactory
+public class ItemFactory : MonoBehaviour
 {
     public static Dictionary<string, ItemModel> itemDictionary = new Dictionary<string, ItemModel>();
-    private static string gameDataProjectFilePath = "/StreamingAssets/items.json";
+	private static string itemDataURL = "https://raw.githubusercontent.com/nansonzheng/GGJ2019SCAF/master/GGJ2019/Assets/StreamingAssets/items.json";
 
-    public static void Initialize()
+	public static ItemFactory instance;
+
+	public static IEnumerator Initialize(ItemManager itemManager)
     {
-        
+		string filePath = Path.Combine(Application.streamingAssetsPath, "items.json");
+		// If file path is URL
+		if (filePath.Contains("://") || filePath.Contains(":///"))
+		{
+			UnityWebRequest www = UnityWebRequest.Get(filePath);
+			yield return www.SendWebRequest();
 
-        string filePath = Application.dataPath + gameDataProjectFilePath;
-        if (File.Exists(filePath))
+			if (www.isNetworkError || www.isHttpError)
+			{
+				Debug.LogError("Error fetching items from URL");
+			}
+			else
+			{
+				ProcessJson(www.downloadHandler.text);
+			}
+		}
+		else if (File.Exists(filePath))
         {
             string dataAsJson = File.ReadAllText(filePath);
-            ItemsList itemsList = JsonUtility.FromJson<ItemsList>(dataAsJson);
-            foreach (ItemModel itemModel in itemsList.items)
-            {
-                itemDictionary.Add(itemModel.key, itemModel);
-            }
+			ProcessJson(dataAsJson);
         }
         else
         {
             Debug.LogError("Error finding items");
         }
     }
+
+	private static void ProcessJson(string data)
+	{
+		ItemsList itemsList = JsonUtility.FromJson<ItemsList>(data);
+		foreach (ItemModel itemModel in itemsList.items)
+		{
+			itemDictionary.Add(itemModel.key, itemModel);
+		}
+	}
 }
 
 [Serializable]
@@ -56,10 +77,15 @@ public class ItemManager : Singleton<ItemManager> {
     
     void Awake()
     {
-        ItemFactory.Initialize();
-        itemData = new List<Item>(this.GetComponentsInChildren<Item>());
-        inventory.Initialize();
+		StartCoroutine(Initialize());
     }
+
+	IEnumerator Initialize()
+	{
+		yield return StartCoroutine(ItemFactory.Initialize(this));
+		itemData = new List<Item>(this.GetComponentsInChildren<Item>());
+		inventory.Initialize();
+	}
 
     void Update()
     {
